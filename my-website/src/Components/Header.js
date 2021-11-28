@@ -11,6 +11,7 @@ const HeaderContainer = styled.div`
     text-align: justify;
     font-family: "Avenir", sans-serif;
     background-color: var(--color-primary);
+    color: var(--color-secondary);
 
     & div {
         padding: 0 15%;

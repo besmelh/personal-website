@@ -1,24 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
+import CircleImageDisplay from './CircleImageDisplay';
 
-const ImageDisplay = styled.div `
-
-
-`
-
-const StyledMainPageSection = styled.section`
-
+const MainText = styled.div `
     display: flex;
-    /* justify-content: flex-end; */
-    padding: 50px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 
-
-    & div {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-    }
 
     & h3 {
         font-weight:400;
@@ -39,17 +28,10 @@ const StyledMainPageSection = styled.section`
         text-align: justify;
     }
 
-    & img{
-        width: 200px;
-        border-radius: 100%;
-        border: 3px solid white;
-        margin:0;
-        transition: transform 0.3s;
-    }
-
-    & img:hover{
-        transform: scale(1.03);
-    }
+`
+const StyledMainPageSection = styled.section`
+    display: flex;
+    padding: 50px 0;
 `;
 
 
@@ -59,7 +41,6 @@ const rightContainer = {
 
 const rightContainerImage = {
     marginLeft: '30px',
-    
 };
 
 const leftContainerImage = {
@@ -77,30 +58,30 @@ function MainPageSection(props) {
       >
 
         {props.allignedLeft === 'true' &&
-            // <div className='img-container'
-            //     style={leftContainerImage}>
-            //     <img src={require(`../Images/${props.image}`).default}/>
-            //     <img src={require(`../Images/cut-circle.svg`).default}></img>
-            // </div>
-
-            <ImageDisplay
-                imageName = {props.image}
-                skills = 'Skill 1, Skill 2, Skill 3'
+            <CircleImageDisplay
+                image = {props.image}
+                skills = {props.skills}
+                style={leftContainerImage}
             />
         }
 
-        <div>
+        <MainText>
             <h3>{props.title}</h3>
             <h4>{props.duration}</h4>
             <p>{props.summary}</p>
-        </div>
+        </MainText>
 
 
         {props.allignedLeft === 'false' &&
-            <div className='img-container'
-                style={rightContainerImage}>
-                <img src={require(`../Images/${props.image}`).default}/>
-            </div>
+            // <div className='img-container'
+            //     style={rightContainerImage}>
+            //     <img src={require(`../Images/${props.image}`).default}/>
+            // </div>
+            <CircleImageDisplay
+                image = {props.image}
+                skills = {props.skills}
+                style={rightContainerImage}
+            />
         }
 
       </StyledMainPageSection>

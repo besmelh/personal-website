@@ -4,9 +4,8 @@ import Content from '../Components/Content';
 import LeftRightContainer from '../Components/LeftRightContainer';
 import MyButton from '../Components/MyButton';
 import IconAndTitle from '../Components/IconAndTitle';
-// import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-// import AppleIcon from '@mui/icons-material/Apple';
 import { Icon } from '@iconify/react';
+// import ReactPlayer from "react-player";
 
 
 function AppDevelopment() {
@@ -107,6 +106,11 @@ function AppDevelopment() {
           </MyButton>
         </div>
         </LeftRightContainer>
+
+        {/* <ReactPlayer
+          url='https://www.youtube.com/watch?v=d46Azg3Pm4c'
+        /> */}
+
       </Content>
 
     </div>

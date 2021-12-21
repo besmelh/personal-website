@@ -2,8 +2,7 @@ import './App.css';
 import {createGlobalStyle} from 'styled-components';
 import Home from './Pages/Home';
 import SubPage from './Pages/SubPage';
-import AppDevelopment from './Pages/AppDevelopment';
-// import {Home, SubPage, AppDevelopment} from './Pages';
+import AppDevelopment from './Pages/AppDevelopment2';
 import {BrowserRouter, Routes, Switch, Route} from 'react-router-dom';
 
 function App() {

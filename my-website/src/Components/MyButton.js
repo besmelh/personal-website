@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import ButtonUnstyled from '@mui/base/ButtonUnstyled';
 
 
-const StyledButton= styled(ButtonUnstyled)`
+const StyledMyButton= styled(ButtonUnstyled)`
 
     && {
         color: var(--color-primary);
@@ -33,9 +33,13 @@ function MyButton(props) {
     const {children, ...other } = props;
 
     return (
-      <StyledButton {...other}>
-          {children}
-      </StyledButton>
+    //   <StyledButton {...other}>
+    //       {props.children}
+    //   </StyledButton>
+   
+        <button>
+
+        </button>
     );
   }
   

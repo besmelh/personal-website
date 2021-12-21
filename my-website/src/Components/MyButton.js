@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import * as React from 'react';
-import ReactDOM from 'react-dom';
 import ButtonUnstyled from '@mui/base/ButtonUnstyled';
 
 
-const StyledMyButton= styled(ButtonUnstyled)`
+const StyledButton = styled(ButtonUnstyled)`
 
     && {
         color: var(--color-primary);
@@ -31,15 +30,12 @@ const StyledMyButton= styled(ButtonUnstyled)`
 function MyButton(props) {
 
     const {children, ...other } = props;
+    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
     return (
-    //   <StyledButton {...other}>
-    //       {props.children}
-    //   </StyledButton>
-   
-        <button>
-
-        </button>
+      <StyledButton {...other}>
+          {props.children}
+      </StyledButton>
     );
   }
   

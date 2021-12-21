@@ -2,7 +2,7 @@ import './App.css';
 import {createGlobalStyle} from 'styled-components';
 import Home from './Pages/Home';
 import SubPage from './Pages/SubPage';
-import AppDevelopment from './Pages/AppDevelopment2';
+import AppDevelopment from './Pages/AppDevelopment';
 import {BrowserRouter, Routes, Switch, Route} from 'react-router-dom';
 
 function App() {

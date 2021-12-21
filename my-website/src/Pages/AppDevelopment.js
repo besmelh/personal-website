@@ -5,7 +5,7 @@ import LeftRightContainer from '../Components/LeftRightContainer';
 import MyButton from '../Components/MyButton';
 import IconAndTitle from '../Components/IconAndTitle';
 import { Icon } from '@iconify/react';
-// import ReactPlayer from "react-player";
+import ReactPlayer from "react-player";
 
 
 function AppDevelopment() {
@@ -107,9 +107,9 @@ function AppDevelopment() {
         </div>
         </LeftRightContainer>
 
-        {/* <ReactPlayer
+        <ReactPlayer
           url='https://www.youtube.com/watch?v=d46Azg3Pm4c'
-        /> */}
+        />
 
       </Content>
 

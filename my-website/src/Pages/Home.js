@@ -18,6 +18,7 @@ function Home() {
         summary = {data[i].summary}
         image = {data[i].image}
         skills = {data[i].skills}
+        href = {data[i].href}
         allignedLeft = {isAllignedLeft}
       />
     )

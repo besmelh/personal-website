@@ -54,13 +54,14 @@ function MainPageSection(props) {
     return (
         
       <StyledMainPageSection
-        style={(props.allignedLeft === 'false') ? rightContainer : null}
+        style={(props.allignedLeft === false) ? rightContainer : null}
       >
 
-        {props.allignedLeft === 'true' &&
+        {props.allignedLeft === true &&
             <CircleImageDisplay
                 image = {props.image}
                 skills = {props.skills}
+                href = {props.href}
                 style={leftContainerImage}
             />
         }
@@ -72,14 +73,11 @@ function MainPageSection(props) {
         </MainText>
 
 
-        {props.allignedLeft === 'false' &&
-            // <div className='img-container'
-            //     style={rightContainerImage}>
-            //     <img src={require(`../Images/${props.image}`).default}/>
-            // </div>
+        {props.allignedLeft === false &&
             <CircleImageDisplay
                 image = {props.image}
                 skills = {props.skills}
+                href = {props.href}
                 style={rightContainerImage}
             />
         }

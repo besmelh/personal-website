@@ -1,4 +1,5 @@
-import React from "react";
+import {React, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 
 
@@ -26,13 +27,14 @@ const MainImage = styled.img`
 
 
 const SkillsText = styled.p `
-    color: black;
     font-size: 13px;
     position: absolute;
     bottom: 0px;
-    top: 135px;
+    top: 138px;
     width: 130px;
     text-align: center;
+    color: var(--color-secondary);
+    font-family: 'Roboto Condensed', sans-serif;
 `
 const CutCircle = styled.img `
     width: 200px;
@@ -42,20 +44,42 @@ const CutCircle = styled.img `
 
 const OnHoverContent = styled.div`
     position: absolute;
-    display: flex;
-    justify-content: center
+    display: none;
+    justify-content: center;
+    cursor: pointer;
 `
 
 
 function CircleImageDisplay(props) {
+
+    const navigate = useNavigate();
+
+    const [circleHovered, setCircleHovered] = useState(true);
+
+    const handleRoute = () =>{ 
+        navigate(props.href || '/');
+    }
+
+    const handleMouseEnter = e => {
+        setCircleHovered(false);
+    }
+
+    const handleMouseLeave = e => {
+        setCircleHovered(true);
+    }
+
     return (
-      <StyledImageDisplay style={props.style}>
+    
+      <StyledImageDisplay style={props.style} onClick={handleRoute} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <MainImage src={require(`../Images/${props.image}`).default}/>
 
-        <OnHoverContent>
-            <CutCircle src={require(`../Images/cut-circle-transparent.svg`).default}/>
-            <SkillsText>{props.skills}</SkillsText>
-        </OnHoverContent>
+        {props.skills &&
+            <OnHoverContent style={(circleHovered) ? {display:'none'} : {display:'flex'}}>
+                <CutCircle src={require(`../Images/cut-circle-transparent.svg`).default}/>
+                <SkillsText>{props.skills}</SkillsText>
+            </OnHoverContent>
+        }
+        
       </StyledImageDisplay>
     );
   }

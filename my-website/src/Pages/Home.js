@@ -2,8 +2,29 @@ import styled from 'styled-components';
 import Header from '../Components/Header';
 import Content from '../Components/Content';
 import MainPageSection from '../Components/MainPageSection';
+import data from './data.json';
 
-function Home() {
+function Home() { 
+
+  let pageSections = [];
+  let isAllignedLeft = false;
+
+  for (var i = 0; i < data.length; i++) {
+    
+    pageSections.push(
+      <MainPageSection
+        title={data[i].title}
+        duration = {data[i].duration}
+        summary = {data[i].summary}
+        image = {data[i].image}
+        skills = {data[i].skills}
+        allignedLeft = {isAllignedLeft}
+      />
+    )
+
+    isAllignedLeft = !isAllignedLeft;
+  }
+
   return (
     <div className="Home">
      <Header>
@@ -12,22 +33,7 @@ function Home() {
       </Header>
 
       <Content>
-        <MainPageSection
-          title='About Me'
-          summary = "I'm currently a student at the University of Rochester, majoring in Computer Science and minoring in Digital Media Studies."
-          image = 'app-dev.png'
-          skills = 'Full-stack development, UI/UX design'
-          allignedLeft = 'false'
-        />     
-
-        <MainPageSection
-          title='Title'
-          duration = '2020 - Present'
-          summary = 'Lorem ipsum This is my space to showcase some of my favorite projects.'
-          image = 'app-dev.png'
-          skills = 'Full-stack development, UI/UX design'
-          allignedLeft = 'true'
-        />
+        {pageSections}
       </Content>
     </div>
   );

@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
 :root {
   --color-primary: #E2DAFC;
+  --color-primary-light: #E4D9FF;
   
   --color-secondary: #273878;
   --color-secodary-gradient: linear-gradient(180deg, #273878 0%, #202847 100%);
-  --color-secondary-dark: #273878;
+  --color-secondary-dark: #1E2749;
 }
 
 body {
@@ -13,4 +16,5 @@ body {
   font-family: 'Roboto', sans-serif;
   padding: 0;
   margin: 0;
+  color: var(--color-primary-light);
 }

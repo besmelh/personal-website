@@ -45,11 +45,12 @@ const StyledContainer = styled.div `
 
 
 function LeftRightContainer(props) {
-    return ( 
-        <StyledContainer >
+    const {children, ...other } = props;
 
-        { props.children }
+    return(
 
+        <StyledContainer {...other}>
+            {children}
         </StyledContainer>
     );
 }

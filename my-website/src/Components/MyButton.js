@@ -6,7 +6,7 @@ import ButtonUnstyled from '@mui/base/ButtonUnstyled';
 
 const StyledButton= styled(ButtonUnstyled)`
 
-    &&{
+    && {
         color: var(--color-primary);
         background-color: Transparent;
         border: 1px solid var(--color-primary);
@@ -21,13 +21,20 @@ const StyledButton= styled(ButtonUnstyled)`
         }
     }
 
+    &&:hover {
+        background-color: var(--color-secondary-dark);
+        cursor: pointer;
+    }
 `;
 
 
 function MyButton(props) {
+
+    const {children, ...other } = props;
+
     return (
-      <StyledButton>
-          {props.children}
+      <StyledButton {...other}>
+          {children}
       </StyledButton>
     );
   }

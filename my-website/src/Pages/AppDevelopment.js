@@ -29,8 +29,8 @@ function AppDevelopment() {
 
           <p>LightUp allows users to brainstorm new ideas by generating random words to inspire them. If they like a specific word it can be locked to prevent it from changing when generating new words. Users can also make notes of all their ideas they get so you don't forget them. <br/><br/> Currently available in the App Store, and is localized in English & Arabic.</p>
           
-          <MyButton>
-          <Icon icon="ant-design:apple-filled" inline={true} />
+          <MyButton  onClick={()=> window.open("https://www.google.com/", "_blank")}>
+            <Icon icon="ant-design:apple-filled" inline={true} />
             View on App Store
           </MyButton>
         </div>
@@ -75,8 +75,8 @@ function AppDevelopment() {
           <p className="tinytext">This app was made as a project for CSC214 - Fall 2020 - University of Rochester</p>
 
           <MyButton>
-          <Icon icon="ant-design:apple-filled" inline={true} />
-            View on App Store
+          <Icon icon="bi:play-circle" inline={true} />
+            In Action
           </MyButton>
         </div>
 

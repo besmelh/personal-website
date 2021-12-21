@@ -19,6 +19,12 @@ const HeaderContainer = styled.div`
     }
 
     & h1 {
+        font-size: 44px;
+        margin-bottom: 10px;
+        letter-spacing: 0.05em;
+    }
+
+    & h2 {
         font-size: 40px;
         margin-bottom: 10px;
     }
@@ -26,6 +32,12 @@ const HeaderContainer = styled.div`
     & h3 {
         font-weight: 400;
         font-size: 23px;
+        margin:0;
+    }
+
+    & h4 {
+        font-weight: 200;
+        font-size: 18px;
         margin:0;
     }
 `;

@@ -13,7 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="subpage" element={<SubPage/>}/>
-            <Route path="app-dev" element={<AppDevelopment/>}/>
+            <Route path="app-development" element={<AppDevelopment/>}/>
           </Routes>
         </BrowserRouter>
      </div>

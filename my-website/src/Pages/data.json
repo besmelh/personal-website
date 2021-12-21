@@ -8,7 +8,7 @@
         },
         {
             "title": "App Development",
-            "summary" : "Here I showcase some of the iOS apps that I have made.            ",
+            "summary" : "Here I showcase some of the iOS apps that I have made.",
             "image" : "home-app-dev.png",
             "skills" : "Software Development, UI/UX design",
             "href" : "app-development"

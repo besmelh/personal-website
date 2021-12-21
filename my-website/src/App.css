@@ -14,7 +14,13 @@ body {
   height: 100%;
   background: var(--color-secodary-gradient);
   font-family: 'Roboto', sans-serif;
+  font-weight: 200;
   padding: 0;
   margin: 0;
   color: var(--color-primary-light);
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
 }

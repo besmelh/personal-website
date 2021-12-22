@@ -10,9 +10,12 @@ const StyledContentContainer = styled.div`
 `;
 
 function Content(props) {
+
+  const {children, ...other } = props;
+
   return (
-    <StyledContentContainer>
-      {props.children}
+    <StyledContentContainer {...other}>
+      {children}
     </StyledContentContainer>
   );
 }

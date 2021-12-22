@@ -1,0 +1,123 @@
+import React from "react";
+import styled from 'styled-components';
+import { ProGallery } from 'pro-gallery';
+import 'pro-gallery/dist/statics/main.css';
+
+
+
+function Gallery(props) {
+    const {...other} = props;
+
+    // Add your images here...
+    const items = [
+        { // Image item:
+                itemId: 'sample-id',
+                mediaUrl: 'https://i.picsum.photos/id/674/200/300.jpg?hmac=kS3VQkm7AuZdYJGUABZGmnNj_3KtZ6Twgb5Qb9ITssY',
+                metaData: {
+                        type: 'image',
+                        height: 200,
+                        width: 100,
+                        title: 'sample-title',
+                        description: 'sample-description',
+                        focalPoint: [0, 0],
+                        link: {
+                                url: 'http://example.com',
+                                target: '_blank'
+                        },
+                }
+        },
+        { // Another Image item:
+                itemId: 'differentItem',
+                mediaUrl: 'https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk',
+                metaData: {
+                        type: 'image',
+                        height: 200,
+                        width: 100,
+                        title: 'sample-title',
+                        description: 'sample-description',
+                        focalPoint: [0, 0],
+                        link: {
+                                url: 'http://example.com',
+                                target: '_blank'
+                        },
+                }
+        },
+        { // Another Image item:
+            itemId: 'differentItem2',
+            mediaUrl: 'https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk',
+            metaData: {
+                    type: 'image',
+                    height: 200,
+                    width: 100,
+                    title: 'sample-title',
+                    description: 'sample-description',
+                    focalPoint: [0, 0],
+                    link: {
+                            url: 'http://example.com',
+                            target: '_blank'
+                    },
+            }
+    },
+    { // Another Image item:
+        itemId: 'differentItem3',
+        mediaUrl: 'https://i.picsum.photos/id/1003/1181/1772.jpg?hmac=oN9fHMXiqe9Zq2RM6XT-RVZkojgPnECWwyEF1RvvTZk',
+        metaData: {
+                type: 'image',
+                height: 200,
+                width: 100,
+                title: 'sample-title',
+                description: 'sample-description',
+                focalPoint: [0, 0],
+                link: {
+                        url: 'http://example.com',
+                        target: '_blank'
+                    },
+            }
+    },
+
+    ]
+
+
+    // The options of the gallery (from the playground current state)
+    const options = {
+    galleryLayout: 4,
+    cubeType: 'fit',
+    imageMargin: 15,
+    isAutoSlideshow: true,
+    slideshowLoop: true,
+    autoSlideshowInterval: 3,
+    gallerySizeType: 'px',
+    overlayBackground: 'rgba(3,3,106,0.3)',
+    titlePlacement: 'SHOW_ON_HOVER,SHOW_BELOW',
+    // itemBorderRadius: 20
+};
+
+    // The size of the gallery container. The images will fit themselves in it
+    const container = {
+    width: 500,
+    height: 300
+    };
+
+    // The eventsListener will notify you anytime something has happened in the gallery.
+    const eventsListener = (eventName, eventData) => console.log({eventName, eventData}); 
+
+    // The scrollingElement is usually the window, if you are scrolling inside another element, suplly it here
+    const scrollingElement = window;
+
+    return (
+        <ProGallery
+        {...other}
+        items={items}
+        options={options}
+        container={container}
+        eventsListener={eventsListener}
+        scrollingElement={scrollingElement}
+        />
+    );
+}
+  
+
+// Enjoy using your new gallery!
+// For more options, visit https://github.com/wix/pro-gallery
+
+export default Gallery;

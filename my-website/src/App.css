@@ -3,6 +3,8 @@
 :root {
   --color-primary: #E2DAFC;
   --color-primary-light: #E4D9FF;
+  --color-primary-extraLight: #eae3fa;
+  --color-primary-alpha20: RGBA(226,218,252,0.3);
   
   --color-secondary: #273878;
   --color-secodary-gradient: linear-gradient(180deg, #273878 0%, #202847 100%);
@@ -23,4 +25,14 @@ body {
 button {
   font-family: 'Roboto', sans-serif;
   font-weight: 200;
+}
+
+h2 {
+  font-weight: 200;
+  font-size: 30px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.2;
 }

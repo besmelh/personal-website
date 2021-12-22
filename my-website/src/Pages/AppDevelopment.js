@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../Components/Header';
 import Content from '../Components/Content';
+import Divider from '../Components/Divider';
+import HomeButton from '../Components/HomeButton';
 import AppDevPageSection from '../Components/AppDevPageSection';
 
 
@@ -29,6 +31,7 @@ const lightupDesc = "LightUp allows users to brainstorm new ideas by generating 
           largeContainerLeft
         />
 
+        <Divider/>
 
         {/* ********* starship adventure ********* */}
         <AppDevPageSection
@@ -39,6 +42,8 @@ const lightupDesc = "LightUp allows users to brainstorm new ideas by generating 
           description="Starship Adventure is a game where the user tries to find the correct angle and velocity to fly the rocket from Earth and land safely on Mars. On each round Mars is placed at a different location." 
           tinytext="This app was made by my team and I for our 48-hour Hackathon submission for CSC214 - Fall 2020 - University of Rochester"
         />
+
+        <Divider/>
 
         {/* ********* watch what ********* */}
         <AppDevPageSection
@@ -51,6 +56,7 @@ const lightupDesc = "LightUp allows users to brainstorm new ideas by generating 
           largeContainerLeft
         />
 
+        <Divider/>
         {/* ********* trip rate ********* */}
 
         <AppDevPageSection
@@ -61,6 +67,7 @@ const lightupDesc = "LightUp allows users to brainstorm new ideas by generating 
           description={`The app allows the user to log their trips' information, including the trip's name, description, type, number of people accompanied, and the amount of fun they had. There's also a status tab to track information regarding all the trips.`}
           tinytext="This app was made as a project for CSC214 - Fall 2020 - University of Rochester"
         />
+      <HomeButton/>
 
       </Content>
 

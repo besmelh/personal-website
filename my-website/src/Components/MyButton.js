@@ -10,7 +10,7 @@ const StyledButton = styled(ButtonUnstyled)`
         background-color: Transparent;
         border: 1px solid var(--color-primary);
         border-radius: 100px;
-        padding: 10px 18px;
+        padding: 10px 28px;
         font-weight:100;
         font-size: 15px;
 
@@ -33,7 +33,7 @@ function MyButton(props) {
 
     return (
       <StyledButton 
-        onClick={() => {window.open(href, "_blank");}} 
+        onClick={() => {window.open(href);}} 
         {...other}>
 
         {children}

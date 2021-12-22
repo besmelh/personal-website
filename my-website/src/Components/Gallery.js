@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { ProGallery } from 'pro-gallery';
 import 'pro-gallery/dist/statics/main.css';
 
+const StyledGallery = styled.div`
+    display: flex;
+    justify-content: center;
 
+`
 
 function Gallery(props) {
     const {height, width,items, ...other} = props;
@@ -50,15 +54,15 @@ function Gallery(props) {
     // The options of the gallery (from the playground current state)
     const options = {
     galleryLayout: 4,
-    cubeType: 'fit',
+    cubeType: 'min',
     // imageMargin: 15,
     // isAutoSlideshow: true,
     // slideshowLoop: true,
     // autoSlideshowInterval: 3,
     // gallerySizeType: 'px',
-    // overlayBackground: 'rgba(3,3,106,0.3)',
+    overlayBackground: 'rgba(3,3,106,0.0)',
     // titlePlacement: 'SHOW_ON_HOVER,SHOW_BELOW',
-    // itemBorderRadius: 20
+    itemBorderRadius: 20
 };
 
     // The size of the gallery container. The images will fit themselves in it
@@ -74,14 +78,17 @@ function Gallery(props) {
     const scrollingElement = window;
 
     return (
-        <ProGallery
-        {...other}
-        items={items}
-        options={options}
-        container={container}
-        eventsListener={eventsListener}
-        scrollingElement={scrollingElement}
-        />
+        <StyledGallery>
+            <ProGallery
+            {...other}
+            items={items}
+            options={options}
+            container={container}
+            eventsListener={eventsListener}
+            scrollingElement={scrollingElement}
+            />
+        </StyledGallery>
+       
     );
 }
   

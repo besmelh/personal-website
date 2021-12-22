@@ -9,18 +9,6 @@ const StyledContainer = styled.div `
     justify-content: space-between;
     margin: 10% 0;
 
-
-    & h2 {
-        font-weight: 200;
-        font-size: 30px;
-    }
-
-    & p {
-        font-size: 15px;
-        line-height: 1.2;
-        text-align: justify;
-    }
-
     & img{
         width: 100%;
     }

@@ -29,11 +29,15 @@ const StyledButton = styled(ButtonUnstyled)`
 
 function MyButton(props) {
 
-    const {children, ...other } = props;
+    const {href, children, ...other } = props;
 
     return (
-      <StyledButton {...other}>
-          {props.children}
+      <StyledButton 
+        onClick={() => {window.open(href, "_blank");}} 
+        {...other}>
+
+        {children}
+        
       </StyledButton>
     );
   }

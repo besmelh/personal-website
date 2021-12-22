@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react";
 
 function AppDevPageSection(props) {
 
-    const {largeContainerLeft, image, videoUrl, icon, title, description, description2, tinytext, buttonIcon, buttonText, ...other } = props;
+    const {largeContainerLeft, image, videoUrl, icon, title, description, description2, tinytext, buttonIcon, buttonText, buttonHref, ...other } = props;
     const [showVideo, setShowVideo] = useState(false);
 
     return (
@@ -32,8 +32,9 @@ function AppDevPageSection(props) {
           <p>{description2}</p>     
           <p className="tinytext">{tinytext}</p>
 
-          <MyButton onClick={()=>setShowVideo(!showVideo)}>
-              {console.log("showVideo: ", showVideo)}
+          <MyButton 
+          {...(buttonHref ? {href: buttonHref} : {onClick : ()=>setShowVideo(!showVideo)})} 
+          >
             <Icon icon={buttonIcon || "bi:play-circle"} inline={true} />
             {buttonText || "In Action"}
           </MyButton>

@@ -19,13 +19,13 @@ const lightupDesc = "LightUp allows users to brainstorm new ideas by generating 
         {/* ********* light up ********* */}
         <AppDevPageSection
           image = "lightup-ss.png"
-          videoUrl="https://www.youtube.com/watch?v=nWvXHZj4lm0"
           icon = "lightup-icon.png"
           title="Light Up"
           description={`LightUp allows users to brainstorm new ideas by generating random words to inspire them. If they like a specific word it can be locked to prevent it from changing when generating new words. Users can also make notes of all their ideas they get so you don't forget them.`}
           description2="Currently available in the App Store, and is localized in English & Arabic."          
           buttonText= "View on the App Store"
           buttonIcon="ant-design:apple-filled"
+          buttonHref="https://apps.apple.com/us/app/light-up-idea-brainstorming/id1550799231"
           largeContainerLeft
         />
 

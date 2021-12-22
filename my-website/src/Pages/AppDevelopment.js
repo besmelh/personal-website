@@ -4,11 +4,13 @@ import Content from '../Components/Content';
 import LeftRightContainer from '../Components/LeftRightContainer';
 import MyButton from '../Components/MyButton';
 import IconAndTitle from '../Components/IconAndTitle';
+import VideoPlayer from '../Components/VideoPlayer';
 import { Icon } from '@iconify/react';
-import ReactPlayer from "react-player";
 
 
 function AppDevelopment() {
+
+  
   return (
     <div className="AppDevelopment">
       <Header>
@@ -44,6 +46,7 @@ function AppDevelopment() {
         <LeftRightContainer>
         <div className="container-medium">
           <img src={require(`../Images/starshipadventure-ss.png`).default}/>
+          <VideoPlayer url ="https://www.youtube.com/watch?v=nWvXHZj4lm0" style ={{display:"none"}}/>
         </div>
 
         <div className="container-small">
@@ -107,9 +110,6 @@ function AppDevelopment() {
         </div>
         </LeftRightContainer>
 
-        <ReactPlayer
-          url='https://www.youtube.com/watch?v=d46Azg3Pm4c'
-        />
 
       </Content>
 

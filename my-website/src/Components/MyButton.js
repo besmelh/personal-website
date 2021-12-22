@@ -30,7 +30,6 @@ const StyledButton = styled(ButtonUnstyled)`
 function MyButton(props) {
 
     const {children, ...other } = props;
-    const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
     return (
       <StyledButton {...other}>

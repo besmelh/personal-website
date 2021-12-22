@@ -22,8 +22,8 @@ const StyledContainer = styled.div `
     }
 
     & img{
-            width: 100%;
-        }
+        width: 100%;
+    }
 
     & .container-small {
         width: 35%;
@@ -31,6 +31,7 @@ const StyledContainer = styled.div `
 
     & .container-medium{
         width: 50%;
+        position: relative;
     }
 
     & .tinytext{
@@ -39,6 +40,13 @@ const StyledContainer = styled.div `
 
     & button {
         margin: 15px 0;
+    }
+
+
+    & .VideoPlayer {
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
 `;

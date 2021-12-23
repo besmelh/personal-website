@@ -35,7 +35,7 @@ function Home() {
         <h3>This is my space to showcase some of my favorite projects. I mainly do software programming, digital design, and occasionally marketing.</h3>
       </Header>
 
-      <Content>
+      <Content noHomeButton>
         {pageSections}
       </Content>
     </div>

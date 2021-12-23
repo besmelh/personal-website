@@ -12,12 +12,12 @@ const StyledContentContainer = styled.div`
 
 function Content(props) {
 
-  const {children, ...other } = props;
+  const {children, noHomeButton, ...other } = props;
 
   return (
     <StyledContentContainer {...other}>
       {children}
-      <HomeButton/>
+      {!noHomeButton && <HomeButton/>}
     </StyledContentContainer>
   );
 }

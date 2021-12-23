@@ -20,6 +20,8 @@ const StyledContainer = styled.div `
     & .container-medium{
         width: 50%;
         position: relative;
+        display: flex;
+        justify-content: center;
     }
 
     & .tinytext{

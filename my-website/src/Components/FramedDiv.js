@@ -9,6 +9,12 @@ const StyledContainer = styled.div `
     justify-content: space-between;
     background-color: var(--color-primary);
     padding:2%;
+
+    & .VideoPlayer{
+        height: 90%;
+        width: 90%;
+    }
+
 `;
 
 

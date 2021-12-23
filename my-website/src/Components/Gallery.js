@@ -54,7 +54,7 @@ function Gallery(props) {
     // The options of the gallery (from the playground current state)
     const options = {
     galleryLayout: 4,
-    cubeType: 'min',
+    cubeType: 'fit',
     // imageMargin: 15,
     // isAutoSlideshow: true,
     // slideshowLoop: true,

@@ -11,23 +11,23 @@ function Footsteps() {
 
     const posters_gallery = [
         {
+            itemId: 'footsteps-poster-2',
+            mediaUrl: 'https://i.ibb.co/RPYtqRK/footsteps-poster-2.webp',
+            metaData: {
+                    type: 'Everyday is Earth day',
+                    title: 'sample-title',
+                    height: 200,
+                    width: 150,
+                }
+        },
+        {
             itemId: 'footsteps-poster-1',
             mediaUrl: 'https://i.ibb.co/26FjZP8/footsteps-poster-1.webp',
             metaData: {
                     type: 'image',
                     title: 'Footsteps',
                     height: 200,
-                    width: 350,
-                }
-        },
-        {
-            itemId: 'footsteps-poster-2',
-            mediaUrl: 'https://i.ibb.co/RPYtqRK/footsteps-poster-2.webp',
-            metaData: {
-                    type: 'Everyday is Earth day',
-                    title: 'sample-title',
-                    height: 300,
-                    width: 100,
+                    width: 250,
                 }
         },
         {
@@ -37,7 +37,7 @@ function Footsteps() {
                     type: 'image',
                     title: 'Endless Straws',
                     height: 200,
-                    width: 100,
+                    width: 150,
                 }
         },
     ]
@@ -66,7 +66,7 @@ function Footsteps() {
 
                 <div className="container-medium">
                     <FramedDiv style={{height: "200px"}}>
-                        <VideoPlayer url="https://www.youtube.com/watch?v=OhjRllj1TM8" />
+                        <VideoPlayer style={{display: "contents"}} url="https://www.youtube.com/watch?v=OhjRllj1TM8" />
                     </FramedDiv>
                 </div>
 

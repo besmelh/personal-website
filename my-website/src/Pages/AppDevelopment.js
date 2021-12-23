@@ -67,8 +67,6 @@ const lightupDesc = "LightUp allows users to brainstorm new ideas by generating 
           description={`The app allows the user to log their trips' information, including the trip's name, description, type, number of people accompanied, and the amount of fun they had. There's also a status tab to track information regarding all the trips.`}
           tinytext="This app was made as a project for CSC214 - Fall 2020 - University of Rochester"
         />
-      <HomeButton/>
-
       </Content>
 
     </div>

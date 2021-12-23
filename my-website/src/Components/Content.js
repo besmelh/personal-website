@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import HomeButton from "./HomeButton";
 
 const StyledContentContainer = styled.div`
   max-width: 1200px;
@@ -16,6 +17,7 @@ function Content(props) {
   return (
     <StyledContentContainer {...other}>
       {children}
+      <HomeButton/>
     </StyledContentContainer>
   );
 }

@@ -12,7 +12,6 @@ function VideoPlayer(props) {
         width="100%" 
         height ="100%"
         className="VideoPlayer"/>
-
     );
   }
   

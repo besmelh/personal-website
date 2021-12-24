@@ -9,135 +9,166 @@ import { Icon } from '@iconify/react';
 import FramedDiv from '../Components/FramedDiv';
 
 
-function TutatainBakery() {
+function MarketingOnCampus() {
 
-    
-    const branding_gallery = [
+
+    const roclab_gallery = [
         {
-            itemId: 'tutatain-logo',
-            mediaUrl: 'https://i.ibb.co/MDRWq8q/tutatain-logo.webp',
+            itemId: 'roclab-1',
+            mediaUrl: 'https://i.ibb.co/Xb9Rb16/roclab-1.png',
             metaData: {
                     type: 'image',
-                    title: 'sample-title',
-                    description: 'sample-description',
                 }
         },
         {
-            itemId: 'tutatain-animated-logo',
-            mediaUrl: 'https://i.ibb.co/4TsMd6x/tutatain-animated-logo.gif',
+            itemId: 'roclab-2',
+            mediaUrl: 'https://i.ibb.co/7CJBpGc/roclab-2.png',
             metaData: {
                     type: 'image',
-                    height: 200,
-                    width: 350,
-                    title: 'sample-title',
-                    description: 'sample-description',
                 }
         },
         { 
-            itemId: 'tutatain-packaging',
-            mediaUrl: 'https://i.ibb.co/qMZ9cwf/tutatain-packaging.webp',
+            itemId: 'roclab-3',
+            mediaUrl: 'https://i.ibb.co/5WPTrdx/roclab-3.png',
             metaData: {
                     type: 'image',
-                    height: 200,
-                    width: 250,
-                    title: 'sample-title',
-                    description: 'sample-description',
             }
         },
         { 
-            itemId: 'tutatain-characters',
-            mediaUrl: 'https://i.ibb.co/xLV5mBZ/tutatain-character-design.webp',
+            itemId: 'roclab-4',
+            mediaUrl: 'https://i.ibb.co/C9vLdKs/roclab-4.png',
             metaData: {
                     type: 'image',
-                    title: 'sample-title',
-                    description: 'sample-description',
             }
         },
     ]
 
-
-    const photography_gallery = [
+    const dh_gallery = [
         {
-            itemId: 'tutatain-matcha-cake',
-            mediaUrl: 'https://i.ibb.co/7kcc2wZ/tutatain-matcha-cake.webp',
+            itemId: 'dh-1',
+            mediaUrl: 'https://i.ibb.co/xqLC3GL/dh-1.webp',
             metaData: {
                     type: 'image',
-                    title: 'Matcha Strawberry Cake',
                 }
         },
         {
-            itemId: 'tutatain-chocolate-cake',
-            mediaUrl: 'https://i.ibb.co/smPfcjn/tutatain-chocolate-cake.webp',
+            itemId: 'dh-2',
+            mediaUrl: 'https://i.ibb.co/yR1GxRW/dh-2.webp',
             metaData: {
                     type: 'image',
-                    title: 'Chocolate Jam Cake',
                 }
         },
         { 
-            itemId: 'tutatain-rasberry-cake',
-            mediaUrl: 'https://i.ibb.co/hgPRw7C/tutatain-rasberry-cake.webp',
+            itemId: 'dh-3',
+            mediaUrl: 'https://i.ibb.co/SQQt5sS/dh-3.webp',
             metaData: {
                     type: 'image',
-                    title: 'Raspberry Cake',
+            }
+        },
+        { 
+            itemId: 'dh-4',
+            mediaUrl: 'https://i.ibb.co/GpgS1Q3/dh-4.webp',
+            metaData: {
+                    type: 'image',
+            }
+        },
+        { 
+            itemId: 'dh-5',
+            mediaUrl: 'https://i.ibb.co/f91QqbN/dh-5.webp',
+            metaData: {
+                    type: 'image',
+            }
+        },
+        { 
+            itemId: 'dh-6',
+            mediaUrl: 'https://i.ibb.co/s982wSC/dh-6.webp',
+            metaData: {
+                    type: 'image',
             }
         },
     ]
+
+    const hp_gallery = [
+        {
+            itemId: 'hp-1',
+            mediaUrl: 'https://i.ibb.co/QKcCqdw/hp-1.webp',
+            metaData: {
+                    type: 'image',
+                }
+        },
+        {
+            itemId: 'hp-2',
+            mediaUrl: 'https://i.ibb.co/3hN1RXJ/hp-2.webp',
+            metaData: {
+                    type: 'image',
+                }
+        },
+        { 
+            itemId: 'hp-6',
+            mediaUrl: 'https://i.ibb.co/VJTFhHn/hp-6.webp',
+            metaData: {
+                    type: 'image',
+            }
+        },
+        { 
+            itemId: 'hp-5',
+            mediaUrl: 'https://i.ibb.co/Wswj8Ys/hp-5.webp',
+            metaData: {
+                    type: 'image',
+            }
+        },
+        { 
+            itemId: 'hp-7',
+            mediaUrl: 'https://i.ibb.co/0f8ttLQ/hp-7.webp',
+            metaData: {
+                    type: 'image',
+            }
+        },
+        { 
+            itemId: 'hp-8',
+            mediaUrl: 'https://i.ibb.co/kH7Bj60/hp-8.webp',
+            metaData: {
+                    type: 'image',
+            }
+        },
+    ]
+
 
   return (
     <div>
       <Header>
-        <h2>Tutatain Bakery</h2>
-        <h4>Tutatain is a bakery founded by my mother and me in the Summer of 2020. My mother took care of the baking, and I took care of the branding and marketing. We're still a small business, but we hope to expand in the future.</h4>
+        <h2>Marketing On Campus</h2>
+        <h4>Below are some samples of the marketing and design efforts I've done as part of some organizing teams or clubs on campus.</h4>
       </Header>
 
       <Content>
 
             <TextAndGallery
-            title="Branding"
-            description='Tutatain means "two berries" in Arabic. The two berries represent my mother and me since we worked together to establish the business. So I decided to play around with that concept and use it in the branding.'
-            images={branding_gallery}
-            buttonText="Visit Website"
-            buttonHref="https://www.tutatain.com/"
+            title="RocLab (2021-2022)"
+            description='RocLab is a new campus group that works to connect students to our university departments, in order to work closely and offer students a real-world experience in software development. I just joined as a Co-Marketing Lead, to help create digital content to advertise RocLab, in addition to assisting with the UI/UX design of the software products.'
+            images={roclab_gallery}
+            buttonText="Visit Instagram"
+            buttonHref="https://www.instagram.com/roclab_/"
             />
 
             <Divider/>
 
-            <LeftRightContainer>
-                <div className='container-small'>
-                    <h2>Digital Marketing</h2>
-                    <h3>Social Media</h3>
-                    <p>Since Instagram is the most common social media platform for businesses, it's currently our main focus. Ocassianly we make TikTok videos to increase traffic.</p>
-
-                    <h3>Content Marketing</h3>
-                    <p>Besides pictures of our cakes, we try to attract customers to our account with other content. Example posts include: </p>
-                    <ul>
-                        <li>Making the perfect cup of matcha</li>
-                        <li>Free virtual background</li>
-                        <li>Behind the scenes of designing cakes</li>
-                    </ul>
-
-                    <MyButton href="https://www.instagram.com/tutatain/">
-                        <Icon icon="akar-icons:instagram-fill" />
-                        Visit Instagram
-                    </MyButton>
-                </div>
-
-                <div className='container-medium'>
-                    <FramedDiv >
-                        <img src="https://i.ibb.co/D5pcQqj/tutatain-instagram.webp" style={{height: "500px", width: "auto"}}/>
-                    </FramedDiv>
-                </div>
-
-            {/* https://i.ibb.co/D5pcQqj/tutatain-instagram.webp */}
-            </LeftRightContainer>
+            <TextAndGallery
+            title="DandyHacks (2020)"
+            description="DandyHacks is the University of Rochester's hackathon and is a fully student-led organization. In 2020 I was part of its marketing team, and we worked together to rebrand DandyHacks, by creating appealing graphics and marketing it globally through social media, since it was an online event that year."
+            images={dh_gallery}
+            buttonText="Visit Instagram"
+            buttonHref="https://www.instagram.com/dandyhacks/"
+            />
             
             <Divider/>
 
             <TextAndGallery
-            title="Photography"
-            description="Below are some of the photographs I've taken of our cakes to showcase across our platforms and use in targeted online marketing."
-            images={photography_gallery}
+            title="Hult Prize Rochester (2020)"
+            description="Hult Prize is a global competition that aims to create social impact. Hult Prize Rochester helps deliver the competition to our campus. As the marketing coordinator, I worked on creating content to promote our events to the students."
+            images={hp_gallery}
             />
+
 
       </Content>
 
@@ -145,4 +176,4 @@ function TutatainBakery() {
   );
 }
 
-export default TutatainBakery;
+export default MarketingOnCampus;

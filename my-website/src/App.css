@@ -5,7 +5,9 @@
   --color-primary-light: #E4D9FF;
   --color-primary-extraLight: #eae3fa;
   --color-primary-alpha20: RGBA(226,218,252,0.3);
+  --color-primary-gradient: linear-gradient(180deg, #E1DAFC 0%, #ECE7FF 100%);
   
+  --color-secondary-light: #42579b;
   --color-secondary: #273878;
   --color-secodary-gradient: linear-gradient(180deg, #273878 0%, #202847 100%);
   --color-secondary-dark: #1E2749;

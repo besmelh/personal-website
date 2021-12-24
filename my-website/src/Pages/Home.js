@@ -3,8 +3,6 @@ import Header from '../Components/Header';
 import Content from '../Components/Content';
 import MainPageSection from '../Components/MainPageSection';
 import data from './data.json';
-import ReactPlayer from "react-player";
-
 
 function Home() { 
 

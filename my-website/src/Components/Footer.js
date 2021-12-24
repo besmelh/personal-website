@@ -15,6 +15,7 @@ const StyledFooter = styled.footer`
     color: var(--color-secondary-dark);
     align-items: center;
     padding: 5% 0;
+    margin-top: 5%;
 
     & a {
         padding: 0;

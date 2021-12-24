@@ -17,7 +17,7 @@ function Content(props) {
   return (
     <StyledContentContainer {...other}>
       {children}
-      {!noHomeButton && <HomeButton/>}
+      /* {noHomeButton && <HomeButton/>} */
     </StyledContentContainer>
   );
 }

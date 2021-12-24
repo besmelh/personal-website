@@ -69,31 +69,32 @@ function MaskPouch() {
         <h6>This project was made by Team Water for DMS104 - Fall 2020</h6>
       </Header>
 
+        <Content></Content>
       <Content>
 
 
-            <LeftRightContainer>
-                <div className="container-small">
-                    <h2>About the product</h2>
-                    <p>"Mask Pouch" is a pouch designed to carry your mask and store and clean it in a convenient way. While also staying clean, Mask Pouch enables it's users to also express themselves in a stylish way due it's various color options, and versatile options to wear it. It also aims to be sustainable and uses low-energy UV bulbs to sterilize the masks in it.</p>
-                </div>
+        <LeftRightContainer>
+            <div className="container-small">
+                <h2>About the product</h2>
+                <p>"Mask Pouch" is a pouch designed to carry your mask and store and clean it in a convenient way. While also staying clean, Mask Pouch enables it's users to also express themselves in a stylish way due it's various color options, and versatile options to wear it. It also aims to be sustainable and uses low-energy UV bulbs to sterilize the masks in it.</p>
+            </div>
 
-                <div className="container-medium">
-                    <FramedDiv>
-                        <img src="https://i.ibb.co/8MVGTdc/mask-pouch-0.webp" alt= {`screenshot of`}/>
-                    </FramedDiv>
-                </div>
+            <div className="container-medium">
+                <FramedDiv>
+                    <img src="https://i.ibb.co/8MVGTdc/mask-pouch-0.webp" alt= {`screenshot of`}/>
+                </FramedDiv>
+            </div>
 
 
-            </LeftRightContainer>
+        </LeftRightContainer>
 
-            <Divider/>
+        <Divider/>
 
-            <TextAndGallery
-            title="Storyboards"
-            description="Here are some of the storyboards created for the product. They furthermore present the product's design, including its hardware and software components."
-            images={storyboards_gallery}
-            />
+        <TextAndGallery
+        title="Storyboards"
+        description="Here are some of the storyboards created for the product. They furthermore present the product's design, including its hardware and software components."
+        images={storyboards_gallery}
+        />
 
       </Content>
 

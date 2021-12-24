@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-
-
-
-
 function IconAndTitle(props) {
 
     const StyledIconAndTitle= styled.div`

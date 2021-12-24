@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import MyButton from "./MyButton";
 
 const StyledContainer = styled.div `
     display: flex;

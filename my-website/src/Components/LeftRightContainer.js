@@ -1,41 +1,55 @@
 import React from "react";
 import styled from 'styled-components';
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-content: space-evenly;
-`;
-
-const Container1 = styled.div`
-    width: 300px;
-`;
-
-const Container2 = styled.div`
-    width: 300px;
+    justify-content: space-between;
+    margin: 10% 0;
 
     & img{
         width: 100%;
     }
+
+    & .container-small {
+        width: 35%;
+    }
+
+    & .container-medium{
+        width: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    & .tinytext{
+        font-size:10px;
+    }
+
+    & button {
+        margin: 15px 0;
+    }
+
+
+    & .VideoPlayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
 `;
 
+
 function LeftRightContainer(props) {
-    return (
-      <StyledContainer>
+    const {children, ...other } = props;
 
-          <Container1>
-                <h2>Light Up</h2>
-                <p>LightUp allows users to brainstorm new ideas by generating random words to inspire them. If they like a specific word it can be locked to prevent it from changing when generating new words. Users can also make notes of all their ideas they get so you don't forget them. Currently available in the App Store, and is localized in English & Arabic.</p>
-                <button>Button</button>
-          </Container1>
+    return(
 
-          <Container2>
-              <img src={require(`../Images/lightup-ss.png`).default}/>
-          </Container2>
-
-      </StyledContainer>
+        <StyledContainer {...other}>
+            {children}
+        </StyledContainer>
     );
-  }
-  
-  export default LeftRightContainer;
+}
+
+export default LeftRightContainer;

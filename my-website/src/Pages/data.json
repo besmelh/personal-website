@@ -14,6 +14,13 @@
             "href" : "app-development"
         },
         {
+            "title": "Web Development",
+            "summary" : "Some of the website development projects I have worked on.",
+            "image" : "home-web-dev.png",
+            "skills" : "Full-stack, React, Javascript",
+            "href" : "web-development"
+        },
+        {
             "title": "Tutatain Bakery",
             "duration" : "2020 - Present",
             "summary" : "A new bakery business established by my mother and I.            ",

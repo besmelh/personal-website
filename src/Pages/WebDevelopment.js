@@ -7,7 +7,6 @@ import DevProjectSection from '../Components/DevProjectSection';
 
 function WebDevelopment() {
 
-const lightupDesc = "LightUp allows users to brainstorm new ideas by generating random words to inspire them. If they like a specific word it can be locked to prevent it from changing when generating new words. Users can also make notes of all their ideas they get so you don't forget them. {'\n'} Currently available in the App Store, and is localized in English & Arabic."
   return (
     <div className="AppDevelopment">
       <Header>

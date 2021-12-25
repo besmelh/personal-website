@@ -56,10 +56,10 @@ function Footer(props) {
         <a href="https://drive.google.com/file/d/1d2gmDO29PjthNws-rth2ulxlUtvvQhFP/view?usp=sharing" target={"_blank"}>My Resume</a>
 
         <IconLinks>
-            <a href="mailto:balshaal@u.rochester.edu" target={"_blank"}><Icon icon="clarity:email-solid" /></a>
-            <a href="https://github.com/besmelh" target={"_blank"}><Icon icon="akar-icons:github-fill" /></a>
-            <a href="https://www.linkedin.com/in/besmelh-alshaalan/" target={"_blank"}><Icon icon="entypo-social:linkedin-with-circle" /></a>
-            <a href="https://youtube.com/channel/UC29ev1ljKQAl-8-hp6VwL-g" target={"_blank"}><Icon icon="entypo-social:youtube-with-circle" /></a>
+            <a href="mailto:balshaal@u.rochester.edu" target={"_blank"} rel="noreferrer"><Icon icon="clarity:email-solid" /></a>
+            <a href="https://github.com/besmelh" target={"_blank"} rel="noreferrer"><Icon icon="akar-icons:github-fill" /></a>
+            <a href="https://www.linkedin.com/in/besmelh-alshaalan/" target={"_blank"} rel="noreferrer"><Icon icon="entypo-social:linkedin-with-circle" /></a>
+            <a href="https://youtube.com/channel/UC29ev1ljKQAl-8-hp6VwL-g" target={"_blank"} rel="noreferrer"><Icon icon="entypo-social:youtube-with-circle" /></a>
         </IconLinks>
 
         <p>© 2021 by Besmelh Alshaalan</p>

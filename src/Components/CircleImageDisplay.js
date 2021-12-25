@@ -69,10 +69,12 @@ function CircleImageDisplay(props) {
     }
 
     return (
+
     
       <StyledImageDisplay style={props.style} onClick={handleRoute} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <MainImage src={require(`../Images/${props.image}`).default}/>
-
+        {/* <MainImage src={require(`../Images/${props.image}`).default}/> */}
+        <MainImage src={props.image}/>
+        
         {props.skills &&
             <OnHoverContent style={(circleHovered) ? {display:'none'} : {display:'flex'}}>
                 <CutCircle src={require(`../Images/cut-circle-transparent.svg`).default}/>

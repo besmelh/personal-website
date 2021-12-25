@@ -1,6 +1,5 @@
 import './App.css';
 import Home from './Pages/Home';
-import SubPage from './Pages/SubPage';
 import AppDevelopment from './Pages/AppDevelopment';
 import WebDevelopment from './Pages/WebDevelopment';
 import TutatainBakery from './Pages/TutatainBakery';
@@ -18,7 +17,6 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="subpage" element={<SubPage/>}/>
             <Route path="app-development" element={<AppDevelopment/>}/>
             <Route path="web-development" element={<WebDevelopment/>}/>
             <Route path="tutatain-bakery" element={<TutatainBakery/>}/>

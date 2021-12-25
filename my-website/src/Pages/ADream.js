@@ -23,8 +23,8 @@ function ADream() {
             </div>
 
             <div className="container-medium">
-                <FramedDiv style={{height: "200px"}}>
-                    <VideoPlayer style={{display: "contents"}} url="https://www.youtube.com/watch?v=OhjRllj1TM8" />
+                <FramedDiv style={{height: "250px", width: "444px"}}>
+                    <VideoPlayer style={{display: "contents"}} url="https://www.youtube.com/watch?v=X0R6MV_F49o&t=34s" />
                 </FramedDiv>
             </div>
         </LeftRightContainer>

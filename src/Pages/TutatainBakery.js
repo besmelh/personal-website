@@ -5,7 +5,6 @@ import TextAndGallery from '../Components/TextAndGallery';
 import Divider from '../Components/Divider';
 import LeftRightContainer from '../Components/LeftRightContainer';
 import MyButton from '../Components/MyButton';
-import { Icon } from '@iconify/react';
 import FramedDiv from '../Components/FramedDiv';
 
 

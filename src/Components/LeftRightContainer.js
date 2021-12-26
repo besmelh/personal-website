@@ -14,6 +14,7 @@ const StyledContainer = styled.div `
 
     & .container-small {
         width: 35%;
+        flex-direction: column;
     }
 
     & .container-medium{
@@ -21,6 +22,7 @@ const StyledContainer = styled.div `
         position: relative;
         display: flex;
         justify-content: center;
+        flex-direction: column;
     }
 
     & .tinytext{

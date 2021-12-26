@@ -117,7 +117,7 @@ function TutatainBakery() {
                     </ul>
 
                     <MyButton href="https://www.instagram.com/tutatain/">
-                        <Icon icon="akar-icons:instagram-fill" />
+                        {/* <Icon icon="akar-icons:instagram-fill" /> */}
                         Visit Instagram
                     </MyButton>
                 </div>

@@ -16,6 +16,7 @@ const StyledImageDisplay = styled.div`
         transform: scale(1.03);
     }
 
+
 `;
 
 const MainImage = styled.img`
@@ -71,7 +72,7 @@ function CircleImageDisplay(props) {
     return (
 
     
-      <StyledImageDisplay style={props.style} onClick={handleRoute} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <StyledImageDisplay style={props.style} onClick={handleRoute} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={props.className}>
         {/* <MainImage src={require(`../Images/${props.image}`).default}/> */}
         <MainImage src={props.image}/>
         

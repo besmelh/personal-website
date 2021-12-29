@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import React, {useState} from "react";
 import LeftRightContainer from "./LeftRightContainer";
 import VideoPlayer from "./VideoPlayer";
 import IconAndTitle from "./IconAndTitle";
@@ -20,10 +20,23 @@ function DevProjectSection(props) {
     const {largeContainerLeft, image, videoUrl, icon, title, description, buttonIcon, buttonText, buttonHref, buttonIcon2, buttonText2, buttonHref2,children, ...other } = props;
     const [showVideo, setShowVideo] = useState(false);
 
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 730;
+
+    React.useEffect(() => {
+        const handleResizeWindow = () => setWidth(window.innerWidth);
+        // subscribe to window resize event "onComponentDidMount"
+        window.addEventListener("resize", handleResizeWindow);
+        return () => {
+            // unsubscribe "onComponentDestroy"
+            window.removeEventListener("resize", handleResizeWindow);
+        };
+    }, []);
+
     return (
         <LeftRightContainer {...other}>
 
-        {!largeContainerLeft && 
+        {(!largeContainerLeft && width > 730) && 
             <div className="container-medium">
                 <img src={image} alt= {`screenshot of ${title}`}/>
                 <VideoPlayer url = {videoUrl} style={showVideo ? {display:"flex"} : {display:"none"}}/> 
@@ -60,7 +73,7 @@ function DevProjectSection(props) {
 
         </div> 
 
-        {largeContainerLeft && 
+        {(largeContainerLeft || width < 730) && 
             <div className="container-medium">
                 <img src={image} alt= {`screenshot of ${title}`}/>
                 <VideoPlayer url = {videoUrl} style={showVideo ? {display:"flex"} : {display:"none"}}/> 

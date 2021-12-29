@@ -4,6 +4,7 @@ function IconAndTitle(props) {
 
     const StyledIconAndTitle= styled.div`
         display: flex;
+        width: 100%;
 
         & img, svg{
             width: ${props.width};

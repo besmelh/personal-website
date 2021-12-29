@@ -7,6 +7,7 @@ const StyledContainer = styled.div `
     justify-content: center;
     justify-content: space-between;
     margin: 10% 0;
+    flex-direction: row;
 
     & img{
         width: 100%;
@@ -38,6 +39,21 @@ const StyledContainer = styled.div `
         position: absolute;
         top: 0;
         left: 0;
+    }
+
+    @media (max-width: 730px) {
+        flex-direction: column;
+        
+        & .container-small, .container-medium{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        & .container-small {
+            margin-bottom: 15%;
+        }
     }
 
 `;

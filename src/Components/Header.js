@@ -3,12 +3,13 @@ import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
 
-    height: 350px;
+    //height: 350px;
+    padding: 10% 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    text-align: justify;
+    text-align: left;
     font-family: "Avenir", sans-serif;
     background-color: var(--color-primary);
     color: var(--color-secondary-dark);
@@ -40,6 +41,10 @@ const HeaderContainer = styled.div`
         font-weight: 200;
         font-size: 18px;
         margin:0;
+    }
+
+    & br {
+        display: hide;
     }
 `;
 

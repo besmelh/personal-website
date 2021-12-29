@@ -69,7 +69,6 @@ function MaskPouch() {
         <h6>This project was made by Team Water for DMS104 - Fall 2020</h6>
       </Header>
 
-        <Content></Content>
       <Content>
 
 

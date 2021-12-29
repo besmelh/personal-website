@@ -7,6 +7,7 @@ const MainText = styled.div `
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    width:250px;
 
 
     & h3 {
@@ -22,16 +23,51 @@ const MainText = styled.div `
     }
 
     & p{
-        width:280px;
         font-weight:100;
         font-size: 15px;
         text-align: justify;
+    }
+
+    @media (max-width: 730px) {
+        margin-top: 10%;
+        align-items: center;
+        text-align: center;
+
+        & h4 {
+            font-weight:200;
+            font-size: 25px;
+            margin-top: 3%;
+        }
+
+        & p{
+            width:250px;
+            text-align: center;
+        }
     }
 
 `
 const StyledMainPageSection = styled.section`
     display: flex;
     padding: 50px 0;
+
+    & .rightContainerImage{
+        margin-left: 30px;
+    }
+
+    & .leftContainerImage{
+        margin-right: 30px;
+    }
+
+    @media (max-width: 730px) {
+        flex-direction: column;
+        align-items: center;
+
+        & .rightContainerImage, .leftContainerImage{
+            margin: 0;
+        }
+
+    }
+
 `;
 
 
@@ -39,17 +75,30 @@ const rightContainer = {
     justifyContent: 'flex-end',
 };
 
-const rightContainerImage = {
-    marginLeft: '30px',
-};
+// const rightContainerImage = {
+//     marginLeft: '30px',
+// };
 
-const leftContainerImage = {
-    marginRight: '30px',
-};
+// const leftContainerImage = {
+//     marginRight: '30px',
+// };
 
 
 
 function MainPageSection(props) {
+
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 730;
+
+    React.useEffect(() => {
+        const handleResizeWindow = () => setWidth(window.innerWidth);
+        // subscribe to window resize event "onComponentDidMount"
+        window.addEventListener("resize", handleResizeWindow);
+        return () => {
+            // unsubscribe "onComponentDestroy"
+            window.removeEventListener("resize", handleResizeWindow);
+        };
+    }, []);
     
     return (
         
@@ -57,12 +106,12 @@ function MainPageSection(props) {
         style={(props.allignedLeft === false) ? rightContainer : null}
       >
 
-        {props.allignedLeft === true &&
+        {(props.allignedLeft === true || width < breakpoint) &&
             <CircleImageDisplay
                 image = {props.image}
                 skills = {props.skills}
                 href = {props.href}
-                style={leftContainerImage}
+                className="leftContainerImage"
             />
         }
 
@@ -73,12 +122,12 @@ function MainPageSection(props) {
         </MainText>
 
 
-        {props.allignedLeft === false &&
+        {(props.allignedLeft === false && width > breakpoint) &&
             <CircleImageDisplay
                 image = {props.image}
                 skills = {props.skills}
                 href = {props.href}
-                style={rightContainerImage}
+                className="rightContainerImage"
             />
         }
 

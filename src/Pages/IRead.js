@@ -23,7 +23,7 @@ function IRead() {
             </div>
 
             <div className="container-medium">
-                <FramedDiv style={{height: "250px", width: "444px"}}>
+                <FramedDiv style={{height: "200px"}}>
                     <VideoPlayer style={{display: "contents"}} url="https://www.youtube.com/watch?v=8Ti39xi9QpQ" />
                 </FramedDiv>
             </div>

@@ -11,6 +11,10 @@ const StyledTextAndGallery = styled.div`
     justify-content: center;
     margin: 10% 0;
 
+    & ${Gallery}{
+      width: 50%;
+    }
+
 `
 
 const TextDiv = styled.div`
@@ -27,6 +31,11 @@ const TextDiv = styled.div`
     & p{
         text-align: center;
     }
+
+    @media (max-width: 730px) {
+      width:100%;
+    }
+  }
 `
 
 const StyledButton = styled(MyButton)`

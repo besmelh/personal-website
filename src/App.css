@@ -11,6 +11,8 @@
   --color-secondary: #273878;
   --color-secodary-gradient: linear-gradient(180deg, #273878 0%, #202847 100%);
   --color-secondary-dark: #1E2749;
+
+  --min-width-px: 730px;
 }
 
 body {

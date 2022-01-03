@@ -107,12 +107,23 @@ function MainPageSection(props) {
       >
 
         {(props.allignedLeft === true || width < breakpoint) &&
-            <CircleImageDisplay
-                image = {props.image}
-                skills = {props.skills}
-                href = {props.href}
-                className="leftContainerImage"
-            />
+            // <CircleImageDisplay
+            //     image = {props.image}
+            //     skills = {props.skills}
+            //     href = {props.href}
+            //     className="leftContainerImage"
+            // />
+            <model-viewer
+            src="models/tutatain-planet.glb"
+            ios-src=""
+            poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
+            alt="A 3D model of an astronaut"
+            shadow-intensity="1"
+            // camera-controls
+            auto-rotate
+            ar
+            style={{height: "500px", width: "500px"}}
+          ></model-viewer>
         }
 
         <MainText>

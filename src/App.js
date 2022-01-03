@@ -11,6 +11,7 @@ import ADream from './Pages/ADream';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from './Components/Footer';
 import IRead from './Pages/IRead';
+import Demo from './Pages/Demo';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="marketing-on-campus" element={<MarketingOnCampus/>}/>
             <Route path="a-dream" element={<ADream/>}/>
             <Route path="iread" element={<IRead/>}/>
+            <Route path="demo" element={<Demo/>}/>
           </Routes>
         </BrowserRouter>
 

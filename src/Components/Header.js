@@ -22,24 +22,28 @@ const HeaderContainer = styled.div`
         font-size: 38px;
         margin-bottom: 10px;
         letter-spacing: 0.05em;
+        text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
     }
 
     & h2 {
         font-size: 40px;
         margin-bottom: 10px;
         font-weight:800;
+        text-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
     }
 
     & h3 {
         font-weight: 400;
         font-size: 18px;
         margin:0;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     }
 
     & h4 {
         font-weight: 200;
         font-size: 18px;
         margin:0;
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     }
 
     & br {

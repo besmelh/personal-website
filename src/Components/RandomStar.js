@@ -1,16 +1,42 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import useWindowDimensions from '../Hooks/useWindowDimensions';
+import Rellax from "rellax";
 
 
 
 const Star = styled.div`
     border-radius: 100%;
-    background-color:white;
+    background-color: #F7F5FF;
     position:absolute;
 `    
     
 const RandomStar = (props) => {
+
+
+    //parallex scrolling
+    const rellaxRef = useRef();
+
+    useEffect(() => {
+        new Rellax(".starRellax", {
+            speed: -10,
+            center: false,
+            wrapper: null,
+            round: true,
+            vertical: true,
+            horizontal: false
+        });
+    
+        new Rellax(rellaxRef.current, {
+            speed: -10,
+            center: false,
+            wrapper: null,
+            round: true,
+            vertical: true,
+            horizontal: false
+        });
+
+        }, []);
 
 
     // const { height, width } = useWindowDimensions();
@@ -20,8 +46,11 @@ const RandomStar = (props) => {
     const maxDur = 8;
     const minDel = 0.1;
     const maxDel = 2;
+    const maxHeight = 45;
+    const maxHeightPhone = 30;
 
-    const randHeight = Math.floor(Math.random()*100);
+    const randHeight = Math.floor(Math.random()*maxHeight);
+    const randHeightPhone = Math.floor(Math.random()*maxHeightPhone);
     const randWidth = Math.floor(Math.random()*100);
     const randSize = Math.floor(Math.random()* (maxSize - minSize + 1) + minSize);
 
@@ -37,7 +66,7 @@ const RandomStar = (props) => {
         transform: 'translate(-50%, -50%)',
         zindex: '-10',
         animation: `flickerAnimation ${randAnimDuration}s infinite`, 
-        animationDelay: `${randAnimDelay}s`,
+        animationDelay: `${randAnimDelay}s`
    });
 
    return (

@@ -5,6 +5,7 @@ import MainPageSection from '../Components/MainPageSection';
 import LeftRightContainer from '../Components/LeftRightContainer';
 import data from './data.json';
 import StaryBackground from '../Components/StaryBackground';
+import MyButton from '../Components/MyButton';
 
 function Home() { 
 
@@ -38,6 +39,7 @@ function Home() {
           <div className="text">
               <h1>Hello, I'm Besmelh Alshaalan</h1>
               <h3>This is my space to showcase some of my favorite projects. I mainly do software programming, digital design, and occasionally marketing.</h3>
+              <MyButton redirect href="/about-me" style={{marginTop: "20px"}}>More about me...</MyButton>
           </div>
         </Header>
 

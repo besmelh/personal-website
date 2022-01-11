@@ -1,12 +1,6 @@
 [
     
         {
-            "title": "About Me",
-            "summary" : "I'm currently a student at the University of Rochester, majoring in Computer Science and minoring in Digital Media Studies.",
-            "image" : "https://i.ibb.co/DLJd5zT/home-me.jpg",
-            "href" : "about-me"
-        },
-        {
             "title": "App Development",
             "summary" : "Here I showcase some of the iOS apps that I have made.",
             "image" : "https://i.ibb.co/rHrYHrS/home-app-dev.png",

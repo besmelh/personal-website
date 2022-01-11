@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
     align-items: flex-start;
     justify-content: center;
     text-align: justify;
-    font-family: "Avenir", sans-serif;
+    font-family: "Lufga", sans-serif;
     background: linear-gradient(180deg, rgba(32, 40, 71, 0) 0%, rgba(17, 22, 41, 0.6) 100%);
     color:  white;
     align-items: center;

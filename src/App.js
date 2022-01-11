@@ -15,8 +15,8 @@ import Demo from './Pages/Demo';
 
 function App() {
   return (
-    <div className="App">     
-        <BrowserRouter>
+    <div className="App">    
+          <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="about-me" element={<AboutMe/>}/>
@@ -31,7 +31,6 @@ function App() {
             <Route path="demo" element={<Demo/>}/>
           </Routes>
         </BrowserRouter>
-
         <Footer/>
      </div>
   );

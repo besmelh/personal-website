@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Header from '../Components/Header';
 import Content from '../Components/Content';
 import MainPageSection from '../Components/MainPageSection';
+import LeftRightContainer from '../Components/LeftRightContainer';
 import data from './data.json';
 
 function Home() { 
@@ -28,20 +29,14 @@ function Home() {
 
   return (
     <div className="Home">
-     <Header style={{backgroundColor: "transparent"}}>
-        <model-viewer
-          src="models/Astronaut.glb"
-          ios-src=""
-          poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
-          alt="A 3D model of an astronaut"
-          shadow-intensity="1"
-          camera-controls
-          auto-rotate
-          ar
-          style={{height: "500px", width: "500px"}}
-        ></model-viewer>
-        <h1>Hello, I'm Besmelh Alshaalan</h1>
-        <h3>This is my space to showcase some of my favorite projects. I mainly do software programming, digital design, and occasionally marketing.</h3>
+     <Header>
+        <div className="icon">
+            <img src="https://i.ibb.co/4dPJ8hK/astronaut1.png" alt="astronaut1"/>
+        </div>
+        <div className="text">
+            <h1>Hello, I'm Besmelh Alshaalan</h1>
+            <h3>This is my space to showcase some of my favorite projects. I mainly do software programming, digital design, and occasionally marketing.</h3>
+        </div>
       </Header>
 
       <Content noHomeButton>

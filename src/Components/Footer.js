@@ -4,18 +4,18 @@ import { Icon } from '@iconify/react';
 
 
 const StyledFooter = styled.footer`
-    // height: 350px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     text-align: justify;
     font-family: "Avenir", sans-serif;
-    background-color: var(--color-primary);
-    color: var(--color-secondary-dark);
+    background: linear-gradient(180deg, rgba(32, 40, 71, 0) 0%, rgba(17, 22, 41, 0.6) 100%);
+    color:  white;
     align-items: center;
     padding: 5% 0;
     margin-top: 5%;
+
 
     & a {
         padding: 0;
@@ -23,11 +23,11 @@ const StyledFooter = styled.footer`
         margin-bottom: 8px;
         font-weight: 500;
         text-decoration: none;
-        color: var(--color-secondary-dark);
+        color:  white;
     }
 
     & svg {
-        color: var(--color-secondary-dark);
+        color:  white;
     }
 
 
@@ -63,6 +63,7 @@ function Footer(props) {
         </IconLinks>
 
         <p>© 2021 by Besmelh Alshaalan</p>
+
     </StyledFooter>
   );
 }

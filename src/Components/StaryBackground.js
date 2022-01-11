@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import RandomStar from './RandomStar';
 
     
-const StaryBackground = () => {
+const StaryBackground = (props) => {
 
-    let numStars = 100;
+    let numStars = 200;
     console.log("numStars", numStars);
     var stars = [];
     for (var i = 0; i < numStars; i++) {

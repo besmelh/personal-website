@@ -29,7 +29,7 @@ function Home() {
   }
 
   return (
-    <div className="Home">
+    <div className="Home" style={{position:"relative", width: "100%", height: "100%"}}>
       <StaryBackground/>  
       <Header>
           <div className="icon">

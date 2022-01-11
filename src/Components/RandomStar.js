@@ -7,6 +7,7 @@ import useWindowDimensions from '../Hooks/useWindowDimensions';
 const Star = styled.div`
     border-radius: 100%;
     background-color:white;
+    position:absolute;
 `    
     
 const RandomStar = (props) => {
@@ -14,7 +15,7 @@ const RandomStar = (props) => {
 
     // const { height, width } = useWindowDimensions();
     const minSize = 2;
-    const maxSize = 12;
+    const maxSize = 10;
     const minDur = 3;
     const maxDur = 8;
     const minDel = 0.1;
@@ -30,7 +31,7 @@ const RandomStar = (props) => {
    const StarStyle = useRef({
         height: `${randSize}px`,
         width: `${randSize}px`,
-        position: 'absolute',
+        // position: 'relative',
         top: `${randHeight}%`,
         left: `${randWidth}%`,
         transform: 'translate(-50%, -50%)',
@@ -40,9 +41,9 @@ const RandomStar = (props) => {
    });
 
    return (
-    <div>
+    // <div>
         <Star style={StarStyle.current} {...props} />
-    </div>
+    // </div>
    )
 }
     

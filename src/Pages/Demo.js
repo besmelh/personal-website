@@ -7,8 +7,12 @@ import useWindowDimensions from '../Hooks/useWindowDimensions';
 function Demo() {
 
   return (
-    <div class="background-container">
+    <div class="background-container" style={{position:"relative", width: "100%", height: "100%"}}>
         <StaryBackground/>
+        <AstronautModel />
+        <AstronautModel />
+        <AstronautModel />
+        <AstronautModel />
         <AstronautModel />
     </div>
   );

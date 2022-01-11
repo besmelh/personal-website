@@ -12,11 +12,13 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from './Components/Footer';
 import IRead from './Pages/IRead';
 import Demo from './Pages/Demo';
+import StaryBackground from './Components/StaryBackground';
 
 function App() {
   return (
     <div className="App">    
-          <BrowserRouter>
+        {/* <StaryBackground/> */}
+        <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="about-me" element={<AboutMe/>}/>

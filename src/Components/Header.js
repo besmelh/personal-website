@@ -67,8 +67,8 @@ const GradientBG = styled.div`
     position: absolute;
     width: 100%;
     height: 460px;
-    left: -9px;
-    top: 0px;
+    left: 0;
+    top: 0;
     z-index: -100;
 
     background: linear-gradient(180deg, rgba(232, 225, 254, 0.6) 0%, rgba(232, 225, 254, 0) 100%);

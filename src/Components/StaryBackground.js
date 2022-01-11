@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import RandomStar from './RandomStar';
-import useWindowDimensions from '../Hooks/useWindowDimensions';
+
     
 const StaryBackground = () => {
-    const { height, width } = useWindowDimensions();
 
     let numStars = 100;
     console.log("numStars", numStars);

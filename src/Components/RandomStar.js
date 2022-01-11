@@ -12,16 +12,16 @@ const Star = styled.div`
 const RandomStar = (props) => {
 
 
-    const { height, width } = useWindowDimensions();
+    // const { height, width } = useWindowDimensions();
     const minSize = 2;
-    const maxSize = 8;
+    const maxSize = 12;
     const minDur = 3;
     const maxDur = 8;
     const minDel = 0.1;
     const maxDel = 2;
 
-    const randHeight = Math.floor(Math.random()*height);
-    const randWidth = Math.floor(Math.random()*width);
+    const randHeight = Math.floor(Math.random()*100);
+    const randWidth = Math.floor(Math.random()*100);
     const randSize = Math.floor(Math.random()* (maxSize - minSize + 1) + minSize);
 
     const randAnimDuration = Math.random() * (maxDur - minDur + 1) + minDur;
@@ -31,8 +31,8 @@ const RandomStar = (props) => {
         height: `${randSize}px`,
         width: `${randSize}px`,
         position: 'absolute',
-        top: randHeight,
-        left: randWidth,
+        top: `${randHeight}%`,
+        left: `${randWidth}%`,
         transform: 'translate(-50%, -50%)',
         zindex: '-10',
         animation: `flickerAnimation ${randAnimDuration}s infinite`, 

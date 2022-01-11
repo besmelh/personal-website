@@ -4,6 +4,7 @@ import Content from '../Components/Content';
 import MainPageSection from '../Components/MainPageSection';
 import LeftRightContainer from '../Components/LeftRightContainer';
 import data from './data.json';
+import StaryBackground from '../Components/StaryBackground';
 
 function Home() { 
 
@@ -29,19 +30,20 @@ function Home() {
 
   return (
     <div className="Home">
-     <Header>
-        <div className="icon">
-            <img src="https://i.ibb.co/4dPJ8hK/astronaut1.png" alt="astronaut1"/>
-        </div>
-        <div className="text">
-            <h1>Hello, I'm Besmelh Alshaalan</h1>
-            <h3>This is my space to showcase some of my favorite projects. I mainly do software programming, digital design, and occasionally marketing.</h3>
-        </div>
-      </Header>
+      <StaryBackground/>  
+      <Header>
+          <div className="icon">
+              <img src="https://i.ibb.co/4dPJ8hK/astronaut1.png" alt="astronaut1"/>
+          </div>
+          <div className="text">
+              <h1>Hello, I'm Besmelh Alshaalan</h1>
+              <h3>This is my space to showcase some of my favorite projects. I mainly do software programming, digital design, and occasionally marketing.</h3>
+          </div>
+        </Header>
 
-      <Content noHomeButton>
-        {pageSections}
-      </Content>
+        <Content noHomeButton>
+          {pageSections}
+        </Content>
     </div>
   );
 }

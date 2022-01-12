@@ -19,9 +19,14 @@ function Home() {
         title={data[i].title}
         duration = {data[i].duration}
         summary = {data[i].summary}
-        image = {data[i].image}
         skills = {data[i].skills}
         href = {data[i].href}
+
+        src = {data[i].src}
+        ios-src=""
+        poster= {data[i].poster}
+        alt= {data[i].alt}
+
         allignedLeft = {isAllignedLeft}
       />
     )

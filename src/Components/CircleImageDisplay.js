@@ -16,17 +16,6 @@ const StyledImageDisplay = styled.div`
 `;
 
 
-// const SkillsText = styled.p `
-//     font-size: 13px;
-//     position: absolute;
-//     bottom: 0px;
-//     top: 138px;
-//     width: 130px;
-//     text-align: center;
-//     color: var(--color-secondary);
-//     font-family: 'Roboto Condensed', sans-serif;
-// `
-
 function CircleImageDisplay(props) {
 
     const navigate = useNavigate();

@@ -88,6 +88,7 @@ const leftContainerText = {
 
 function MainPageSection(props) {
 
+    const {src, iosSrc, poster, alt, href, ...other} = props;
     const [width, setWidth] = React.useState(window.innerWidth);
     const breakpoint = 730;
     const modelDimension = "400px";
@@ -110,13 +111,13 @@ function MainPageSection(props) {
 
         {(props.allignedLeft === true || width < breakpoint) &&
             <CircleImageDisplay
-                src = "models/tutatain-planet.glb"
-                ios-src=""
-                poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
-                alt="A 3D model of an astronaut"    
-                href = {props.href}
-                className="leftContainerImage"
+                src = {src}
+                ios-src={iosSrc}
+                poster={poster}
+                alt={alt}  
+                href = {href}
                 modelDimension = {modelDimension}
+                className="leftContainerImage"
             />
         }
 
@@ -132,14 +133,14 @@ function MainPageSection(props) {
 
         {(props.allignedLeft === false && width > breakpoint) &&
             <CircleImageDisplay
-            src = "models/tutatain-planet.glb"
-            ios-src=""
-            poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
-            alt="A 3D model of an astronaut"    
-            href = {props.href}
+            src = {src}
+            ios-src={iosSrc}
+            poster={poster}
+            alt={alt}  
+            href = {href}
+            modelDimension = {modelDimension}
             className="rightContainerImage"
-            modelDimension =  {modelDimension}
-        />
+            />
         }
 
       </StyledMainPageSection>

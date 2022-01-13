@@ -9,7 +9,7 @@ const StaryBackground = (props) => {
 
     useEffect(() => {
         new Rellax(".animateRellax", {
-          speed: -10,
+          speed: -5,
           center: false,
           wrapper: null,
           round: true,
@@ -17,14 +17,14 @@ const StaryBackground = (props) => {
           horizontal: false
         });
     
-        new Rellax(rellaxRef.current, {
-          speed: -10,
-          center: false,
-          wrapper: null,
-          round: true,
-          vertical: true,
-          horizontal: false
-        });
+        // new Rellax(rellaxRef.current, {
+        //   speed: -10,
+        //   center: false,
+        //   wrapper: null,
+        //   round: true,
+        //   vertical: true,
+        //   horizontal: false
+        // });
 
       }, []);
 

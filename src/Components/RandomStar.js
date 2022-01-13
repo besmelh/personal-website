@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import useWindowDimensions from '../Hooks/useWindowDimensions';
-import Rellax from "rellax";
 
 
 
@@ -14,31 +13,6 @@ const Star = styled.div`
 const RandomStar = (props) => {
 
 
-    //parallex scrolling
-    const rellaxRef = useRef();
-
-    useEffect(() => {
-        new Rellax(".starRellax", {
-            speed: -10,
-            center: false,
-            wrapper: null,
-            round: true,
-            vertical: true,
-            horizontal: false
-        });
-    
-        new Rellax(rellaxRef.current, {
-            speed: -10,
-            center: false,
-            wrapper: null,
-            round: true,
-            vertical: true,
-            horizontal: false
-        });
-
-        }, []);
-
-
     // const { height, width } = useWindowDimensions();
     const minSize = 2;
     const maxSize = 10;
@@ -46,7 +20,7 @@ const RandomStar = (props) => {
     const maxDur = 8;
     const minDel = 0.1;
     const maxDel = 2;
-    const maxHeight = 45;
+    const maxHeight = 50;
     const maxHeightPhone = 30;
 
     const randHeight = Math.floor(Math.random()*maxHeight);

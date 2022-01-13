@@ -17,6 +17,7 @@ function Demo() {
           alt="A 3D model of an astronaut"
           shadow-intensity="1"
           auto-rotate
+          camera-controls
           ar
           style={{height: "500px", width: "500px"}}
         ></model-viewer>

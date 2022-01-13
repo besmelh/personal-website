@@ -19,6 +19,15 @@
             "alt" : "app development planet 3d model"
         },
         {
+            "title": "Animation",
+            "summary" : "Some of the website development projects I have worked on.",
+            "skills" : "Animation, Video Editing",
+            "href" : "animation",
+            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/animation-planet.glb?v=1642069461551",
+            "poster" : "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717",
+            "alt" : "animation planet 3d model"
+        },
+        {
             "title": "Tutatain Bakery",
             "duration" : "2020 - Present",
             "summary" : "A new bakery business established by my mother and I.            ",

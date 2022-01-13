@@ -65,6 +65,19 @@ const HeaderContainer = styled.div`
         margin-top:30%;
     }
 
+    /* & .inPageText{
+        width: 60%;
+    } */
+
+    & .notHome{
+        align-items: center;
+        
+        & .text{
+            width: 60%;
+            margin-top:0;
+        }
+    }
+
 `;
 
 const GradientBG = styled.div`

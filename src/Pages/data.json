@@ -5,7 +5,7 @@
             "summary" : "Here I showcase some of the iOS apps that I have made.",
             "skills" : "Software Development, UI/UX design",
             "href" : "app-development",
-            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.glb?v=1641945849187",
+            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.glb?v=1642024423999",
             "poster" : "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717",
             "alt" : "app development planet 3d model"
         },
@@ -14,7 +14,7 @@
             "summary" : "Some of the website development projects I have worked on.",
             "skills" : "Full-stack, React, Javascript",
             "href" : "web-development",
-            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.glb?v=1641945849187",
+            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/web-dev-planet.glb?v=1642032637037",
             "poster" : "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717",
             "alt" : "app development planet 3d model"
         },
@@ -27,30 +27,6 @@
             "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/tutatain-planet.glb?v=1641945857278",
             "poster" : "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717",
             "alt" : "app development planet 3d model"
-        },
-        {
-            "title": "Marketing on Campus",
-            "duration" : "2020 - Present",
-            "summary" : "Some of my involvements on the campus clubs and organizations at the University of Rochester.",
-            "image" : "https://i.ibb.co/zFq1Z5P/home-marketing-on-campus.png",
-            "skills" : "Marketing, Graphic Design",
-            "href" : "marketing-on-campus"
-        },
-        {
-            "title": "Mask Pouch",
-            "duration" : "2020",
-            "summary" : "With my team, we worked on the product design of \"Mask Pouch\"",
-            "image" : "https://i.ibb.co/stDxYL8/home-mask-pouch.png",
-            "skills" : "Product Design, digital design, UI/UX design",
-            "href" : "mask-pouch"
-        },
-        {
-            "title": "Footsteps",
-            "duration" : "2019",
-            "summary" : "Art in various media forms about the topic of living eco-friendly lives.",
-            "image" : "https://i.ibb.co/wMYfbr7/home-footsteps.png",
-            "skills" : "Graphic Design, Video Editing",
-            "href" : "footsteps"
         },
         {
             "title": "A Dream",

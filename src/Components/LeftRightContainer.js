@@ -9,7 +9,7 @@ const StyledContainer = styled.div `
     margin: 10% 0;
     flex-direction: row;
 
-    & img{
+    & img {
         width: 100%;
     }
 

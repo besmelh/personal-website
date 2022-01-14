@@ -7,11 +7,32 @@ import DevProjectSection from '../Components/DevProjectSection';
 
 function WebDevelopment() {
 
+  const src = "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/web-dev-planet.glb?v=1642120711136"
+  const poster = "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/web-planet.png?v=1642120223997"
+  const alt = "web dev planet 3d model"
+  const modelDimension = "400px"
+
   return (
-    <div className="AppDevelopment">
+
+    <div>
       <Header>
-        <h2>Web Development</h2>
-        <h4>Below are some of the Full-stack and Front-end website development projects I worked on using React and/or Vanilla JS/HTML/CSS.</h4>
+        <div className="icon">          
+            <model-viewer
+            src={src}
+            poster={poster}
+            alt={alt}
+            shadow-intensity="0"
+            auto-rotate
+            camera-controls
+            ar
+            style={{height: modelDimension, width: modelDimension}}
+            ></model-viewer>
+        </div>
+
+        <div className="inPageText">
+          <h2>Web Development</h2>
+          <h4>Below are some of the Full-stack and Front-end website development projects I worked on using React and/or Vanilla JS/HTML/CSS.</h4>
+        </div>
       </Header>
 
       <Content>

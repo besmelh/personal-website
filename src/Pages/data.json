@@ -1,72 +1,41 @@
 [
     
         {
-            "title": "About Me",
-            "summary" : "I'm currently a student at the University of Rochester, majoring in Computer Science and minoring in Digital Media Studies.",
-            "image" : "https://i.ibb.co/DLJd5zT/home-me.jpg",
-            "href" : "about-me"
-        },
-        {
             "title": "App Development",
             "summary" : "Here I showcase some of the iOS apps that I have made.",
-            "image" : "https://i.ibb.co/rHrYHrS/home-app-dev.png",
             "skills" : "Software Development, UI/UX design",
-            "href" : "app-development"
+            "href" : "app-development",
+            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.glb?v=1642024423999",
+            "poster" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.png?v=1642120092441",
+            "alt" : "app development planet 3d model"
         },
         {
             "title": "Web Development",
             "summary" : "Some of the website development projects I have worked on.",
-            "image" : "https://i.ibb.co/gyXNmmM/home-web-dev.png",
             "skills" : "Full-stack, React, Javascript",
-            "href" : "web-development"
+            "href" : "web-development",
+            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/web-dev-planet.glb?v=1642120711136",
+            "poster" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/web-planet.png?v=1642120223997",
+            "alt" : "app development planet 3d model"
+        },
+        {
+            "title": "Animation",
+            "summary" : "Some of the website development projects I have worked on.",
+            "skills" : "Animation, Video Editing",
+            "href" : "animation",
+            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/animation-planet.glb?v=1642069461551",
+            "poster" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/animation-planet.png?v=1642120108239",
+            "alt" : "animation planet 3d model"
         },
         {
             "title": "Tutatain Bakery",
             "duration" : "2020 - Present",
             "summary" : "A new bakery business established by my mother and I.            ",
-            "image" : "https://i.ibb.co/N6SnwJk/home-tutatain-bakery.png",
             "skills" : "Branding, digital marketing",
-            "href" : "tutatain-bakery"
-        },
-        {
-            "title": "Marketing on Campus",
-            "duration" : "2020 - Present",
-            "summary" : "Some of my involvements on the campus clubs and organizations at the University of Rochester.",
-            "image" : "https://i.ibb.co/zFq1Z5P/home-marketing-on-campus.png",
-            "skills" : "Marketing, Graphic Design",
-            "href" : "marketing-on-campus"
-        },
-        {
-            "title": "Mask Pouch",
-            "duration" : "2020",
-            "summary" : "With my team, we worked on the product design of \"Mask Pouch\"",
-            "image" : "https://i.ibb.co/stDxYL8/home-mask-pouch.png",
-            "skills" : "Product Design, digital design, UI/UX design",
-            "href" : "mask-pouch"
-        },
-        {
-            "title": "Footsteps",
-            "duration" : "2019",
-            "summary" : "Art in various media forms about the topic of living eco-friendly lives.",
-            "image" : "https://i.ibb.co/wMYfbr7/home-footsteps.png",
-            "skills" : "Graphic Design, Video Editing",
-            "href" : "footsteps"
-        },
-        {
-            "title": "A Dream",
-            "duration" : "2018",
-            "summary" : "An animated video about the importance of living eco-friendly lives.",
-            "image" : "https://i.ibb.co/qMqWrYd/home-a-dream.jpg",
-            "skills" : "Animation, Video Editing",
-            "href" : "a-dream"
-        },
-        {
-            "title": "iRead Film Competition",
-            "duration" : "2014",
-            "summary" : "A hand drawn animation about the importance of reading.",
-            "image" : "https://i.ibb.co/g7bkG8y/home-iread.jpg",
-            "skills" : "Animation",
-            "href" : "iread"
+            "href" : "tutatain-bakery",
+            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/tutatain-planet.glb?v=1641945857278",
+            "poster" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/tutatain-planet.png?v=1642120091434",
+            "alt" : "app development planet 3d model"
         }
 
     ]

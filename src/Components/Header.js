@@ -6,7 +6,8 @@ const HeaderContainer = styled.div`
     padding: 10%;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    /* align-items: flex-start; */
+    align-items: center;
     justify-content: center;
     text-align: left;
     font-family: "PralineMCL", sans-serif;
@@ -60,23 +61,11 @@ const HeaderContainer = styled.div`
         }
     }
 
-    & .text{
+    & .homeText{
         width: 60%;
-        margin-top:30%;
+        margin-top: 15%;
     }
 
-    /* & .inPageText{
-        width: 60%;
-    } */
-
-    & .notHome{
-        align-items: center;
-        
-        & .text{
-            width: 60%;
-            margin-top:0;
-        }
-    }
 
 `;
 

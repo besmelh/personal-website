@@ -6,7 +6,7 @@
             "skills" : "Software Development, UI/UX design",
             "href" : "app-development",
             "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.glb?v=1642024423999",
-            "poster" : "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717",
+            "poster" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.png?v=1642120092441",
             "alt" : "app development planet 3d model"
         },
         {
@@ -14,8 +14,8 @@
             "summary" : "Some of the website development projects I have worked on.",
             "skills" : "Full-stack, React, Javascript",
             "href" : "web-development",
-            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/web-dev-planet.glb?v=1642032637037",
-            "poster" : "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717",
+            "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/web-dev-planet.glb?v=1642120711136",
+            "poster" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/web-planet.png?v=1642120223997",
             "alt" : "app development planet 3d model"
         },
         {
@@ -24,7 +24,7 @@
             "skills" : "Animation, Video Editing",
             "href" : "animation",
             "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/animation-planet.glb?v=1642069461551",
-            "poster" : "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717",
+            "poster" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/animation-planet.png?v=1642120108239",
             "alt" : "animation planet 3d model"
         },
         {
@@ -34,24 +34,8 @@
             "skills" : "Branding, digital marketing",
             "href" : "tutatain-bakery",
             "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/tutatain-planet.glb?v=1641945857278",
-            "poster" : "https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717",
+            "poster" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/tutatain-planet.png?v=1642120091434",
             "alt" : "app development planet 3d model"
-        },
-        {
-            "title": "A Dream",
-            "duration" : "2018",
-            "summary" : "An animated video about the importance of living eco-friendly lives.",
-            "image" : "https://i.ibb.co/qMqWrYd/home-a-dream.jpg",
-            "skills" : "Animation, Video Editing",
-            "href" : "a-dream"
-        },
-        {
-            "title": "iRead Film Competition",
-            "duration" : "2014",
-            "summary" : "A hand drawn animation about the importance of reading.",
-            "image" : "https://i.ibb.co/g7bkG8y/home-iread.jpg",
-            "skills" : "Animation",
-            "href" : "iread"
         }
 
     ]

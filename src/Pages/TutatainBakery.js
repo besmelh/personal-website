@@ -82,11 +82,31 @@ function TutatainBakery() {
         },
     ]
 
+    const src = "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/tutatain-planet.glb?v=1641945857278"
+    const poster = "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/tutatain-planet.png?v=1642120091434"
+    const alt = "tutatain bakery planet 3d model"
+    const modelDimension = "400px"
+
   return (
     <div>
       <Header>
-        <h2>Tutatain Bakery</h2>
-        <h4>Tutatain is a bakery founded by my mother and me in the Summer of 2020. My mother took care of the baking, and I took care of the branding and marketing. We're still a small business, but we hope to expand in the future.</h4>
+        <div className="icon">          
+            <model-viewer
+            src={src}
+            poster={poster}
+            alt={alt}
+            shadow-intensity="0"
+            auto-rotate
+            camera-controls
+            ar
+            style={{height: modelDimension, width: modelDimension}}
+            ></model-viewer>
+        </div>
+
+        <div>  
+            <h2>Tutatain Bakery</h2>
+            <h4>Tutatain is a bakery founded by my mother and me in the Summer of 2020. My mother took care of the baking, and I took care of the branding and marketing. We're still a small business, but we hope to expand in the future.</h4>
+        </div>
       </Header>
 
       <Content>

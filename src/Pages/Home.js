@@ -41,7 +41,7 @@ function Home() {
           <div className="icon">
               <img src="https://i.ibb.co/4dPJ8hK/astronaut1.png" alt="astronaut1"/>
           </div>
-          <div className="text">
+          <div className="homeText">
               <h1>Hello, I'm Besmelh Alshaalan</h1>
               <h3>This is my space to showcase some of my favorite projects. I mainly do software programming, digital design, and occasionally marketing.</h3>
               <MyButton redirect href="/about-me" style={{marginTop: "20px"}}>More about me...</MyButton>

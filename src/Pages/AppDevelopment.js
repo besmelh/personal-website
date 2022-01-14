@@ -7,11 +7,31 @@ import DevProjectSection from '../Components/DevProjectSection';
 
 function AppDevelopment() {
 
+  const src = "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.glb?v=1642024423999"
+  const poster = "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.png?v=1642120092441"
+  const alt = "app dev planet 3d model"
+  const modelDimension = "400px"
+
   return (
     <div className="AppDevelopment">
       <Header>
-        <h2>App Development</h2>
-        <h4>Below are some of the iOS apps I made with Swift.</h4>
+        <div className="icon">          
+              <model-viewer
+              src={src}
+              poster={poster}
+              alt={alt}
+              shadow-intensity="0"
+              auto-rotate
+              camera-controls
+              ar
+              style={{height: modelDimension, width: modelDimension}}
+              ></model-viewer>
+          </div>
+
+        <div>
+          <h2>App Development</h2>
+          <h4>Below are some of the iOS apps I made with Swift.</h4>
+        </div>
       </Header>
 
       <Content>

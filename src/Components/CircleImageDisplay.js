@@ -42,7 +42,7 @@ function CircleImageDisplay(props) {
         <model-viewer
             src={src}
             ios-src={iosSrc}
-            poster={iosSrc}
+            poster={poster}
             alt={alt}
             shadow-intensity="0"
             auto-rotate

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 :root {
   --color-primary: #E2DAFC;
@@ -15,20 +14,21 @@
   --min-width-px: 730px;
 }
 
+
 body {
   width: 100%;
   height: 100%;
   background: var(--color-secodary-gradient);
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
+  font-family: 'Lufga', sans-serif;
+  font-weight: lighter;
   padding: 0;
   margin: 0;
   color: var(--color-primary-light);
 }
 
 button {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 200;
+  font-family: 'Lufga', sans-serif;
+  font-weight: lighter;
 }
 
 h2 {

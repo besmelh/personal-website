@@ -4,18 +4,18 @@ import { Icon } from '@iconify/react';
 
 
 const StyledFooter = styled.footer`
-    // height: 350px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     text-align: justify;
-    font-family: "Avenir", sans-serif;
-    background-color: var(--color-primary);
-    color: var(--color-secondary-dark);
+    font-family: "Lufga", sans-serif;
+    background: linear-gradient(180deg, rgba(32, 40, 71, 0) 0%, rgba(17, 22, 41, 0.6) 100%);
+    color:  white;
     align-items: center;
     padding: 5% 0;
     margin-top: 5%;
+
 
     & a {
         padding: 0;
@@ -23,11 +23,11 @@ const StyledFooter = styled.footer`
         margin-bottom: 8px;
         font-weight: 500;
         text-decoration: none;
-        color: var(--color-secondary-dark);
+        color:  white;
     }
 
     & svg {
-        color: var(--color-secondary-dark);
+        color:  white;
     }
 
 
@@ -46,6 +46,21 @@ const IconLinks = styled.div`
     }
 `
 
+const Copyrights = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+    color: #AAA5BD;
+
+    & p{
+        margin: 0;
+        padding: 5px 0;
+    }
+
+`
+
 function Footer(props) {
 
   const {...other } = props;
@@ -62,7 +77,11 @@ function Footer(props) {
             <a href="https://youtube.com/channel/UC29ev1ljKQAl-8-hp6VwL-g" target={"_blank"} rel="noreferrer"><Icon icon="entypo-social:youtube-with-circle" /></a>
         </IconLinks>
 
-        <p>© 2021 by Besmelh Alshaalan</p>
+        <Copyrights>
+            <p>Built using React, and planets made with Blender.</p>
+            <p>© 2022 by Besmelh Alshaalan</p>
+        </Copyrights>
+
     </StyledFooter>
   );
 }

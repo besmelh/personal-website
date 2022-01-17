@@ -1,17 +1,36 @@
 import React from "react";
 import styled from 'styled-components';
+import { RedFormat } from "three";
 import CircleImageDisplay from './CircleImageDisplay';
+
+
+const StyledMainPageSection = styled.section`
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+
+    @media (max-width: 730px) {
+        flex-direction: column;
+        align-items: center;
+    }
+
+`;
+
 
 const MainText = styled.div `
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width:250px;
+    background: linear-gradient(180deg, rgba(17, 22, 41, 0.6) 0%, rgba(32, 40, 71, 0) 100%);    padding: 50px;
+    border-radius: 4px;
+    position:relative;
+    width: 300px;
+    z-index: -5;
 
 
     & h3 {
-        font-weight:400;
+        font-weight: normal;
         font-size: 30px;
         margin: 0;
     } 
@@ -26,6 +45,10 @@ const MainText = styled.div `
         font-weight:100;
         font-size: 15px;
         text-align: justify;
+
+        &.skills {
+            font-size: 13px;
+        }
     }
 
     @media (max-width: 730px) {
@@ -46,49 +69,29 @@ const MainText = styled.div `
     }
 
 `
-const StyledMainPageSection = styled.section`
-    display: flex;
-    padding: 50px 0;
-
-    & .rightContainerImage{
-        margin-left: 30px;
-    }
-
-    & .leftContainerImage{
-        margin-right: 30px;
-    }
-
-    @media (max-width: 730px) {
-        flex-direction: column;
-        align-items: center;
-
-        & .rightContainerImage, .leftContainerImage{
-            margin: 0;
-        }
-
-    }
-
-`;
-
 
 const rightContainer = {
     justifyContent: 'flex-end',
 };
 
-// const rightContainerImage = {
-//     marginLeft: '30px',
-// };
+const rightContainerText = {
+    left: "150px",
+    paddingRight: "100px"
+};
 
-// const leftContainerImage = {
-//     marginRight: '30px',
-// };
+const leftContainerText = {
+    left: "-150px",
+    paddingLeft: "100px",
 
+};
 
 
 function MainPageSection(props) {
 
+    const {src, iosSrc, poster, alt, href, ...other} = props;
     const [width, setWidth] = React.useState(window.innerWidth);
     const breakpoint = 730;
+    const modelDimension = "400px";
 
     React.useEffect(() => {
         const handleResizeWindow = () => setWidth(window.innerWidth);
@@ -108,26 +111,35 @@ function MainPageSection(props) {
 
         {(props.allignedLeft === true || width < breakpoint) &&
             <CircleImageDisplay
-                image = {props.image}
-                skills = {props.skills}
-                href = {props.href}
+                src = {src}
+                ios-src={iosSrc}
+                poster={poster}
+                alt={alt}  
+                href = {href}
+                modelDimension = {modelDimension}
                 className="leftContainerImage"
             />
         }
 
-        <MainText>
+        <MainText
+         style={(props.allignedLeft === true) ? leftContainerText : rightContainerText}
+        >
             <h3>{props.title}</h3>
             <h4>{props.duration}</h4>
             <p>{props.summary}</p>
+            <p className="skills">{props.skills}</p>
         </MainText>
 
 
         {(props.allignedLeft === false && width > breakpoint) &&
             <CircleImageDisplay
-                image = {props.image}
-                skills = {props.skills}
-                href = {props.href}
-                className="rightContainerImage"
+            src = {src}
+            ios-src={iosSrc}
+            poster={poster}
+            alt={alt}  
+            href = {href}
+            modelDimension = {modelDimension}
+            className="rightContainerImage"
             />
         }
 

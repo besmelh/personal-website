@@ -18,8 +18,10 @@ function ADream() {
   return (
     <div>
       <Header>
-        <h2>About Me</h2>
-        <h4>A little more information about me.</h4>
+        {/* <div> */}
+          <h2 style={{marginRight: "20px"}}>About Me</h2>
+          <h4>A little more information about me.</h4>
+        {/* </div> */}
       </Header>
 
       <Content>

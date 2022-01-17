@@ -46,6 +46,21 @@ const IconLinks = styled.div`
     }
 `
 
+const Copyrights = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0;
+    color: #AAA5BD;
+
+    & p{
+        margin: 0;
+        padding: 5px 0;
+    }
+
+`
+
 function Footer(props) {
 
   const {...other } = props;
@@ -62,7 +77,10 @@ function Footer(props) {
             <a href="https://youtube.com/channel/UC29ev1ljKQAl-8-hp6VwL-g" target={"_blank"} rel="noreferrer"><Icon icon="entypo-social:youtube-with-circle" /></a>
         </IconLinks>
 
-        <p>© 2021 by Besmelh Alshaalan</p>
+        <Copyrights>
+            <p>Built using React, and planets made with Blender.</p>
+            <p>© 2022 by Besmelh Alshaalan</p>
+        </Copyrights>
 
     </StyledFooter>
   );

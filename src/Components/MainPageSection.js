@@ -124,7 +124,6 @@ function MainPageSection(props) {
                 alt={alt}  
                 href = {href}
                 modelDimension = {modelDimension}
-                className="leftContainerImage"
             />
         }
 
@@ -149,7 +148,6 @@ function MainPageSection(props) {
             alt={alt}  
             href = {href}
             modelDimension = {modelDimension}
-            className="rightContainerImage"
             />
         }
 

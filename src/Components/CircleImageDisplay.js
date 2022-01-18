@@ -46,7 +46,6 @@ function CircleImageDisplay(props) {
             alt={alt}
             shadow-intensity="0"
             auto-rotate
-            ar
             style={{height: modelDimension, width: modelDimension}}
           ></model-viewer>
         

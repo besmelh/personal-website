@@ -55,13 +55,7 @@ function Gallery(props) {
     const options = {
     galleryLayout: 4,
     cubeType: 'fit',
-    // imageMargin: 15,
-    // isAutoSlideshow: true,
-    // slideshowLoop: true,
-    // autoSlideshowInterval: 3,
-    // gallerySizeType: 'px',
     overlayBackground: 'rgba(3,3,106,0.0)',
-    // titlePlacement: 'SHOW_ON_HOVER,SHOW_BELOW',
     itemBorderRadius: 20
 };
 

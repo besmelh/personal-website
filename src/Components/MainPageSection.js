@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import { RedFormat } from "three";
 import CircleImageDisplay from './CircleImageDisplay';
 
 
@@ -8,6 +7,7 @@ const StyledMainPageSection = styled.section`
     display: flex;
     align-items: center;
     padding: 50px 0;
+    z-index:1;
 
     @media (max-width: 730px) {
         flex-direction: column;
@@ -22,7 +22,9 @@ const MainText = styled.div `
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    background: linear-gradient(180deg, rgba(17, 22, 41, 0.6) 0%, rgba(32, 40, 71, 0) 100%);    padding: 50px;
+    background: linear-gradient(0deg, rgba(17, 22, 41, 0.6) 0%, rgba(32, 40, 71, 0) 100%);   
+    padding: 50px;
+    top: -100px;
     border-radius: 4px;
     position:relative;
     width: 300px;
@@ -75,20 +77,24 @@ const rightContainer = {
 };
 
 const rightContainerText = {
+    top: "0",
     left: "150px",
-    paddingRight: "100px"
+    paddingRight: "150px",
+    background: "linear-gradient(90deg, rgba(17, 22, 41, 0.6) 0%, rgba(32, 40, 71, 0) 100%)"
 };
 
 const leftContainerText = {
+    top: "0",
     left: "-150px",
-    paddingLeft: "100px",
+    paddingLeft: "150px",
+    background: "linear-gradient(270deg, rgba(17, 22, 41, 0.6) 0%, rgba(32, 40, 71, 0) 100%)"
 
 };
 
 
 function MainPageSection(props) {
 
-    const {src, iosSrc, poster, alt, href, ...other} = props;
+    const {src, iosSrc, poster, alt, href} = props;
     const [width, setWidth] = React.useState(window.innerWidth);
     const breakpoint = 730;
     const modelDimension = "400px";
@@ -107,6 +113,7 @@ function MainPageSection(props) {
         
       <StyledMainPageSection
         style={(props.allignedLeft === false) ? rightContainer : null}
+        className={width < breakpoint ? "phone-view" : null}
       >
 
         {(props.allignedLeft === true || width < breakpoint) &&
@@ -122,7 +129,10 @@ function MainPageSection(props) {
         }
 
         <MainText
-         style={(props.allignedLeft === true) ? leftContainerText : rightContainerText}
+         style={(width < breakpoint) ?
+                null
+                : (props.allignedLeft === true) ? leftContainerText : rightContainerText
+            }
         >
             <h3>{props.title}</h3>
             <h4>{props.duration}</h4>

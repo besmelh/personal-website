@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 
 const StyledImageDisplay = styled.div`
-    // width: 100%;
     transition: transform 0.3s;
     display: flex;
     justify-content: center;

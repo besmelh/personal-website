@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "engines": {
     "node": "16.13.1",
-    "yarn": "3.1.1"
+    "yarn": "1.22.17"
   },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
-    "@google/model-viewer": "^1.9.2",
+    "@google/model-viewer": "^1.10.1",
     "@mui/base": "^5.0.0-alpha.61",
     "@mui/system": "^5.2.5",
     "@react-three/drei": "^8.3.1",

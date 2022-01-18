@@ -7,6 +7,8 @@ import TutatainBakery from './Pages/TutatainBakery';
 import Animation from './Pages/Animation';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from './Components/Footer';
+import "@google/model-viewer";
+
 
 function App() {
   return (

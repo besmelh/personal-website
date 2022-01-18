@@ -16,15 +16,6 @@ const StaryBackground = (props) => {
           vertical: true,
           horizontal: false
         });
-    
-        // new Rellax(rellaxRef.current, {
-        //   speed: -10,
-        //   center: false,
-        //   wrapper: null,
-        //   round: true,
-        //   vertical: true,
-        //   horizontal: false
-        // });
 
       }, []);
 

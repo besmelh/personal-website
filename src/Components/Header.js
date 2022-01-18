@@ -6,18 +6,12 @@ const HeaderContainer = styled.div`
     padding: 10%;
     display: flex;
     flex-direction: row;
-    /* align-items: flex-start; */
     align-items: center;
     justify-content: center;
     text-align: left;
     font-family: "PralineMCL", sans-serif;
     color: var(--color-secondary-dark);
     color:white;
-
-    // & div {
-    //     padding: 0 15%;
-    //     max-width: 1200px; 
-    // }
 
     & h1 {
         font-size: 38px;

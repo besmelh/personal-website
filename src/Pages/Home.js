@@ -1,14 +1,11 @@
-import styled from 'styled-components';
 import Header from '../Components/Header';
 import Content from '../Components/Content';
 import MainPageSection from '../Components/MainPageSection';
-import LeftRightContainer from '../Components/LeftRightContainer';
 import data from './data.json';
 import StaryBackground from '../Components/StaryBackground';
 import MyButton from '../Components/MyButton';
 
 function Home() { 
-
   let pageSections = [];
   let isAllignedLeft = false;
 

@@ -40,3 +40,7 @@ p {
   font-size: 15px;
   line-height: 1.2;
 }
+
+model-viewer{
+  --poster-color: transparent;
+} 

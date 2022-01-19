@@ -98,8 +98,8 @@ function TutatainBakery() {
             shadow-intensity="0"
             auto-rotate
             camera-controls
-            ar
             style={{height: modelDimension, width: modelDimension}}
+            seamless-poster
             ></model-viewer>
         </div>
 

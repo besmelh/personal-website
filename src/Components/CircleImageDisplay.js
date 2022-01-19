@@ -7,11 +7,7 @@ const StyledImageDisplay = styled.div`
     transition: transform 0.3s;
     display: flex;
     justify-content: center;
-
-    & model-viewer{
-        --poster-color: transparent;
-    } 
-
+    
     &:hover{
         transform: scale(1.1);
         cursor: pointer;
@@ -50,7 +46,6 @@ function CircleImageDisplay(props) {
             shadow-intensity="0"
             auto-rotate
             style={{height: modelDimension, width: modelDimension}}
-            className="poster"
             seamless-poster
             ></model-viewer>
         

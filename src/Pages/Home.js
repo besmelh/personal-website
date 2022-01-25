@@ -36,7 +36,7 @@ function Home() {
       <StaryBackground/>  
       <Header>
           <div className="icon">
-              <img src="https://i.ibb.co/4dPJ8hK/astronaut1.png" alt="astronaut1"/>
+              <img src="https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/astronaut2.png?v=1643078319594" alt="astronaut-besmelh"/>
           </div>
           <div className="homeText">
               <h1>Hello, I'm Besmelh Alshaalan</h1>

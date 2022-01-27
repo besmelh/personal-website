@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as React from 'react';
+import React from 'react';
 import ButtonUnstyled from '@mui/base/ButtonUnstyled';
 import { useNavigate } from "react-router-dom";
 

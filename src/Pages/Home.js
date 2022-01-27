@@ -6,6 +6,7 @@ import StaryBackground from '../Components/StaryBackground';
 import MyButton from '../Components/MyButton';
 
 function Home() { 
+
   let pageSections = [];
   let isAllignedLeft = false;
 

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 
 
@@ -11,8 +11,6 @@ const Star = styled.div`
     
 const RandomStar = (props) => {
 
-
-    // const { height, width } = useWindowDimensions();
     const minSize = 2;
     const maxSize = 10;
     const minDur = 3;
@@ -33,7 +31,6 @@ const RandomStar = (props) => {
    const StarStyle = useRef({
         height: `${randSize}px`,
         width: `${randSize}px`,
-        // position: 'relative',
         top: `${randHeight}%`,
         left: `${randWidth}%`,
         transform: 'translate(-50%, -50%)',
@@ -43,9 +40,7 @@ const RandomStar = (props) => {
    });
 
    return (
-    // <div>
         <Star style={StarStyle.current} {...props} />
-    // </div>
    )
 }
     

@@ -7,13 +7,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
  
-@font-face {
-  font-family: "PralineMCL";
-  src: local("PralineMCL"),
-    url("./fonts/PralineMCL.ttf") format("truetype");
-  font-weight: normal;
-}
 
+@font-face {
+  font-family: 'PralineMCL';
+  src: url('./fonts/praline/pralinemcl-webfont.woff2') format('woff2'),
+       url('./fonts/praline/pralinemcl-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
 
 @font-face {
   font-family: 'Lufga';

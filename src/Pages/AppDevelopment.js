@@ -14,7 +14,7 @@ function AppDevelopment() {
 
   return (
     <div className="AppDevelopment">
-      <Header>
+      <Header stars>
         <div className="icon">          
               <model-viewer
               src={src}
@@ -35,7 +35,6 @@ function AppDevelopment() {
       </Header>
 
       <Content>
-
 
         {/* ********* light up ********* */}
         <DevProjectSection

@@ -15,7 +15,7 @@ function Animation() {
 
   return (
     <div>
-      <Header className="icon">
+      <Header stars className="icon">
          <div className="icon">          
               <model-viewer
               src={src}

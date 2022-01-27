@@ -15,7 +15,7 @@ function WebDevelopment() {
   return (
 
     <div>
-      <Header>
+      <Header stars>
         <div className="icon">          
             <model-viewer
             src={src}

@@ -1,9 +1,11 @@
 import React from "react";
 import styled from 'styled-components';
+import StaryBackground from '../Components/StaryBackground';
 
 const HeaderContainer = styled.div`
 
     padding: 10%;
+    padding-bottom: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -78,6 +80,7 @@ function Header(props) {
     return (
       <HeaderContainer style={props.style}>
          <GradientBG/>
+        { props.stars && <StaryBackground/> } 
         {props.children}
       </HeaderContainer>
     );

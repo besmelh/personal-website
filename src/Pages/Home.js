@@ -35,6 +35,7 @@ function Home() {
   return (
     <div className="Home" style={{position:"relative", width: "100%", height: "100%"}}>
       <StaryBackground/>  
+
       <Header>
           <div className="icon">
               <img src="https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/astronaut2.png?v=1643078319594" alt="astronaut-besmelh"/>

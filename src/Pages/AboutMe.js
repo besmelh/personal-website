@@ -6,6 +6,7 @@ import FramedDiv from '../Components/FramedDiv';
 import MyButton from '../Components/MyButton';
 import { Icon } from '@iconify/react';
 import styled from 'styled-components';
+import NewGallery from '../Components/NewGallery';
 
 const ButtonsList = styled.div`
   & button{
@@ -13,10 +14,13 @@ const ButtonsList = styled.div`
   }
 `
 
-function ADream() {
+function AboutMe() {
 
+  const demoimg = "https://previews.123rf.com/images/yuliarudenko/yuliarudenko1906/yuliarudenko190600078/124795732-cute-happy-smiling-funny-potato-vector-flat-cartoon-character-illustration-icon-design-isolated-on-w.jpg"
   return (
     <div>
+
+
       <Header stars>
           <h2 style={{marginRight: "20px"}}>About Me</h2>
           <h4>A little more information about me.</h4>
@@ -24,6 +28,12 @@ function ADream() {
 
       <Content>
 
+      {/* <NewGallery>
+        <img src={demoimg}/>
+        <img src={demoimg}/>
+        <img src={demoimg}/>
+      </NewGallery> */}
+      
         <LeftRightContainer>
             <div className="container-small">
               <FramedDiv>
@@ -59,4 +69,4 @@ function ADream() {
   );
 }
 
-export default ADream;
+export default AboutMe;

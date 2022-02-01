@@ -110,14 +110,14 @@ function TutatainBakery() {
       </Header>
 
       <Content>
-
+{/* 
             <TextAndGallery
             title="Branding"
             description='Tutatain means "two berries" in Arabic. The two berries represent my mother and me since we worked together to establish the business. So I decided to play around with that concept and use it in the branding.'
             images={branding_gallery}
             buttonText="Visit Website"
             buttonHref="https://www.tutatain.com/"
-            />
+            /> */}
 
             <Divider/>
 
@@ -152,11 +152,11 @@ function TutatainBakery() {
             
             <Divider/>
 
-            <TextAndGallery
+            {/* <TextAndGallery
             title="Photography"
             description="Below are some of the photographs I've taken of our cakes to showcase across our platforms and use in targeted online marketing."
             images={photography_gallery}
-            />
+            /> */}
 
       </Content>
 

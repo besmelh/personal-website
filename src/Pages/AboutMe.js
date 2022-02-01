@@ -28,11 +28,14 @@ function AboutMe() {
 
       <Content>
 
-      {/* <NewGallery>
+      <NewGallery>
         <img src={demoimg}/>
         <img src={demoimg}/>
         <img src={demoimg}/>
-      </NewGallery> */}
+      </NewGallery>
+
+      <div style={{marginBottom:"500px"}}>
+      </div>
       
         <LeftRightContainer>
             <div className="container-small">

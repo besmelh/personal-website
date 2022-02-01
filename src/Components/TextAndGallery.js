@@ -52,19 +52,22 @@ function TextAndGallery(props) {
     const {title, description, buttonText, buttonHref, images, ...other } = props;
 
     return (
-      <StyledTextAndGallery {...other}>
-          <TextDiv>
-            <h2>{title}</h2>
-            <p>{description}</p>
-          </TextDiv>
+      // <StyledTextAndGallery {...other}>
+      //     <TextDiv>
+      //       <h2>{title}</h2>
+      //       <p>{description}</p>
+      //     </TextDiv>
 
-          <Gallery
-            width={600}
-            height={200}
-            items={images}
-            />
-            {buttonText && <StyledButton href={buttonHref}>{buttonText}</StyledButton>}
-      </StyledTextAndGallery>
+      //     <Gallery
+      //       width={600}
+      //       height={200}
+      //       items={images}
+      //       />
+      //       {buttonText && <StyledButton href={buttonHref}>{buttonText}</StyledButton>}
+      // </StyledTextAndGallery>
+      <div>
+        
+      </div>
     );
   }
   

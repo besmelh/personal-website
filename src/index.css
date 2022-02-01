@@ -59,7 +59,6 @@ body {
        url('./fonts/lufga/lufga-bolditalic-webfont.woff') format('woff');
   font-weight: bold;
   font-style: italic;
-
 }
 
 @font-face {
@@ -68,8 +67,7 @@ body {
        url('./fonts/lufga/lufga-bold-webfont.woff') format('woff');
   font-weight: bold;
   font-style: normal;
-
-}
+} 
 
 @keyframes float {
 	0% {

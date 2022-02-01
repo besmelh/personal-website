@@ -7,6 +7,7 @@ const Star = styled.div`
     border-radius: 100%;
     background-color: #F7F5FF;
     position:absolute;
+    z-index: -5;
 `    
     
 const RandomStar = (props) => {

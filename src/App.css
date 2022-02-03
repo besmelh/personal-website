@@ -1,6 +1,7 @@
 
 :root {
   --color-primary: #E2DAFC;
+  --color-primary: rgb(180, 167, 221);
   --color-primary-light: #E4D9FF;
   --color-primary-extraLight: #eae3fa;
   --color-primary-alpha20: RGBA(226,218,252,0.3);

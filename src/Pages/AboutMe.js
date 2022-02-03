@@ -6,7 +6,7 @@ import FramedDiv from '../Components/FramedDiv';
 import MyButton from '../Components/MyButton';
 import { Icon } from '@iconify/react';
 import styled from 'styled-components';
-import NewGallery from '../Components/NewGallery';
+import NewGallery from '../Components/Gallery';
 
 const ButtonsList = styled.div`
   & button{

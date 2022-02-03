@@ -15,42 +15,18 @@ function TutatainBakery() {
         {
             itemId: 'tutatain-logo',
             mediaUrl: 'https://i.ibb.co/MDRWq8q/tutatain-logo.webp',
-            metaData: {
-                    type: 'image',
-                    title: 'sample-title',
-                    description: 'sample-description',
-                }
         },
         {
             itemId: 'tutatain-animated-logo',
             mediaUrl: 'https://i.ibb.co/4TsMd6x/tutatain-animated-logo.gif',
-            metaData: {
-                    type: 'image',
-                    height: 200,
-                    width: 350,
-                    title: 'sample-title',
-                    description: 'sample-description',
-                }
         },
         { 
             itemId: 'tutatain-packaging',
             mediaUrl: 'https://i.ibb.co/qMZ9cwf/tutatain-packaging.webp',
-            metaData: {
-                    type: 'image',
-                    height: 200,
-                    width: 250,
-                    title: 'sample-title',
-                    description: 'sample-description',
-            }
         },
         { 
             itemId: 'tutatain-characters',
             mediaUrl: 'https://i.ibb.co/xLV5mBZ/tutatain-character-design.webp',
-            metaData: {
-                    type: 'image',
-                    title: 'sample-title',
-                    description: 'sample-description',
-            }
         },
     ]
 
@@ -59,26 +35,14 @@ function TutatainBakery() {
         {
             itemId: 'tutatain-matcha-cake',
             mediaUrl: 'https://i.ibb.co/7kcc2wZ/tutatain-matcha-cake.webp',
-            metaData: {
-                    type: 'image',
-                    title: 'Matcha Strawberry Cake',
-                }
         },
         {
             itemId: 'tutatain-chocolate-cake',
             mediaUrl: 'https://i.ibb.co/smPfcjn/tutatain-chocolate-cake.webp',
-            metaData: {
-                    type: 'image',
-                    title: 'Chocolate Jam Cake',
-                }
         },
         { 
             itemId: 'tutatain-rasberry-cake',
             mediaUrl: 'https://i.ibb.co/hgPRw7C/tutatain-rasberry-cake.webp',
-            metaData: {
-                    type: 'image',
-                    title: 'Raspberry Cake',
-            }
         },
     ]
 
@@ -87,7 +51,7 @@ function TutatainBakery() {
     const alt = "tutatain bakery planet 3d model"
     const modelDimension = "400px"
 
-  return (
+    return (
     <div>
       <Header stars>
         <div className="icon">          
@@ -110,14 +74,14 @@ function TutatainBakery() {
       </Header>
 
       <Content>
-{/* 
+
             <TextAndGallery
             title="Branding"
             description='Tutatain means "two berries" in Arabic. The two berries represent my mother and me since we worked together to establish the business. So I decided to play around with that concept and use it in the branding.'
             images={branding_gallery}
             buttonText="Visit Website"
             buttonHref="https://www.tutatain.com/"
-            /> */}
+            />
 
             <Divider/>
 
@@ -152,11 +116,11 @@ function TutatainBakery() {
             
             <Divider/>
 
-            {/* <TextAndGallery
+            <TextAndGallery
             title="Photography"
             description="Below are some of the photographs I've taken of our cakes to showcase across our platforms and use in targeted online marketing."
             images={photography_gallery}
-            /> */}
+            />
 
       </Content>
 

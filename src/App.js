@@ -6,6 +6,8 @@ import AppDevelopment from './Pages/AppDevelopment';
 import WebDevelopment from './Pages/WebDevelopment';
 import TutatainBakery from './Pages/TutatainBakery';
 import Animation from './Pages/Animation';
+import Demo from './Pages/Demo';
+
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from './Components/Footer';
@@ -29,6 +31,7 @@ function App() {
             <Route path="web-development" element={<WebDevelopment/>}/>
             <Route path="animation" element={<Animation/>}/>
             <Route path="tutatain-bakery" element={<TutatainBakery/>}/>
+            <Route path="demo" element={<Demo/>}/>
           </Routes>
         </BrowserRouter>
         <Footer/>

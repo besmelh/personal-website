@@ -6,7 +6,6 @@ import FramedDiv from '../Components/FramedDiv';
 import MyButton from '../Components/MyButton';
 import { Icon } from '@iconify/react';
 import styled from 'styled-components';
-import NewGallery from '../Components/Gallery';
 
 const ButtonsList = styled.div`
   & button{
@@ -16,7 +15,6 @@ const ButtonsList = styled.div`
 
 function AboutMe() {
 
-  const demoimg = "https://previews.123rf.com/images/yuliarudenko/yuliarudenko1906/yuliarudenko190600078/124795732-cute-happy-smiling-funny-potato-vector-flat-cartoon-character-illustration-icon-design-isolated-on-w.jpg"
   return (
     <div>
 
@@ -27,20 +25,13 @@ function AboutMe() {
       </Header>
 
       <Content>
-
-      <NewGallery>
-        <img src={demoimg}/>
-        <img src={demoimg}/>
-        <img src={demoimg}/>
-      </NewGallery>
-
       <div style={{marginBottom:"500px"}}>
       </div>
       
         <LeftRightContainer>
             <div className="container-small">
               <FramedDiv>
-                <img src = "https://i.ibb.co/DLJd5zT/home-me.jpg"></img>
+                <img src = "https://i.ibb.co/DLJd5zT/home-me.jpg" alt="personal headshot"></img>
               </FramedDiv>
             </div>
 

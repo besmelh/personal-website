@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import {React} from "react";
 import { useNavigate } from "react-router-dom";
 import styled from 'styled-components';
 
@@ -19,25 +19,16 @@ function CircleImageDisplay(props) {
 
     const navigate = useNavigate();
 
-    const [circleHovered, setCircleHovered] = useState(true);
-
     const handleRoute = () =>{ 
         navigate(props.href || '/');
     }
 
-    const handleMouseEnter = e => {
-        setCircleHovered(false);
-    }
-
-    const handleMouseLeave = e => {
-        setCircleHovered(true);
-    }
 
     const {src, iosSrc, poster, alt, modelDimension, ...other} = props;
 
     return (
     
-      <StyledImageDisplay style={other} onClick={handleRoute} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={props.className}>
+      <StyledImageDisplay style={other} onClick={handleRoute} className={props.className}>
         <model-viewer
             src={src}
             ios-src={iosSrc}

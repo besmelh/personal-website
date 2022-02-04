@@ -56,7 +56,7 @@ function TextAndGallery(props) {
     const {title, description, buttonText, buttonHref, images, ...other } = props;
 
     return (
-      <StyledTextAndGallery>
+      <StyledTextAndGallery {...other}>
         <TextDiv>
           <h2>{title}</h2>
           <p>{description}</p>

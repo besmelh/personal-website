@@ -36,7 +36,7 @@ function DevProjectSection(props) {
     return (
         <LeftRightContainer {...other}>
 
-        {(!largeContainerLeft && width > 730) && 
+        {(!largeContainerLeft && width > breakpoint) && 
             <div className="container-medium">
                 <img src={image} alt= {`screenshot of ${title}`}/>
                 <VideoPlayer url = {videoUrl} style={showVideo ? {display:"flex"} : {display:"none"}}/> 

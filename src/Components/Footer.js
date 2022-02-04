@@ -68,7 +68,7 @@ function Footer(props) {
   return (
     <StyledFooter {...other}>
         <a href="/">Home Page</a>
-        <a href="https://drive.google.com/file/d/1d2gmDO29PjthNws-rth2ulxlUtvvQhFP/view?usp=sharing" target={"_blank"}>My Resume</a>
+        <a href="https://drive.google.com/file/d/1d2gmDO29PjthNws-rth2ulxlUtvvQhFP/view?usp=sharing" target={"_blank"} rel="noreferrer">My Resume</a>
 
         <IconLinks>
             <a href="mailto:balshaal@u.rochester.edu" target={"_blank"} rel="noreferrer"><Icon icon="clarity:email-solid" /></a>

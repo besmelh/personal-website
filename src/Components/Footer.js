@@ -79,6 +79,7 @@ function Footer(props) {
 
         <Copyrights>
             <p>Built using React, and planets made with Blender.</p>
+            <p>Deployed on Netlify</p>
             <p>© 2022 by Besmelh Alshaalan</p>
         </Copyrights>
 

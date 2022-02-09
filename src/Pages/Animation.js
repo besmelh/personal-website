@@ -69,7 +69,7 @@ function Animation() {
         <LeftRightContainer>
             <div className="container-medium">
                 <FramedDiv>
-                  <img src="https://i.ibb.co/Ns4qWvm/iread-bookmark.webp"/>
+                  <img src="https://i.ibb.co/Ns4qWvm/iread-bookmark.webp" alt="iread inspiration bookmark"/>
                 </FramedDiv>
             </div>
 

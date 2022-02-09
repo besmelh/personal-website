@@ -107,7 +107,7 @@ function TutatainBakery() {
 
                 <div className='container-medium'>
                     <FramedDiv >
-                        <img src="https://i.ibb.co/D5pcQqj/tutatain-instagram.webp" style={{height: "500px", width: "auto"}}/>
+                        <img src="https://i.ibb.co/D5pcQqj/tutatain-instagram.webp" alt="tuatain bakery instagram account screenshot" style={{height: "500px", width: "auto"}}/>
                     </FramedDiv>
                 </div>
 

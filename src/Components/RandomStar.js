@@ -18,7 +18,7 @@ const RandomStar = (props) => {
     const maxDur = 8;
     const minDel = 0.1;
     const maxDel = 2;
-    const maxHeight = 100;
+    const maxHeight = 90;
     const maxHeightPhone = 30;
 
     const randHeight = Math.floor(Math.random()*maxHeight);

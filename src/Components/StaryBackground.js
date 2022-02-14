@@ -9,7 +9,7 @@ const StaryBackground = (props) => {
 
     useEffect(() => {
         new Rellax(".animateRellax", {
-          speed: -5,
+          speed: -2,
           center: false,
           wrapper: null,
           round: true,

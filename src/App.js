@@ -6,6 +6,7 @@ import WebDevelopment from './Pages/WebDevelopment';
 import TutatainBakery from './Pages/TutatainBakery';
 import Animation from './Pages/Animation';
 import Demo from './Pages/Demo';
+import ScrollToTop from './Components/ScrollToTop';
 
 
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
@@ -23,15 +24,17 @@ function App() {
   return (
     <div className="App">    
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="about-me" element={<AboutMe/>}/>
-            <Route path="app-development" element={<AppDevelopment/>}/>
-            <Route path="web-development" element={<WebDevelopment/>}/>
-            <Route path="animation" element={<Animation/>}/>
-            <Route path="tutatain-bakery" element={<TutatainBakery/>}/>
-            <Route path="demo" element={<Demo/>}/>
-          </Routes>
+          <ScrollToTop>
+            <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route path="about-me" element={<AboutMe/>}/>
+              <Route path="app-development" element={<AppDevelopment/>}/>
+              <Route path="web-development" element={<WebDevelopment/>}/>
+              <Route path="animation" element={<Animation/>}/>
+              <Route path="tutatain-bakery" element={<TutatainBakery/>}/>
+              <Route path="demo" element={<Demo/>}/>
+            </Routes>
+          </ScrollToTop>
         </BrowserRouter>
         <Footer/>
      </div>

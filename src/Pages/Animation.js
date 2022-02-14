@@ -40,6 +40,7 @@ function Animation() {
             <div className="container-small">
                 <h2>A Dream</h2>
                 <p>A boy has a futuristic nightmare based on his actions. What will he do to change that nightmare when he wakes up?</p>
+                <p>The animated video has been made using <i>Moho</i>'s animation software.</p>
             </div>
 
             <div className="container-medium">

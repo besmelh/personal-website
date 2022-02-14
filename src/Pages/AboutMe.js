@@ -21,12 +21,9 @@ function AboutMe() {
 
       <Header stars>
           <h2 style={{marginRight: "20px"}}>About Me</h2>
-          <h4>A little more information about me.</h4>
       </Header>
 
       <Content>
-      <div style={{marginBottom:"500px"}}>
-      </div>
       
         <LeftRightContainer>
             <div className="container-small">

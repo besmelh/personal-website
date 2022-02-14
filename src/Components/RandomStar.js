@@ -18,7 +18,7 @@ const RandomStar = (props) => {
     const maxDur = 8;
     const minDel = 0.1;
     const maxDel = 2;
-    const maxHeight = 50;
+    const maxHeight = 100;
     const maxHeightPhone = 30;
 
     const randHeight = Math.floor(Math.random()*maxHeight);
@@ -37,7 +37,7 @@ const RandomStar = (props) => {
         transform: 'translate(-50%, -50%)',
         zindex: '-10',
         animation: `flickerAnimation ${randAnimDuration}s infinite`, 
-        animationDelay: `${randAnimDelay}s`
+        animationDelay: `${randAnimDelay}s`,
    });
 
    return (

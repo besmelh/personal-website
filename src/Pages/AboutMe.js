@@ -56,7 +56,7 @@ function AboutMe() {
                 LinkedIn
               </MyButton>
 
-              <MyButton href='mailto:balshaal@u.rochester.edu'>
+              <MyButton href='mailto:besmelh.alshaalan@gmail.com'>
                 <Icon icon='clarity:email-solid' />
                 E-mail
               </MyButton>

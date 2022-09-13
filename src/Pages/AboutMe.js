@@ -8,8 +8,12 @@ import { Icon } from '@iconify/react';
 import styled from 'styled-components';
 
 const ButtonsList = styled.div`
+  display: flex;
+
   & button {
     margin-right: 15px;
+    display: flex;
+    align-items: center;
   }
 `;
 

@@ -105,10 +105,11 @@ function AppDevelopment() {
         {/* ********* fairy and ghost ********* */}
 
         <DevProjectSection
-          image='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/fairy%26ghost.png?v=1664600095092'
+          image='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/fairy%26ghost-flipped.png?v=1664601708614'
           videoUrl='https://youtu.be/gRQAlcWh0BY'
           icon='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/fairy%26ghost-logo.png?v=1664601035371'
           title='Fairy & Ghost'
+          largeContainerLeft
         >
           <p>
             Inspired by the original Fireboy and Watergirl,{' '}

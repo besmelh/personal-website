@@ -18,24 +18,6 @@ const StyledFooter = styled.footer`
   align-items: center;
   padding: 5% 0;
   margin-top: 5%;
-
-  & a {
-    padding: 0;
-    margin: 0;
-    margin-bottom: 8px;
-    font-weight: 500;
-    text-decoration: none;
-    color: white;
-  }
-
-  & svg {
-    color: white;
-  }
-
-  & a:hover,
-  svg:hover {
-    color: var(--color-secondary-light);
-  }
 `;
 
 const IconLinks = styled.div`

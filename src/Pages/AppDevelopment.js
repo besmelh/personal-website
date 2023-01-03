@@ -100,47 +100,6 @@ function AppDevelopment() {
             of Rochester
           </p>
         </DevProjectSection>
-
-        <Divider />
-        {/* ********* fairy and ghost ********* */}
-
-        <DevProjectSection
-          image='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/fairy%26ghost-flipped.png?v=1664601708614'
-          videoUrl='https://youtu.be/gRQAlcWh0BY'
-          icon='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/fairy%26ghost-logo.png?v=1664601035371'
-          title='Fairy & Ghost'
-          largeContainerLeft
-        >
-          <p>
-            Inspired by the original Fireboy and Watergirl,{' '}
-            <a
-              href='https://www.fionaau.net/'
-              target={'_blank'}
-              rel='noreferrer'
-              style={{ textDecoration: 'underline' }}
-            >
-              Fiona Au
-            </a>{' '}
-            and I have created Fairy & Ghost.
-          </p>
-          <p>
-            A very kind human has died in an unfortunate accident and has been
-            sent to the underworld. A fairy who witnessed the accident has taken
-            pity on the human and is now helping its ghost escape the underworld
-            through a well.
-          </p>
-          <p>
-            Now, both must work together to overcome obstacles and make it
-            outside. Along the way, they must each collect items to help return
-            the ghost to its former human state.
-          </p>
-          <p>
-            {' '}
-            The ghost will collect its human bones and avoid the light, and the
-            fairy will collect fairy dust to have enough magic power while
-            avoiding darkness.
-          </p>
-        </DevProjectSection>
       </Content>
     </div>
   );

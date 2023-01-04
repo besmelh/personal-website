@@ -1,88 +1,115 @@
-import React, {useState} from "react";
-import LeftRightContainer from "./LeftRightContainer";
-import VideoPlayer from "./VideoPlayer";
-import IconAndTitle from "./IconAndTitle";
-import MyButton from "./MyButton";
-import { Icon } from "@iconify/react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import LeftRightContainer from './LeftRightContainer';
+import VideoPlayer from './VideoPlayer';
+import IconAndTitle from './IconAndTitle';
+import MyButton from './MyButton';
+import { Icon } from '@iconify/react';
+import styled from 'styled-components';
 
 const ButtonsSet = styled.div`
+  display: flex;
 
-    display: flex;
-
-    & button {
-        margin-right: 15px;
-    }
-`
+  & button {
+    margin-right: 15px;
+  }
+`;
 
 function DevProjectSection(props) {
+  const {
+    largeContainerLeft,
+    image,
+    videoUrl,
+    icon,
+    title,
+    description,
+    buttonIcon,
+    buttonText,
+    buttonHref,
+    buttonIcon2,
+    buttonText2,
+    buttonHref2,
+    children,
+    ...other
+  } = props;
+  const [showVideo, setShowVideo] = useState(false);
 
-    const {largeContainerLeft, image, videoUrl, icon, title, description, buttonIcon, buttonText, buttonHref, buttonIcon2, buttonText2, buttonHref2,children, ...other } = props;
-    const [showVideo, setShowVideo] = useState(false);
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 730;
 
-    const [width, setWidth] = React.useState(window.innerWidth);
-    const breakpoint = 730;
+  React.useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+    // subscribe to window resize event "onComponentDidMount"
+    window.addEventListener('resize', handleResizeWindow);
+    return () => {
+      // unsubscribe "onComponentDestroy"
+      window.removeEventListener('resize', handleResizeWindow);
+    };
+  }, []);
 
-    React.useEffect(() => {
-        const handleResizeWindow = () => setWidth(window.innerWidth);
-        // subscribe to window resize event "onComponentDidMount"
-        window.addEventListener("resize", handleResizeWindow);
-        return () => {
-            // unsubscribe "onComponentDestroy"
-            window.removeEventListener("resize", handleResizeWindow);
-        };
-    }, []);
+  return (
+    <LeftRightContainer {...other}>
+      {!largeContainerLeft && width > breakpoint && (
+        <div className='container-medium'>
+          <img src={image} alt={`screenshot of ${title}`} />
+          <VideoPlayer
+            url={videoUrl}
+            style={showVideo ? { display: 'flex' } : { display: 'none' }}
+          />
+        </div>
+      )}
 
-    return (
-        <LeftRightContainer {...other}>
+      <div className='container-small'>
+        <IconAndTitle width='50px'>
+          <img src={icon} alt={`icon of ${title}`} />
+          <h2>{title}</h2>
+        </IconAndTitle>
 
-        {(!largeContainerLeft && width > breakpoint) && 
-            <div className="container-medium">
-                <img src={image} alt= {`screenshot of ${title}`}/>
-                <VideoPlayer url = {videoUrl} style={showVideo ? {display:"flex"} : {display:"none"}}/> 
-            </div>
-        }
-
-
-        <div className="container-small">
-           <IconAndTitle width="50px">
-            <img src={icon} alt= {`icon of ${title}`}/>
-            <h2>{title}</h2>
-          </IconAndTitle>
-
-          <p>{description}</p>    
-          {children}     
-
+        <p>{description}</p>
+        {children}
 
         <ButtonsSet>
-            <MyButton 
-            {...(buttonHref ? {href: buttonHref} : {onClick : ()=>setShowVideo(!showVideo)})} 
-            >
-                <Icon icon={buttonIcon || "bi:play-circle"} inline={true} />
-                {buttonText || "In Action"}
+          {videoUrl && (
+            <MyButton {...{ onClick: () => setShowVideo(!showVideo) }}>
+              <Icon icon='bi:play-circle' inline={true} />
+              {'In Action'}
             </MyButton>
+          )}
 
-            {buttonText2 && 
-            <MyButton 
-                {...(buttonHref2 ? {href: buttonHref2} : {onClick : ()=>setShowVideo(!showVideo)})} 
-                >
-                <Icon icon={buttonIcon2 || "bi:play-circle"} inline={true} />
-                {buttonText2 || "In Action"}
-            </MyButton>}
+          {buttonText && (
+            <MyButton
+              {...(buttonHref
+                ? { href: buttonHref }
+                : { onClick: () => setShowVideo(!showVideo) })}
+            >
+              <Icon icon={buttonIcon || 'bi:play-circle'} inline={true} />
+              {buttonText || 'In Action'}
+            </MyButton>
+          )}
+
+          {buttonText2 && (
+            <MyButton
+              {...(buttonHref2
+                ? { href: buttonHref2 }
+                : { onClick: () => setShowVideo(!showVideo) })}
+            >
+              <Icon icon={buttonIcon2 || 'bi:play-circle'} inline={true} />
+              {buttonText2 || 'In Action'}
+            </MyButton>
+          )}
         </ButtonsSet>
+      </div>
 
-        </div> 
+      {(largeContainerLeft || width < 730) && (
+        <div className='container-medium'>
+          <img src={image} alt={`screenshot of ${title}`} />
+          <VideoPlayer
+            url={videoUrl}
+            style={showVideo ? { display: 'flex' } : { display: 'none' }}
+          />
+        </div>
+      )}
+    </LeftRightContainer>
+  );
+}
 
-        {(largeContainerLeft || width < 730) && 
-            <div className="container-medium">
-                <img src={image} alt= {`screenshot of ${title}`}/>
-                <VideoPlayer url = {videoUrl} style={showVideo ? {display:"flex"} : {display:"none"}}/> 
-            </div>
-        }
-        </LeftRightContainer>
-    );
-  }
-  
-  export default DevProjectSection;
-      
-      
+export default DevProjectSection;

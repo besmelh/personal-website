@@ -1,10 +1,10 @@
 [
     
         {
-            "title": "VR and Mobile Apps",
+            "title": "VR & Mobile Apps",
             "summary" : "Here I showcase some of the VR and iOS apps and that I developed.",
             "skills" : "Software Development, UI/UX design, Swift, Unity",
-            "href" : "app-development",
+            "href" : "vr-mobile-apps",
             "src" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.glb?v=1642024423999",
             "poster" : "https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.png?v=1642120092441",
             "alt" : "app development planet 3d model"

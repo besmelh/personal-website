@@ -29,12 +29,35 @@ function AppDevelopment() {
         </div>
 
         <div>
-          <h2>App Development & Video Games</h2>
-          <h4>Below are some of the iOS apps I made with Swift.</h4>
+          <h2>VR & Mobile Apps</h2>
+          <h4>
+            Below are some of the iOS apps I made with Swift, and VR projects
+            made with Unity.
+          </h4>
         </div>
       </Header>
 
       <Content>
+        {/* ********* phobigone ********* */}
+        <DevProjectSection
+          image='https://i.ibb.co/3W0dFxz/phobigone.png'
+          icon='https://i.ibb.co/vYbMzmk/phobigone-logo.png'
+          title='Phobigone'
+          description={`LightUp allows users to brainstorm new ideas by generating random words to inspire them. If they like a specific word it can be locked to prevent it from changing when generating new words. Users can also make notes of all their ideas they get so you don't forget them.`}
+          videoUrl='https://youtu.be/z7GhZehCUkI'
+          buttonText='Learn more'
+          buttonIcon='gg:website'
+          buttonHref='https://sites.google.com/u.rochester.edu/phobigone-vr/home?authuser=0'
+          largeContainerLeft
+        >
+          <p>
+            Currently available in the App Store, and is localized in English &
+            Arabic.
+          </p>
+        </DevProjectSection>
+
+        <Divider />
+
         {/* ********* light up ********* */}
         <DevProjectSection
           image='https://i.ibb.co/NC2fPY3/lightup-ss.webp'
@@ -44,7 +67,6 @@ function AppDevelopment() {
           buttonText='View on the App Store'
           buttonIcon='ant-design:apple-filled'
           buttonHref='https://apps.apple.com/us/app/light-up-idea-brainstorming/id1550799231'
-          largeContainerLeft
         >
           <p>
             Currently available in the App Store, and is localized in English &
@@ -61,6 +83,7 @@ function AppDevelopment() {
           icon='https://i.ibb.co/1KBGB8g/starshipadventure-icon.webp'
           title='Starship Adventure'
           description='Starship Adventure is a game where the user tries to find the correct angle and velocity to fly the rocket from Earth and land safely on Mars. On each round Mars is placed at a different location.'
+          largeContainerLeft
         >
           <p className='tinytext'>
             This app was made by my team and I for our 48-hour Hackathon
@@ -77,7 +100,6 @@ function AppDevelopment() {
           icon='https://i.ibb.co/LZkhjwm/watchwhat-icon.webp'
           title='Watch What?'
           description={`Can't decide on what to watch next? Open the "Watch What" app and swipe through the randomly generated T.V. shows, and double tap on the ones you like to save them to your favorites list!`}
-          largeContainerLeft
         >
           <p className='tinytext'>
             This app was made as a project for CSC214 - Fall 2020 - University
@@ -94,6 +116,7 @@ function AppDevelopment() {
           icon='https://i.ibb.co/GvCyZ6D/triprate-icon.webp'
           title='TripRate'
           description={`The app allows the user to log their trips' information, including the trip's name, description, type, number of people accompanied, and the amount of fun they had. There's also a status tab to track information regarding all the trips.`}
+          largeContainerLeft
         >
           <p className='tinytext'>
             This app was made as a project for CSC214 - Fall 2020 - University

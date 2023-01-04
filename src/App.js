@@ -28,7 +28,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="about-me" element={<AboutMe/>}/>
-              <Route path="app-development" element={<AppDevelopment/>}/>
+              <Route path="vr-mobile-apps" element={<AppDevelopment/>}/>
               <Route path="web-development" element={<WebDevelopment/>}/>
               <Route path="animation" element={<Animation/>}/>
               <Route path="tutatain-bakery" element={<TutatainBakery/>}/>

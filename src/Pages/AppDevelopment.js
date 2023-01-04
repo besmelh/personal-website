@@ -49,12 +49,7 @@ function AppDevelopment() {
           buttonIcon='gg:website'
           buttonHref='https://sites.google.com/u.rochester.edu/phobigone-vr/home?authuser=0'
           largeContainerLeft
-        >
-          <p>
-            Currently available in the App Store, and is localized in English &
-            Arabic.
-          </p>
-        </DevProjectSection>
+        ></DevProjectSection>
 
         <Divider />
 
@@ -67,12 +62,7 @@ function AppDevelopment() {
           buttonText='Learn more'
           buttonIcon='gg:website'
           buttonHref='https://balshaal.wixsite.com/lightup'
-        >
-          <p>
-            Currently available in the App Store, and is localized in English &
-            Arabic.
-          </p>
-        </DevProjectSection>
+        ></DevProjectSection>
 
         <Divider />
 

@@ -43,7 +43,7 @@ function AppDevelopment() {
           image='https://i.ibb.co/3W0dFxz/phobigone.png'
           icon='https://i.ibb.co/vYbMzmk/phobigone-logo.png'
           title='Phobigone'
-          description={`LightUp allows users to brainstorm new ideas by generating random words to inspire them. If they like a specific word it can be locked to prevent it from changing when generating new words. Users can also make notes of all their ideas they get so you don't forget them.`}
+          description={`Phobigone is a VR app, that allows users to confront their fears in a safe virtual environment. Users get to choose from 3 scenarios that test one's fear of the dark, heights, and tight spaces. In each scenario, the user must complete a task to overcome the fear with which they are confronted with.`}
           videoUrl='https://youtu.be/z7GhZehCUkI'
           buttonText='Learn more'
           buttonIcon='gg:website'
@@ -64,9 +64,9 @@ function AppDevelopment() {
           icon='https://i.ibb.co/T4w9c4T/lightup-icon.webp'
           title='Light Up'
           description={`LightUp allows users to brainstorm new ideas by generating random words to inspire them. If they like a specific word it can be locked to prevent it from changing when generating new words. Users can also make notes of all their ideas they get so you don't forget them.`}
-          buttonText='View on the App Store'
-          buttonIcon='ant-design:apple-filled'
-          buttonHref='https://apps.apple.com/us/app/light-up-idea-brainstorming/id1550799231'
+          buttonText='Learn more'
+          buttonIcon='gg:website'
+          buttonHref='https://balshaal.wixsite.com/lightup'
         >
           <p>
             Currently available in the App Store, and is localized in English &

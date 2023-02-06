@@ -38,32 +38,28 @@ function WebDevelopment() {
       </Header>
 
       <Content>
-        {/* ********* millie ********* */}
+        {/* ********* lofi ********* */}
         <DevProjectSection
-          image='https://i.ibb.co/qYQ1HqQ/millie-ss.png'
-          icon='https://i.ibb.co/vXNcrVp/millie-icon.png'
-          title="Millie's School Recommender"
-          description={`During my time as a Tech & Product Intern at Millie Group in Summer 2021, I worked on Millie’s internal school recommender tool which will be used to view and manage Millie’s existing info in their database of schools in a user-friendly UI.`}
-          buttonText='View on Github'
-          buttonIcon='akar-icons:github-fill'
-          buttonHref='https://github.com/besmelh/millie-school-recommender-2021'
+          image='https://i.ibb.co/dDS9Q1Q/boppity-bop-lofi.png'
+          icon='https://i.ibb.co/Qj3Nb8G/boppity-bop-logo.png'
+          title='Boppity-Bop Lofi'
+          description={`Audio visualizer website, with a relaxing window view (buildings, trees, clouds) that animates to Lo-fi music.`}
+          buttonText='Go to Website'
+          buttonIcon='akar-icons:link-chain'
+          buttonHref='https://boppity-bop-lofi.netlify.app/'
+          largeContainerLeft
         >
-          <p>My work included:</p>
-          <ol>
-            <li>
-              Conducting <strong>user research</strong> to finalize the portal’s
-              functionality and features.
-            </li>
-            <li>
-              Designed the <strong>UI/UX</strong> of the portal through a Figma
-              prototype.
-            </li>
-            <li>
-              Developed a <strong>full-stack</strong> website using React,
-              Material UI, and Express. And managed some databases through AWS
-              and PostgreSQL.
-            </li>
-          </ol>
+          <p>
+            Boppity-Bop Lofi is a an audio visualizing website, where you can
+            play your music, and watch the buildings bop and move to the music.
+            The scene is designed to resemble a relaxing window view, with a 2D
+            animation style.
+          </p>
+          <p>
+            At the moment it works by playing a demo mp3 file, but currently I'm
+            working on integrating it with Spotify's API so users can play their
+            own music.
+          </p>
         </DevProjectSection>
 
         <Divider />
@@ -74,9 +70,7 @@ function WebDevelopment() {
           icon='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/balancebuddy-logo.png?v=1664593702558'
           title='BalanceBuddy'
           description={`A concept website to help students balance between their schoolwork & internship search process.`}
-          buttonText='Demo Video'
           videoUrl='https://www.youtube.com/watch?v=xZ66I4_RNAo&t=25s'
-          largeContainerLeft
         >
           <p>Implemented website feautures:</p>
           <ol>
@@ -116,6 +110,36 @@ function WebDevelopment() {
         </DevProjectSection>
 
         <Divider />
+        {/* ********* millie ********* */}
+        <DevProjectSection
+          image='https://i.ibb.co/qYQ1HqQ/millie-ss.png'
+          icon='https://i.ibb.co/vXNcrVp/millie-icon.png'
+          title="Millie's School Recommender"
+          description={`During my time as a Tech & Product Intern at Millie Group in Summer 2021, I worked on Millie’s internal school recommender tool which will be used to view and manage Millie’s existing info in their database of schools in a user-friendly UI.`}
+          buttonText='View on Github'
+          buttonIcon='akar-icons:github-fill'
+          buttonHref='https://github.com/besmelh/millie-school-recommender-2021'
+          largeContainerLeft
+        >
+          <p>My work included:</p>
+          <ol>
+            <li>
+              Conducting <strong>user research</strong> to finalize the portal’s
+              functionality and features.
+            </li>
+            <li>
+              Designed the <strong>UI/UX</strong> of the portal through a Figma
+              prototype.
+            </li>
+            <li>
+              Developed a <strong>full-stack</strong> website using React,
+              Material UI, and Express. And managed some databases through AWS
+              and PostgreSQL.
+            </li>
+          </ol>
+        </DevProjectSection>
+
+        <Divider />
 
         {/* ********* DandyHacks '22 ********* */}
         <DevProjectSection
@@ -129,21 +153,6 @@ function WebDevelopment() {
         ></DevProjectSection>
 
         <Divider />
-
-        {/* ********* DandyHacks '21 ********* */}
-        <DevProjectSection
-          image='https://i.ibb.co/ZcDcWTT/dh-ss.png'
-          icon='https://i.ibb.co/bJcXk5D/dh-2021-icon.png'
-          title="Dandyhacks '21"
-          description='Developed and maintained DandyHacks’ website using HTML/CSS/JS in preparation for the Hackathon event, alongside my other teammates.'
-          buttonText='Go to Website'
-          buttonIcon='akar-icons:link-chain'
-          buttonHref='https://dandyhacks.net/'
-          buttonText2='View on Github'
-          buttonIcon2='akar-icons:github-fill'
-          buttonHref2='https://github.com/dandyhacks/website'
-          largeContainerLeft
-        />
       </Content>
     </div>
   );

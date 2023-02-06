@@ -8,11 +8,9 @@ import Animation from './Pages/Animation';
 import Demo from './Pages/Demo';
 import ScrollToTop from './Components/ScrollToTop';
 
-
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Footer from './Components/Footer';
-import "@google/model-viewer";
-
+import '@google/model-viewer';
 
 function App() {
   // const AboutMe = lazy(() => import('./Pages/AboutMe'));
@@ -22,22 +20,22 @@ function App() {
   // const Animation = lazy(() => import('./Pages/Animation'));
 
   return (
-    <div className="App">    
-        <BrowserRouter>
-          <ScrollToTop>
-            <Routes>
-              <Route path="/" element={<Home/>} />
-              <Route path="about-me" element={<AboutMe/>}/>
-              <Route path="vr-mobile-apps" element={<AppDevelopment/>}/>
-              <Route path="web-development" element={<WebDevelopment/>}/>
-              <Route path="animation" element={<Animation/>}/>
-              <Route path="tutatain-bakery" element={<TutatainBakery/>}/>
-              <Route path="demo" element={<Demo/>}/>
-            </Routes>
-          </ScrollToTop>
-        </BrowserRouter>
-        <Footer/>
-     </div>
+    <div className='App'>
+      <BrowserRouter>
+        <ScrollToTop>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='about-me' element={<AboutMe />} />
+            <Route path='web-development' element={<WebDevelopment />} />
+            <Route path='vr-mobile-apps' element={<AppDevelopment />} />
+            <Route path='animation' element={<Animation />} />
+            <Route path='tutatain-bakery' element={<TutatainBakery />} />
+            <Route path='demo' element={<Demo />} />
+          </Routes>
+        </ScrollToTop>
+      </BrowserRouter>
+      <Footer />
+    </div>
   );
 }
 

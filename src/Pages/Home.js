@@ -4,6 +4,7 @@ import MainPageSection from '../Components/MainPageSection';
 import data from './data.json';
 import StaryBackground from '../Components/StaryBackground';
 import MyButton from '../Components/MyButton';
+import SplineObject from '../Components/SplineObject';
 
 function Home() {
   let pageSections = [];

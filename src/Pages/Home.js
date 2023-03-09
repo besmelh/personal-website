@@ -5,6 +5,7 @@ import data from './data.json';
 import StaryBackground from '../Components/StaryBackground';
 import MyButton from '../Components/MyButton';
 import SplineObject from '../Components/SplineObject';
+import { Canvas } from '@react-three/fiber';
 
 function Home() {
   let pageSections = [];
@@ -48,6 +49,8 @@ function Home() {
             This is my space to showcase some of my favorite projects. Where I
             integrate Software Development with arts and visuals.
           </h3>
+          <SplineObject />
+
           <MyButton redirect href='/about-me' style={{ marginTop: '20px' }}>
             More about me...
           </MyButton>

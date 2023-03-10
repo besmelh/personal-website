@@ -13,12 +13,6 @@ import Footer from './Components/Footer';
 import '@google/model-viewer';
 
 function App() {
-  // const AboutMe = lazy(() => import('./Pages/AboutMe'));
-  // const AppDevelopment = lazy(() => import('./Pages/AppDevelopment'));
-  // const WebDevelopment = lazy(() => import('./Pages/WebDevelopment'));
-  // const TutatainBakery = lazy(() => import('./Pages/TutatainBakery'));
-  // const Animation = lazy(() => import('./Pages/Animation'));
-
   return (
     <div className='App'>
       <BrowserRouter>

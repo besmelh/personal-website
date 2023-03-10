@@ -6,6 +6,7 @@ import StaryBackground from '../Components/StaryBackground';
 import MyButton from '../Components/MyButton';
 import SplineObject from '../Components/SplineObject';
 import { Canvas } from '@react-three/fiber';
+import Spline from '@splinetool/react-spline';
 
 function Home() {
   let pageSections = [];
@@ -49,7 +50,6 @@ function Home() {
             This is my space to showcase some of my favorite projects. Where I
             integrate Software Development with arts and visuals.
           </h3>
-          <SplineObject />
 
           <MyButton redirect href='/about-me' style={{ marginTop: '20px' }}>
             More about me...
@@ -57,7 +57,27 @@ function Home() {
         </div>
       </Header>
 
-      <Content noHomeButton>{pageSections}</Content>
+      <Content noHomeButton>
+        {/* ********* phobigone ********* */}
+        <MainPageSection
+          title='Phobigone'
+          summary="VR app to reduce people's fears."
+          skills='Unity, Software Development, UI/UX design, Blender'
+          href='vr-mobile-apps'
+          src='https://prod.spline.design/EaVEPovGuLXxV1Bk/scene.splinecode'
+          allignedLeft={true}
+        />
+
+        {/* ********* balancebuddy ********* */}
+        <MainPageSection
+          title='BalanceBuddy'
+          summary="VR app to reduce people's fears."
+          skills='Unity, Software Development, UI/UX design, Blender'
+          href='web-development'
+          src='https://prod.spline.design/Q7TUOjInZ3KxPOXL/scene.splinecode'
+          allignedLeft={false}
+        />
+      </Content>
     </div>
   );
 }

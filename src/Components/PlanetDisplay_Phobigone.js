@@ -22,12 +22,10 @@ function PlanetDisplay_Phobigone(props) {
 
   return (
     <div>
-      <Suspense fallback={<p>Loading...</p>}>
-        <Spline
-          onLoad={() => setTimeout(() => setModelLoading(false), 2000)}
-          scene='https://prod.spline.design/EaVEPovGuLXxV1Bk/scene.splinecode'
-        />
-      </Suspense>
+      <Spline
+        onLoad={() => setTimeout(() => setModelLoading(false), 2000)}
+        scene='https://prod.spline.design/EaVEPovGuLXxV1Bk/scene.splinecode'
+      />
 
       {isModelLoading && (
         <FadeIn>

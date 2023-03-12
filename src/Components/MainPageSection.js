@@ -97,7 +97,6 @@ function MainPageSection(props) {
   const transition = { duration: 1, type: 'spring' };
   const { title, summary, skills, href, src, alt, allignedLeft, children } =
     props;
-  const [showVideo, setShowVideo] = useState(false);
 
   const [width, setWidth] = React.useState(window.innerWidth);
   const breakpoint = 730;

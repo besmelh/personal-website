@@ -9,6 +9,8 @@ import PlanetDisplay from '../Components/PlanetDisplay';
 import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
 
 function Phobigone(props) {
+  const transition = { duration: 0.5, type: 'spring' };
+
   const { imageDetails, ...other } = props;
   const src =
     'https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.glb?v=1642024423999';
@@ -24,6 +26,7 @@ function Phobigone(props) {
         <Header stars>
           <motion.div
             initial={{ width: imageDetails.width, height: imageDetails.height }}
+            transition={transition}
             className='icon'
           >
             <PlanetDisplay_Phobigone />

@@ -32,7 +32,7 @@ function Phobigone(props) {
             <PlanetDisplay_Phobigone />
           </motion.div>
 
-          <motion.div initial={{ opacity: 0 }}>
+          <motion.div initial={{ opacity: 1 }}>
             <h2>Phobigone</h2>
             <h4>
               Below are some of the iOS apps I made with Swift, and VR projects
@@ -41,7 +41,7 @@ function Phobigone(props) {
           </motion.div>
         </Header>
 
-        <motion.div initial={{ opacity: 0 }}>
+        <motion.div initial={{ opacity: 1 }}>
           <Content>
             {/* ********* phobigone ********* */}
             <p>

@@ -49,7 +49,7 @@ const HeaderContainer = styled.div`
   & .icon {
     width: 40%;
     padding-right: 5%;
-
+    height: 500px;
     & img {
       width: 100%;
       animation: float 6s ease-in-out infinite;

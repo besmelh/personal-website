@@ -100,7 +100,7 @@ function PlanetDisplay(props) {
         </FadeIn>
       </InnerDiv>
 
-      {/* {isModelLoading && (
+      {isModelLoading && (
         <InnerDiv>
           <FadeIn>
             <LoadingOuterDiv>
@@ -109,16 +109,16 @@ function PlanetDisplay(props) {
             </LoadingOuterDiv>
           </FadeIn>
         </InnerDiv>
-      )} */}
+      )}
 
-      <InnerDiv>
+      {/* <InnerDiv>
         <FadeIn>
           <LoadingOuterDiv>
             <img src={image} />
             <p>Loading...</p>
           </LoadingOuterDiv>
         </FadeIn>
-      </InnerDiv>
+      </InnerDiv> */}
 
       <InnerDiv>
         <ClickableZone

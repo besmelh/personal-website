@@ -119,21 +119,6 @@ function MainPageSection(props) {
     navigate(href || '/');
   };
 
-  // function model(route) {
-  //   const model = (
-  //     <motion.div
-  //       whileHover={{ scale: 1.1 }}
-  //       transition={transition}
-  //       onClick={route}
-  //     >
-  //       {Children.map(children, (child) => (
-  //         <div>{child}</div>
-  //       ))}
-  //     </motion.div>
-  //   );
-  //   return model;
-  // }
-
   const model = (
     <motion.div
       whileHover={{ scale: 1.1 }}

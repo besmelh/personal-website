@@ -17,23 +17,11 @@ const StyledImageDisplay = styled.div`
 `;
 
 function PlanetDisplay_Phobigone(props) {
-  const { src, href, style, className, ...other } = props;
-
-  const navigate = useNavigate();
-
-  const handleRoute = () => {
-    navigate(href || '/');
-  };
+  const { src, style, className, ...other } = props;
 
   return (
     <Suspense fallback={<p>Loading...</p>}>
-      <StyledImageDisplay
-        style={style}
-        onClick={handleRoute}
-        className={className}
-      >
-        <Spline scene='https://prod.spline.design/EaVEPovGuLXxV1Bk/scene.splinecode' />
-      </StyledImageDisplay>
+      <Spline scene='https://prod.spline.design/EaVEPovGuLXxV1Bk/scene.splinecode' />
     </Suspense>
   );
 }

@@ -3,6 +3,8 @@ import Header from '../Components/Header';
 import Content from '../Components/Content';
 import Divider from '../Components/Divider';
 import DevProjectSection from '../Components/DevProjectSection';
+import { motion } from 'framer-motion';
+import ScrollToTop from '../Components/ScrollToTop';
 
 function AppDevelopment() {
   const src =
@@ -13,7 +15,13 @@ function AppDevelopment() {
   const modelDimension = '400px';
 
   return (
-    <div className='AppDevelopment'>
+    <motion.div
+      className='AppDevelopment'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+    >
       <Header stars>
         <div className='icon'>
           <model-viewer
@@ -114,7 +122,7 @@ function AppDevelopment() {
           </p>
         </DevProjectSection>
       </Content>
-    </div>
+    </motion.div>
   );
 }
 

@@ -6,28 +6,45 @@ import WebDevelopment from './Pages/WebDevelopment';
 import TutatainBakery from './Pages/TutatainBakery';
 import Animation from './Pages/Animation';
 import Demo from './Pages/Demo';
+import Phobigone from './Pages/Phobigone';
 import ScrollToTop from './Components/ScrollToTop';
+import { AnimatePresence } from 'framer-motion';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Footer from './Components/Footer';
 import '@google/model-viewer';
 
 function App() {
+  const location = useLocation();
+  const imageDetails = {
+    width: 524,
+    height: 650,
+  };
+
   return (
     <div className='App'>
-      <BrowserRouter>
-        <ScrollToTop>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='about-me' element={<AboutMe />} />
-            <Route path='web-development' element={<WebDevelopment />} />
-            <Route path='vr-mobile-apps' element={<AppDevelopment />} />
-            <Route path='animation' element={<Animation />} />
-            <Route path='tutatain-bakery' element={<TutatainBakery />} />
-            <Route path='demo' element={<Demo />} />
-          </Routes>
-        </ScrollToTop>
-      </BrowserRouter>
+      {/* <BrowserRouter> */}
+      {/* <ScrollToTop> */}
+      <AnimatePresence
+        mode='wait'
+        // initial={false}
+      >
+        <Routes key={location.pathname} location={location}>
+          <Route path='/' element={<Home />} />
+          <Route path='about-me' element={<AboutMe />} />
+          <Route
+            path='phobigone'
+            element={<Phobigone imageDetails={imageDetails} />}
+          />
+          <Route path='web-development' element={<WebDevelopment />} />
+          <Route path='vr-mobile-apps' element={<AppDevelopment />} />
+          <Route path='animation' element={<Animation />} />
+          <Route path='tutatain-bakery' element={<TutatainBakery />} />
+          <Route path='demo' element={<Demo />} />
+        </Routes>
+      </AnimatePresence>
+      {/* </ScrollToTop> */}
+      {/* </BrowserRouter> */}
       <Footer />
     </div>
   );

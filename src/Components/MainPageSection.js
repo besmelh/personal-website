@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, Children } from 'react';
 import styled from 'styled-components';
 import PlanetDisplay from './PlanetDisplay';
-import MyButton from './MyButton';
-import { Icon } from '@iconify/react';
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const StyledMainPageSection = styled.section`
   display: flex;
@@ -94,7 +94,9 @@ const leftContainerText = {
 };
 
 function MainPageSection(props) {
-  const { title, summary, skills, href, src, alt, allignedLeft } = props;
+  const transition = { duration: 1, type: 'spring' };
+  const { title, summary, skills, href, src, alt, allignedLeft, children } =
+    props;
   const [showVideo, setShowVideo] = useState(false);
 
   const [width, setWidth] = React.useState(window.innerWidth);
@@ -111,32 +113,63 @@ function MainPageSection(props) {
     };
   }, []);
 
+  const navigate = useNavigate();
+
+  const handleRoute = () => {
+    navigate(href || '/');
+  };
+
+  // function model(route) {
+  //   const model = (
+  //     <motion.div
+  //       whileHover={{ scale: 1.1 }}
+  //       transition={transition}
+  //       onClick={route}
+  //     >
+  //       {Children.map(children, (child) => (
+  //         <div>{child}</div>
+  //       ))}
+  //     </motion.div>
+  //   );
+  //   return model;
+  // }
+
+  const model = (
+    <motion.div
+      whileHover={{ scale: 1.1 }}
+      transition={transition}
+      onClick={handleRoute}
+    >
+      {Children.map(children, (child) => (
+        <div>{child}</div>
+      ))}
+    </motion.div>
+  );
+
   return (
     <StyledMainPageSection
       style={allignedLeft === false ? rightContainer : null}
       className={width < breakpoint ? 'phone-view' : null}
     >
-      {(allignedLeft === true || width < breakpoint) && (
-        <PlanetDisplay src={src} alt={alt} href={href} />
-      )}
+      {(allignedLeft === true || width < breakpoint) && model}
 
-      <MainText
-        style={
-          width < breakpoint
-            ? null
-            : allignedLeft === true
-            ? leftContainerText
-            : rightContainerText
-        }
-      >
-        <h3>{title}</h3>
-        <p>{summary}</p>
-        <p className='skills'>{skills}</p>
-      </MainText>
+      <div>
+        <MainText
+          style={
+            width < breakpoint
+              ? null
+              : allignedLeft === true
+              ? leftContainerText
+              : rightContainerText
+          }
+        >
+          <h3>{title}</h3>
+          <p>{summary}</p>
+          <p className='skills'>{skills}</p>
+        </MainText>
+      </div>
 
-      {allignedLeft === false && width > breakpoint && (
-        <PlanetDisplay src={src} alt={alt} href={href} />
-      )}
+      {allignedLeft === false && width > breakpoint && model}
     </StyledMainPageSection>
   );
 }

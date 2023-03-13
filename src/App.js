@@ -8,6 +8,7 @@ import Animation from './Pages/Animation';
 import Demo from './Pages/Demo';
 import Phobigone from './Pages/Phobigone';
 import BalanceBuddy from './Pages/BalanceBuddy';
+import BoppityBopLofi from './Pages/BoppityBopLofi';
 import ScrollToTop from './Components/ScrollToTop';
 import { AnimatePresence } from 'framer-motion';
 
@@ -17,10 +18,6 @@ import '@google/model-viewer';
 
 function App() {
   const location = useLocation();
-  const imageDetails = {
-    width: 524,
-    height: 650,
-  };
 
   return (
     <div className='App'>
@@ -33,11 +30,12 @@ function App() {
         <Routes key={location.pathname} location={location}>
           <Route path='/' element={<Home />} />
           <Route path='about-me' element={<AboutMe />} />
-          <Route
-            path='phobigone'
-            element={<Phobigone imageDetails={imageDetails} />}
-          />
+          {/* projects */}
+          <Route path='phobigone' element={<Phobigone />} />
           <Route path='balancebuddy' element={<BalanceBuddy />} />
+          <Route path='boppity-bop-lofi' element={<BoppityBopLofi />} />
+
+          {/* original pages */}
           <Route path='web-development' element={<WebDevelopment />} />
           <Route path='vr-mobile-apps' element={<AppDevelopment />} />
           <Route path='animation' element={<Animation />} />

@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import ScrollToTop from '../Components/ScrollToTop';
 import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
 import PlanetDisplay_BalanceBuddy from '../Components/PlanetDisplay_BalanceBuddy';
+import PlanetDisplay_BoppityBopLofi from '../Components/PlanetDisplay_BoppityBopLofi';
 
 function Home() {
   const transition = { duration: 0.5, type: 'spring' };
@@ -67,7 +68,7 @@ function Home() {
             href='boppity-bop-lofi'
             allignedLeft={false}
           >
-            <PlanetDisplay_BalanceBuddy hoverable />
+            <PlanetDisplay_BoppityBopLofi hoverable />
           </MainPageSection>
 
           {/* ********* balancebuddy ********* */}
@@ -75,6 +76,16 @@ function Home() {
             title='BalanceBuddy'
             summary='Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.'
             href='balancebuddy'
+            allignedLeft={true}
+          >
+            <PlanetDisplay_BalanceBuddy hoverable />
+          </MainPageSection>
+
+          {/* ********* lightup ********* */}
+          <MainPageSection
+            title='LightUp'
+            summary='An iOS app for brainstorming ideas; it displays random words and has the option to write ideas in "sticky notes".'
+            href='lightup'
             allignedLeft={true}
           >
             <PlanetDisplay_BalanceBuddy hoverable />

@@ -16,32 +16,23 @@ function Phobigone(props) {
     'https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/apps-planet.glb?v=1642024423999';
 
   return (
-    <motion.div
-      initial='initial'
-      animate='animate'
-      exit='exit'
-      className='Phobigone'
-    >
+    <div className='Phobigone'>
       <ScrollToTop>
         <Header stars>
-          <motion.div
-            initial={{ width: imageDetails.width, height: imageDetails.height }}
-            transition={transition}
-            className='icon'
-          >
+          <div className='icon'>
             <PlanetDisplay_Phobigone />
-          </motion.div>
+          </div>
 
-          <motion.div initial={{ opacity: 1 }}>
+          <div>
             <h2>Phobigone</h2>
             <h4>
               Below are some of the iOS apps I made with Swift, and VR projects
               made with Unity.
             </h4>
-          </motion.div>
+          </div>
         </Header>
 
-        <motion.div initial={{ opacity: 1 }}>
+        <div initial={{ opacity: 1 }}>
           <Content>
             {/* ********* phobigone ********* */}
             <p>
@@ -55,9 +46,9 @@ function Phobigone(props) {
               tenetur error, harum nesciunt ipsum debitis quas aliquid.
             </p>
           </Content>
-        </motion.div>
+        </div>
       </ScrollToTop>
-    </motion.div>
+    </div>
   );
 }
 

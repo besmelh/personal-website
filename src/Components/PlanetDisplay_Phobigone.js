@@ -7,14 +7,14 @@ import PlanetDisplay from './PlanetDisplay';
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
 function PlanetDisplay_Phobigone(props) {
+  const { hoverable } = props;
   return (
     <PlanetDisplay
-      image='https://www.transparentpng.com/thumb/cute/TZMwWi-cute-clipart-transparent.png'
       scene='https://prod.spline.design/EaVEPovGuLXxV1Bk/scene.splinecode'
+      placeholder='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/phobigone-placeholder.png?v=1678729607472'
+      href='phobigone'
+      hoverable={hoverable}
     />
-    // <div style={{ backgroundColor: 'pink' }}>
-    //   <Spline scene='https://prod.spline.design/EaVEPovGuLXxV1Bk/scene.splinecode' />
-    // </div>
   );
 }
 

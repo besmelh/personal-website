@@ -13,7 +13,6 @@ const height_clickable = height / 1.5;
 
 const OuterDiv = styled.div`
   position: relative;
-  /* background-color: red; */
   width: ${width}px;
   height: ${height}px;
   transition: all 0.2s ease-in-out;
@@ -21,7 +20,6 @@ const OuterDiv = styled.div`
   canvas {
     scale: ${scale};
     height: ${height}px;
-    /* background-color: green; */
   }
 
   .splineDiv {
@@ -36,7 +34,6 @@ const InnerDiv = styled.div`
   position: absolute;
   width: ${width}px;
   height: ${height}px;
-  /* background-color: pink; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,14 +60,13 @@ const LoadingOuterDiv = styled.div`
   }
 `;
 
-const ClickableZone = styled.div`
+const ClickableZone = styled.a`
   width: ${width_clickable}px;
   height: ${height_clickable}px;
-  /* background-color: darkGrey; */
 `;
 
 function PlanetDisplay(props) {
-  const { image, scene } = props;
+  const { image, scene, placeholder, href, hoverable } = props;
 
   const [isModelLoading, setModelLoading] = useState(true);
   const [hover, setHover] = useState();
@@ -104,28 +100,22 @@ function PlanetDisplay(props) {
         <InnerDiv>
           <FadeIn>
             <LoadingOuterDiv>
-              <img src={image} />
+              <img src={placeholder} />
               <p>Loading...</p>
             </LoadingOuterDiv>
           </FadeIn>
         </InnerDiv>
       )}
 
-      {/* <InnerDiv>
-        <FadeIn>
-          <LoadingOuterDiv>
-            <img src={image} />
-            <p>Loading...</p>
-          </LoadingOuterDiv>
-        </FadeIn>
-      </InnerDiv> */}
-
-      <InnerDiv>
-        <ClickableZone
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        />
-      </InnerDiv>
+      {hoverable && (
+        <InnerDiv>
+          <ClickableZone
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            href={href}
+          />
+        </InnerDiv>
+      )}
     </OuterDiv>
   );
 }

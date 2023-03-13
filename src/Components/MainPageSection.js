@@ -119,15 +119,11 @@ function MainPageSection(props) {
   };
 
   const model = (
-    <motion.div
-      whileHover={{ scale: 1.1 }}
-      transition={transition}
-      onClick={handleRoute}
-    >
+    <div>
       {Children.map(children, (child) => (
         <div>{child}</div>
       ))}
-    </motion.div>
+    </div>
   );
 
   return (

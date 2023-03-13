@@ -24,12 +24,7 @@ function Home() {
       // transition={{ duration: 1 }}
     >
       <ScrollToTop>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={transition}
-        >
+        <div>
           <StaryBackground />
 
           <Header topGradient stars>
@@ -51,38 +46,27 @@ function Home() {
               </MyButton>
             </div>
           </Header>
-        </motion.div>
+        </div>
 
         <Content noHomeButton>
-          {/* <motion.div
-          exit={{ opacity: 0 }}
-          whileHover={{ scale: 1.1 }}
-          transition={transition}
-        >
-          <Spline scene='https://prod.spline.design/96OBBqAkJjYL-Bz1/scene.splinecode' />
-        </motion.div> */}
-
           {/* ********* phobigone ********* */}
           <MainPageSection
             title='Phobigone'
-            summary="VR app to reduce people's fears."
-            skills='Unity, Software Development, UI/UX design, Blender'
+            summary='VR game application to help users overcome their phobias (fear of the dark, heights, small spaces).'
             href='phobigone'
             allignedLeft={true}
           >
-            <PlanetDisplay_Phobigone />
+            <PlanetDisplay_Phobigone hoverable />
           </MainPageSection>
 
           {/* ********* balancebuddy ********* */}
           <MainPageSection
             title='BalanceBuddy'
-            summary="VR app to reduce people's fears."
-            skills='Unity, Software Development, UI/UX design, Blender'
-            href='web-development'
-            src='https://prod.spline.design/Q7TUOjInZ3KxPOXL/scene.splinecode'
+            summary='Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.'
+            href='balancebuddy'
             allignedLeft={false}
           >
-            <PlanetDisplay_Phobigone />
+            <PlanetDisplay_Phobigone hoverable />
           </MainPageSection>
         </Content>
       </ScrollToTop>

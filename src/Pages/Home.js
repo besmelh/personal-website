@@ -12,6 +12,7 @@ import ScrollToTop from '../Components/ScrollToTop';
 import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
 import PlanetDisplay_BalanceBuddy from '../Components/PlanetDisplay_BalanceBuddy';
 import PlanetDisplay_BoppityBopLofi from '../Components/PlanetDisplay_BoppityBopLofi';
+import PlanetDisplay_LightUp from '../Components/PlanetDisplay_LightUp';
 
 function Home() {
   const transition = { duration: 0.5, type: 'spring' };
@@ -86,9 +87,9 @@ function Home() {
             title='LightUp'
             summary='An iOS app for brainstorming ideas; it displays random words and has the option to write ideas in "sticky notes".'
             href='lightup'
-            allignedLeft={true}
+            allignedLeft={false}
           >
-            <PlanetDisplay_BalanceBuddy hoverable />
+            <PlanetDisplay_LightUp hoverable />
           </MainPageSection>
         </Content>
       </ScrollToTop>

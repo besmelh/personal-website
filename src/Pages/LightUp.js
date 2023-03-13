@@ -2,9 +2,9 @@ import React from 'react';
 import Header from '../Components/Header';
 import Content from '../Components/Content';
 import ScrollToTop from '../Components/ScrollToTop';
-import PlanetDisplay_BoppityBopLofi from '../Components/PlanetDisplay_BoppityBopLofi';
+import PlanetDisplay_LightUp from '../Components/PlanetDisplay_LightUp';
 
-function BoppityBopLofi(props) {
+function LightUp(props) {
   const transition = { duration: 0.5, type: 'spring' };
 
   return (
@@ -12,11 +12,11 @@ function BoppityBopLofi(props) {
       <ScrollToTop>
         <Header stars>
           <div className='icon'>
-            <PlanetDisplay_BoppityBopLofi />
+            <PlanetDisplay_LightUp />
           </div>
 
           <div>
-            <h2>Boppity-Bop Lofi</h2>
+            <h2>LightUp</h2>
             <h4>
               Below are some of the iOS apps I made with Swift, and VR projects
               made with Unity.
@@ -26,7 +26,7 @@ function BoppityBopLofi(props) {
 
         <div>
           <Content>
-            {/* ********* lofi ********* */}
+            {/* ********* lightup ********* */}
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
               mollitia, molestiae quas vel sint commodi repudiandae consequuntur
@@ -44,4 +44,4 @@ function BoppityBopLofi(props) {
   );
 }
 
-export default BoppityBopLofi;
+export default LightUp;

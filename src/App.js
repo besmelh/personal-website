@@ -1,4 +1,10 @@
 import './App.css';
+import ScrollToTop from './Components/ScrollToTop';
+import { AnimatePresence } from 'framer-motion';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Footer from './Components/Footer';
+import '@google/model-viewer';
+
 import Home from './Pages/Home';
 import AboutMe from './Pages/AboutMe';
 import AppDevelopment from './Pages/AppDevelopment';
@@ -9,12 +15,7 @@ import Demo from './Pages/Demo';
 import Phobigone from './Pages/Phobigone';
 import BalanceBuddy from './Pages/BalanceBuddy';
 import BoppityBopLofi from './Pages/BoppityBopLofi';
-import ScrollToTop from './Components/ScrollToTop';
-import { AnimatePresence } from 'framer-motion';
-
-import { Routes, Route, useLocation } from 'react-router-dom';
-import Footer from './Components/Footer';
-import '@google/model-viewer';
+import LightUp from './Pages/LightUp';
 
 function App() {
   const location = useLocation();
@@ -34,6 +35,7 @@ function App() {
           <Route path='phobigone' element={<Phobigone />} />
           <Route path='balancebuddy' element={<BalanceBuddy />} />
           <Route path='boppity-bop-lofi' element={<BoppityBopLofi />} />
+          <Route path='lightup' element={<LightUp />} />
 
           {/* original pages */}
           <Route path='web-development' element={<WebDevelopment />} />

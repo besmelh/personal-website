@@ -7,6 +7,7 @@ import TutatainBakery from './Pages/TutatainBakery';
 import Animation from './Pages/Animation';
 import Demo from './Pages/Demo';
 import Phobigone from './Pages/Phobigone';
+import BalanceBuddy from './Pages/BalanceBuddy';
 import ScrollToTop from './Components/ScrollToTop';
 import { AnimatePresence } from 'framer-motion';
 
@@ -36,6 +37,7 @@ function App() {
             path='phobigone'
             element={<Phobigone imageDetails={imageDetails} />}
           />
+          <Route path='balancebuddy' element={<BalanceBuddy />} />
           <Route path='web-development' element={<WebDevelopment />} />
           <Route path='vr-mobile-apps' element={<AppDevelopment />} />
           <Route path='animation' element={<Animation />} />

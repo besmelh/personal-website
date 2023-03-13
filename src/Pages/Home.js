@@ -10,6 +10,7 @@ import Spline from '@splinetool/react-spline';
 import { motion } from 'framer-motion';
 import ScrollToTop from '../Components/ScrollToTop';
 import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
+import PlanetDisplay_BalanceBuddy from '../Components/PlanetDisplay_BalanceBuddy';
 
 function Home() {
   const transition = { duration: 0.5, type: 'spring' };
@@ -59,14 +60,24 @@ function Home() {
             <PlanetDisplay_Phobigone hoverable />
           </MainPageSection>
 
+          {/* ********* lofi ********* */}
+          <MainPageSection
+            title='Boppity-Bop Lofi'
+            summary='Audio visualizer website, with a relaxing window view (buildings, trees, clouds) that animates to Lo-fi music.'
+            href='boppity-bop-lofi'
+            allignedLeft={false}
+          >
+            <PlanetDisplay_BalanceBuddy hoverable />
+          </MainPageSection>
+
           {/* ********* balancebuddy ********* */}
           <MainPageSection
             title='BalanceBuddy'
             summary='Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.'
             href='balancebuddy'
-            allignedLeft={false}
+            allignedLeft={true}
           >
-            <PlanetDisplay_Phobigone hoverable />
+            <PlanetDisplay_BalanceBuddy hoverable />
           </MainPageSection>
         </Content>
       </ScrollToTop>

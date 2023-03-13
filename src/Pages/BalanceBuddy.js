@@ -6,9 +6,9 @@ import DevProjectSection from '../Components/DevProjectSection';
 import { motion } from 'framer-motion';
 import ScrollToTop from '../Components/ScrollToTop';
 import PlanetDisplay from '../Components/PlanetDisplay';
-import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
+import PlanetDisplay_BalanceBuddy from '../Components/PlanetDisplay_BalanceBuddy';
 
-function Phobigone(props) {
+function BalanceBuddy(props) {
   const transition = { duration: 0.5, type: 'spring' };
 
   const { imageDetails, ...other } = props;
@@ -20,11 +20,11 @@ function Phobigone(props) {
       <ScrollToTop>
         <Header stars>
           <div className='icon'>
-            <PlanetDisplay_Phobigone />
+            <PlanetDisplay_BalanceBuddy />
           </div>
 
           <div>
-            <h2>Phobigone</h2>
+            <h2>BalanceBuddy</h2>
             <h4>
               Below are some of the iOS apps I made with Swift, and VR projects
               made with Unity.
@@ -34,7 +34,7 @@ function Phobigone(props) {
 
         <div initial={{ opacity: 1 }}>
           <Content>
-            {/* ********* phobigone ********* */}
+            {/* ********* BalanceBuddy ********* */}
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
               mollitia, molestiae quas vel sint commodi repudiandae consequuntur
@@ -52,4 +52,4 @@ function Phobigone(props) {
   );
 }
 
-export default Phobigone;
+export default BalanceBuddy;

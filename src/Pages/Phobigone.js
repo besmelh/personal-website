@@ -9,7 +9,6 @@ import PlanetDisplay from '../Components/PlanetDisplay';
 import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
 import VideoPlayer from '../Components/VideoPlayer';
 import LeftRightContainer from '../Components/LeftRightContainer';
-import TwoElementDiv from '../Components/TwoElementDiv';
 import FramedDiv from '../Components/FramedDiv';
 import MyButton from '../Components/MyButton';
 import { Icon } from '@iconify/react';
@@ -42,7 +41,7 @@ function Phobigone(props) {
           <Content noHomeButton>
             {/* ********* phobigone ********* */}
             <LeftRightContainer>
-              <div className='container-small'>
+              <div className='container-xsmall'>
                 <p>
                   Phobigone is a VR app, that allows users to confront their
                   fears in a safe virtual environment. Users get to choose from
@@ -59,13 +58,13 @@ function Phobigone(props) {
                   the road, flying birds in the sky, and walking pedestrians on
                   the sidewalk.
                 </p>
-                <MyButton>
+                <MyButton href='https://sites.google.com/u.rochester.edu/phobigone-vr/home?authuser=0'>
                   {' '}
                   <Icon icon='gg:website' inline={true} />
                   Learn more
                 </MyButton>
               </div>
-              <div className='container-medium' style={{ height: '500px' }}>
+              <div className='container-large' style={{ height: '500px' }}>
                 <VideoPlayer url='https://www.youtube.com/watch?v=z7GhZehCUkI' />
               </div>
             </LeftRightContainer>

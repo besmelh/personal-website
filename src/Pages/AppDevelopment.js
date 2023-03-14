@@ -45,7 +45,7 @@ function AppDevelopment() {
         </div>
       </Header>
 
-      <Content>
+      <Content homeButton>
         {/* ********* phobigone ********* */}
         <DevProjectSection
           image='https://i.ibb.co/3W0dFxz/phobigone.png'

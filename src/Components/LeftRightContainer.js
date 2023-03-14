@@ -13,6 +13,11 @@ const StyledContainer = styled.div`
     width: 100%;
   }
 
+  & .container-xsmall {
+    width: 25%;
+    flex-direction: column;
+  }
+
   & .container-small {
     width: 35%;
     flex-direction: column;
@@ -20,6 +25,14 @@ const StyledContainer = styled.div`
 
   & .container-medium {
     width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  & .container-large {
+    width: 70%;
     position: relative;
     display: flex;
     justify-content: center;

@@ -1,30 +1,24 @@
-import React from "react";
+import React from 'react';
 import styled from 'styled-components';
 
-const StyledContainer = styled.div `
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-    background-color: var(--color-primary);
-    padding:2%;
+const StyledContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  background-color: var(--color-primary);
+  padding: 1%;
 
-    & .VideoPlayer{
-        height: 90%;
-        width: 90%;
-    }
-
+  & .VideoPlayer {
+    height: 90%;
+    width: 90%;
+  }
 `;
 
-
 function FramedDiv(props) {
-    const {children, ...other } = props;
+  const { children, ...other } = props;
 
-    return(
-        <StyledContainer {...other}>
-            {children}
-        </StyledContainer>
-    );
+  return <StyledContainer {...other}>{children}</StyledContainer>;
 }
 
 export default FramedDiv;

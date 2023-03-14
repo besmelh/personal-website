@@ -7,6 +7,12 @@ import { motion } from 'framer-motion';
 import ScrollToTop from '../Components/ScrollToTop';
 import PlanetDisplay from '../Components/PlanetDisplay';
 import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
+import VideoPlayer from '../Components/VideoPlayer';
+import LeftRightContainer from '../Components/LeftRightContainer';
+import TwoElementDiv from '../Components/TwoElementDiv';
+import FramedDiv from '../Components/FramedDiv';
+import MyButton from '../Components/MyButton';
+import { Icon } from '@iconify/react';
 
 function Phobigone(props) {
   const transition = { duration: 0.5, type: 'spring' };
@@ -26,25 +32,45 @@ function Phobigone(props) {
           <div>
             <h2>Phobigone</h2>
             <h4>
-              Below are some of the iOS apps I made with Swift, and VR projects
-              made with Unity.
+              VR game application to help users overcome their phobias (fear of
+              the dark, heights, small spaces). Developed in Unity for Oculus.
             </h4>
           </div>
         </Header>
 
         <div initial={{ opacity: 1 }}>
-          <Content>
+          <Content noHomeButton>
             {/* ********* phobigone ********* */}
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-              voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-              fugiat iusto fuga praesentium optio, eaque rerum! Provident
-              similique accusantium nemo autem. Veritatis obcaecati tenetur iure
-              eius earum ut molestias architecto voluptate aliquam nihil,
-              eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-              tenetur error, harum nesciunt ipsum debitis quas aliquid.
-            </p>
+            <LeftRightContainer>
+              <div className='container-small'>
+                <p>
+                  Phobigone is a VR app, that allows users to confront their
+                  fears in a safe virtual environment. Users get to choose from
+                  3 scenarios that test one's fear of the dark, heights, and
+                  tight spaces. In each scenario, the user must complete a task
+                  to overcome the fear with which they are confronted with.
+                </p>
+
+                <p>
+                  The main role I played in this group project was designing the
+                  fear of heights scene. The main cityscape and bridges that the
+                  user crosses were placed. As was as elements to make the
+                  secene more liveley and immersive, such as the moving cars on
+                  the road, flying birds in the sky, and walking pedestrians on
+                  the sidewalk.
+                </p>
+                <MyButton>
+                  {' '}
+                  <Icon icon='gg:website' inline={true} />
+                  Learn more
+                </MyButton>
+              </div>
+              <div className='container-medium' style={{ height: '500px' }}>
+                <VideoPlayer url='https://www.youtube.com/watch?v=z7GhZehCUkI' />
+              </div>
+            </LeftRightContainer>
+
+            {/* add screenshots of the heights scene */}
           </Content>
         </div>
       </ScrollToTop>

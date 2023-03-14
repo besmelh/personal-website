@@ -51,7 +51,10 @@ function BoppityBopLofi(props) {
                     <Icon icon='akar-icons:link-chain' inline={true} />
                     Visit Site
                   </MyButton>
-                  <MyButton style={{ marginTop: '0' }}>
+                  <MyButton
+                    style={{ marginTop: '0' }}
+                    href='https://boppity-bop-lofi.netlify.app/'
+                  >
                     <Icon icon='akar-icons:github-fill' inline={true} />
                     Source Code
                   </MyButton>

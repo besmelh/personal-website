@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Header from '../Components/Header';
 import Content from '../Components/Content';
 import Divider from '../Components/Divider';
@@ -12,6 +14,26 @@ import LeftRightContainer from '../Components/LeftRightContainer';
 import FramedDiv from '../Components/FramedDiv';
 import MyButton from '../Components/MyButton';
 import { Icon } from '@iconify/react';
+import HomeButton from '../Components/HomeButton';
+
+const ImageRow = styled.div`
+  display: flex;
+  justify-content: space-around;
+  gap: 3%;
+  text-align: center;
+
+  & img {
+    width: 100%;
+  }
+
+  & p {
+    margin-bottom: 0;
+  }
+`;
+
+const ImageCol = styled.div`
+  /* width: 30%; */
+`;
 
 function Phobigone(props) {
   const transition = { duration: 0.5, type: 'spring' };
@@ -23,7 +45,7 @@ function Phobigone(props) {
   return (
     <div>
       <ScrollToTop>
-        <Header stars>
+        <Header stars topGradient>
           <div className='icon'>
             <PlanetDisplay_Phobigone />
           </div>
@@ -38,36 +60,68 @@ function Phobigone(props) {
         </Header>
 
         <div initial={{ opacity: 1 }}>
-          <Content noHomeButton>
+          <Content homeButton>
             {/* ********* phobigone ********* */}
-            <LeftRightContainer>
-              <div className='container-xsmall'>
-                <p>
-                  Phobigone is a VR app, that allows users to confront their
-                  fears in a safe virtual environment. Users get to choose from
-                  3 scenarios that test one's fear of the dark, heights, and
-                  tight spaces. In each scenario, the user must complete a task
-                  to overcome the fear with which they are confronted with.
-                </p>
-
-                <p>
-                  The main role I played in this group project was designing the
-                  fear of heights scene. The main cityscape and bridges that the
-                  user crosses were placed. As was as elements to make the
-                  secene more liveley and immersive, such as the moving cars on
-                  the road, flying birds in the sky, and walking pedestrians on
-                  the sidewalk.
-                </p>
-                <MyButton href='https://sites.google.com/u.rochester.edu/phobigone-vr/home?authuser=0'>
-                  {' '}
-                  <Icon icon='gg:website' inline={true} />
-                  Learn more
-                </MyButton>
-              </div>
-              <div className='container-large' style={{ height: '500px' }}>
-                <VideoPlayer url='https://www.youtube.com/watch?v=z7GhZehCUkI' />
-              </div>
-            </LeftRightContainer>
+            <div>
+              <h1>About Phobigone</h1>
+              <p>
+                Phobigone is a VR app, that allows users to confront their fears
+                in a safe virtual environment. Users get to choose from 3
+                scenarios that test one's fear of the dark, heights, and tight
+                spaces. In each scenario, the user must complete a task to
+                overcome the fear with which they are confronted with.
+              </p>
+              <p style={{ marginBottom: '50px' }}>
+                The main role I played in this group project was designing the
+                fear of heights scene. The main cityscape and bridges that the
+                user crosses were placed. As was as elements to make the secene
+                more liveley and immersive, such as the moving cars on the road,
+                flying birds in the sky, and walking pedestrians on the
+                sidewalk.
+              </p>
+              <ImageRow>
+                <ImageCol>
+                  <FramedDiv>
+                    <img src='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/phobigone-dark.png?v=1678982363456' />
+                  </FramedDiv>
+                  <h3>Fear of the Dark</h3>
+                  <p>
+                    Find a light switch in a dark room using a flashlight with
+                    limited battery.
+                  </p>
+                </ImageCol>
+                <ImageCol>
+                  <FramedDiv>
+                    <img src='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/phobigone-heights.png?v=1678982362408' />
+                  </FramedDiv>
+                  <h3>Fear of the Heights</h3>
+                  <p>
+                    Cross over to a platform from the roof of a building using a
+                    wooden bridge.
+                  </p>
+                </ImageCol>
+                <ImageCol>
+                  <FramedDiv>
+                    <img src='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/phobigone-tight.png?v=1678982361714' />
+                  </FramedDiv>
+                  <h3>Fear of Tight Spaces</h3>
+                  <p>
+                    Continually press a button in the middle of a room to shrink
+                    the space.
+                  </p>
+                </ImageCol>
+              </ImageRow>
+            </div>
+            <Divider style={{ margin: '80px auto' }} />
+            <div>
+              <h1>Demo Video</h1>
+              <FramedDiv>
+                <VideoPlayer
+                  height='600px'
+                  url='https://www.youtube.com/watch?v=z7GhZehCUkI'
+                />
+              </FramedDiv>
+            </div>
 
             {/* add screenshots of the heights scene */}
           </Content>

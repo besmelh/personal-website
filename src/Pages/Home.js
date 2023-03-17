@@ -30,8 +30,8 @@ function Home() {
         <div>
           <StaryBackground />
 
-          <Header topGradient stars>
-            <div className='icon'>
+          <Header main={true} topGradient stars>
+            <div className='icon' style={{ width: '35%' }}>
               <img
                 src='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/astronaut2.png?v=1643078319594'
                 alt='astronaut-besmelh'
@@ -57,7 +57,7 @@ function Home() {
             title='Phobigone'
             summary='VR game application to help users overcome their phobias (fear of the dark, heights, small spaces).'
             href='phobigone'
-            allignedLeft={true}
+            allignedLeft={false}
           >
             <PlanetDisplay_Phobigone hoverable />
           </MainPageSection>
@@ -67,7 +67,7 @@ function Home() {
             title='Boppity-Bop Lofi'
             summary='Audio visualizer website, with a relaxing window view (buildings, trees, clouds) that animates to Lo-fi music.'
             href='boppity-bop-lofi'
-            allignedLeft={false}
+            allignedLeft={true}
           >
             <PlanetDisplay_BoppityBopLofi hoverable />
           </MainPageSection>
@@ -77,7 +77,7 @@ function Home() {
             title='BalanceBuddy'
             summary='Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.'
             href='balancebuddy'
-            allignedLeft={true}
+            allignedLeft={false}
           >
             <PlanetDisplay_BalanceBuddy hoverable />
           </MainPageSection>
@@ -87,7 +87,7 @@ function Home() {
             title='LightUp'
             summary='An iOS app for brainstorming ideas; it displays random words and has the option to write ideas in "sticky notes".'
             href='lightup'
-            allignedLeft={false}
+            allignedLeft={true}
           >
             <PlanetDisplay_LightUp hoverable />
           </MainPageSection>

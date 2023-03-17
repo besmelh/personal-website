@@ -1,9 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Header from '../Components/Header';
 import Content from '../Components/Content';
 import ScrollToTop from '../Components/ScrollToTop';
 import PlanetDisplay_LightUp from '../Components/PlanetDisplay_LightUp';
-import styled from 'styled-components';
 import Divider from '../Components/Divider';
 import LeftRightContainer from '../Components/LeftRightContainer';
 import VideoPlayer from '../Components/VideoPlayer';
@@ -23,7 +24,7 @@ function LightUp(props) {
   return (
     <div>
       <ScrollToTop>
-        <Header stars>
+        <Header stars topGradient>
           <div className='icon'>
             <PlanetDisplay_LightUp />
           </div>
@@ -38,7 +39,7 @@ function LightUp(props) {
         </Header>
         <Divider />
         <div>
-          <Content style={{ marginTop: '50px' }}>
+          <Content homeButton style={{ marginTop: '50px' }}>
             {/* ********* lightup ********* */}
             {/* <LeftRightContainer>
               <div className='container-small'>

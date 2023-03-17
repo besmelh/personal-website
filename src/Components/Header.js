@@ -46,6 +46,16 @@ const HeaderContainer = styled.div`
     display: hide;
   }
 
+  & .astronaut {
+    width: 40%;
+    padding-right: 5%;
+    height: 500px;
+    & img {
+      width: 100%;
+      animation: float 6s ease-in-out infinite;
+    }
+  }
+
   & .icon {
     width: 40%;
     padding-right: 5%;
@@ -59,6 +69,26 @@ const HeaderContainer = styled.div`
   & .homeText {
     width: 60%;
     margin-top: 15%;
+  }
+
+  & .main {
+    background-color: red;
+    flex-direction: row;
+  }
+
+  @media only screen and (max-width: 1040px) {
+    /* For everything smaller than 1040px */
+    /* flex-direction: column-reverse; */
+    margin-bottom: 5%;
+    & .icon {
+      width: 100%;
+      padding-right: 0;
+      height: 400px;
+      & img {
+        width: 100%;
+        animation: float 6s ease-in-out infinite;
+      }
+    }
   }
 `;
 
@@ -78,9 +108,36 @@ const GradientBG = styled.div`
 `;
 
 function Header(props) {
-  const { stars, topGradient, children, ...other } = props;
+  const { stars, topGradient, children, main, ...other } = props;
+
+  // handling smaller viewports
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 1040;
+  const modelDimension = '400px';
+
+  React.useEffect(() => {
+    const handleResizeWindow = () => setWidth(window.innerWidth);
+    // subscribe to window resize event "onComponentDidMount"
+    window.addEventListener('resize', handleResizeWindow);
+    return () => {
+      // unsubscribe "onComponentDestroy"
+      window.removeEventListener('resize', handleResizeWindow);
+    };
+  }, []);
+
+  const flexCol = {
+    flexDirection: 'column-reverse',
+  };
+  const flexRow = {
+    flexDirection: 'row',
+  };
+
   return (
-    <HeaderContainer style={props.style}>
+    <HeaderContainer
+      // style={main === false ? null : width <= breakpoint ? flexRow : null}
+      style={width > breakpoint ? null : main === true ? flexRow : flexCol}
+      {...other}
+    >
       {topGradient && <GradientBG />}
       {stars && <StaryBackground />}
       {children}

@@ -3,10 +3,8 @@ import styled from 'styled-components';
 
 const StyledSet = styled.div`
   display: flex;
-
-  & button {
-    margin-right: 15px;
-  }
+  gap: 5%;
+  width: 100%;
 `;
 
 function ButtonsSet(props) {

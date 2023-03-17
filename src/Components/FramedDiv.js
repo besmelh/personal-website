@@ -7,7 +7,7 @@ const StyledContainer = styled.div`
   justify-content: center;
   justify-content: space-between;
   background-color: var(--color-primary);
-  padding: 2%;
+  padding: 5px;
 
   & .VideoPlayer {
     height: 90%;

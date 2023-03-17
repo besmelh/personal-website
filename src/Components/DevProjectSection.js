@@ -4,15 +4,7 @@ import VideoPlayer from './VideoPlayer';
 import IconAndTitle from './IconAndTitle';
 import MyButton from './MyButton';
 import { Icon } from '@iconify/react';
-import styled from 'styled-components';
-
-const ButtonsSet = styled.div`
-  display: flex;
-
-  & button {
-    margin-right: 15px;
-  }
-`;
+import ButtonsSet from './ButtonsSet';
 
 function DevProjectSection(props) {
   const {

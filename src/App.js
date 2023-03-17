@@ -1,4 +1,10 @@
 import './App.css';
+import ScrollToTop from './Components/ScrollToTop';
+import { AnimatePresence } from 'framer-motion';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Footer from './Components/Footer';
+import '@google/model-viewer';
+
 import Home from './Pages/Home';
 import AboutMe from './Pages/AboutMe';
 import AppDevelopment from './Pages/AppDevelopment';
@@ -6,34 +12,41 @@ import WebDevelopment from './Pages/WebDevelopment';
 import TutatainBakery from './Pages/TutatainBakery';
 import Animation from './Pages/Animation';
 import Demo from './Pages/Demo';
-import ScrollToTop from './Components/ScrollToTop';
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Footer from './Components/Footer';
-import '@google/model-viewer';
+import Phobigone from './Pages/Phobigone';
+import BalanceBuddy from './Pages/BalanceBuddy';
+import BoppityBopLofi from './Pages/BoppityBopLofi';
+import LightUp from './Pages/LightUp';
 
 function App() {
-  // const AboutMe = lazy(() => import('./Pages/AboutMe'));
-  // const AppDevelopment = lazy(() => import('./Pages/AppDevelopment'));
-  // const WebDevelopment = lazy(() => import('./Pages/WebDevelopment'));
-  // const TutatainBakery = lazy(() => import('./Pages/TutatainBakery'));
-  // const Animation = lazy(() => import('./Pages/Animation'));
+  const location = useLocation();
 
   return (
     <div className='App'>
-      <BrowserRouter>
-        <ScrollToTop>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='about-me' element={<AboutMe />} />
-            <Route path='web-development' element={<WebDevelopment />} />
-            <Route path='vr-mobile-apps' element={<AppDevelopment />} />
-            <Route path='animation' element={<Animation />} />
-            <Route path='tutatain-bakery' element={<TutatainBakery />} />
-            <Route path='demo' element={<Demo />} />
-          </Routes>
-        </ScrollToTop>
-      </BrowserRouter>
+      {/* <BrowserRouter> */}
+      {/* <ScrollToTop> */}
+      <AnimatePresence
+        mode='wait'
+        // initial={false}
+      >
+        <Routes key={location.pathname} location={location}>
+          <Route path='/' element={<Home />} />
+          <Route path='about-me' element={<AboutMe />} />
+          {/* projects */}
+          <Route path='phobigone' element={<Phobigone />} />
+          <Route path='balancebuddy' element={<BalanceBuddy />} />
+          <Route path='boppity-bop-lofi' element={<BoppityBopLofi />} />
+          <Route path='lightup' element={<LightUp />} />
+
+          {/* original pages */}
+          <Route path='web-development' element={<WebDevelopment />} />
+          <Route path='vr-mobile-apps' element={<AppDevelopment />} />
+          <Route path='animation' element={<Animation />} />
+          <Route path='tutatain-bakery' element={<TutatainBakery />} />
+          <Route path='demo' element={<Demo />} />
+        </Routes>
+      </AnimatePresence>
+      {/* </ScrollToTop> */}
+      {/* </BrowserRouter> */}
       <Footer />
     </div>
   );

@@ -4,57 +4,96 @@ import MainPageSection from '../Components/MainPageSection';
 import data from './data.json';
 import StaryBackground from '../Components/StaryBackground';
 import MyButton from '../Components/MyButton';
+import SplineObject from '../Components/SplineObject';
+import { Canvas } from '@react-three/fiber';
+import Spline from '@splinetool/react-spline';
+import { motion } from 'framer-motion';
+import ScrollToTop from '../Components/ScrollToTop';
+import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
+import PlanetDisplay_BalanceBuddy from '../Components/PlanetDisplay_BalanceBuddy';
+import PlanetDisplay_BoppityBopLofi from '../Components/PlanetDisplay_BoppityBopLofi';
+import PlanetDisplay_LightUp from '../Components/PlanetDisplay_LightUp';
 
 function Home() {
-  let pageSections = [];
-  let isAllignedLeft = false;
-
-  for (var i = 0; i < data.length; i++) {
-    pageSections.push(
-      <MainPageSection
-        title={data[i].title}
-        duration={data[i].duration}
-        summary={data[i].summary}
-        skills={data[i].skills}
-        href={data[i].href}
-        src={data[i].src}
-        ios-src=''
-        poster={data[i].poster}
-        alt={data[i].alt}
-        allignedLeft={isAllignedLeft}
-      />
-    );
-
-    isAllignedLeft = !isAllignedLeft;
-  }
+  const transition = { duration: 0.5, type: 'spring' };
 
   return (
-    <div
+    <motion.div
       className='Home'
       style={{ position: 'relative', width: '100%', height: '100%' }}
+      //   initial={{ opacity: 0 }}
+      //   animate={{ opacity: 1 }}
+      //   exit={{ opacity: 0 }}
+      // transition={{ duration: 1 }}
     >
-      <StaryBackground />
-      <Header>
-        <div className='icon'>
-          <img
-            src='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/astronaut2.png?v=1643078319594'
-            alt='astronaut-besmelh'
-          />
-        </div>
-        <div className='homeText'>
-          <h1>Hello, I'm Besmelh Alshaalan</h1>
-          <h3>
-            This is my space to showcase some of my favorite projects. Where I
-            integrate Software Development with arts and visuals.
-          </h3>
-          <MyButton redirect href='/about-me' style={{ marginTop: '20px' }}>
-            More about me...
-          </MyButton>
-        </div>
-      </Header>
+      <ScrollToTop>
+        <div>
+          <StaryBackground />
 
-      <Content noHomeButton>{pageSections}</Content>
-    </div>
+          <Header main={true} topGradient stars>
+            <div className='icon' style={{ width: '35%' }}>
+              <img
+                src='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/astronaut2.png?v=1643078319594'
+                alt='astronaut-besmelh'
+              />
+            </div>
+            <div className='homeText'>
+              <h1>Hello, I'm Besmelh Alshaalan</h1>
+              <h3>
+                This is my space to showcase some of my favorite projects. Where
+                I integrate Software Development with arts and visuals.
+              </h3>
+
+              <MyButton redirect href='/about-me' style={{ marginTop: '20px' }}>
+                More about me...
+              </MyButton>
+            </div>
+          </Header>
+        </div>
+
+        <Content noHomeButton>
+          {/* ********* phobigone ********* */}
+          <MainPageSection
+            title='Phobigone'
+            summary='VR game application to help users overcome their phobias (fear of the dark, heights, small spaces).'
+            href='phobigone'
+            allignedLeft={false}
+          >
+            <PlanetDisplay_Phobigone hoverable />
+          </MainPageSection>
+
+          {/* ********* lofi ********* */}
+          <MainPageSection
+            title='Boppity-Bop Lofi'
+            summary='Audio visualizer website, with a relaxing window view (buildings, trees, clouds) that animates to Lo-fi music.'
+            href='boppity-bop-lofi'
+            allignedLeft={true}
+          >
+            <PlanetDisplay_BoppityBopLofi hoverable />
+          </MainPageSection>
+
+          {/* ********* balancebuddy ********* */}
+          <MainPageSection
+            title='BalanceBuddy'
+            summary='Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.'
+            href='balancebuddy'
+            allignedLeft={false}
+          >
+            <PlanetDisplay_BalanceBuddy hoverable />
+          </MainPageSection>
+
+          {/* ********* lightup ********* */}
+          <MainPageSection
+            title='LightUp'
+            summary='An iOS app for brainstorming ideas; it displays random words and has the option to write ideas in "sticky notes".'
+            href='lightup'
+            allignedLeft={true}
+          >
+            <PlanetDisplay_LightUp hoverable />
+          </MainPageSection>
+        </Content>
+      </ScrollToTop>
+    </motion.div>
   );
 }
 

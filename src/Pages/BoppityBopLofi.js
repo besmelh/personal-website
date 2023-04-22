@@ -28,11 +28,11 @@ function BoppityBopLofi(props) {
               trees, clouds) that animates to Lo-fi music.
             </h4>
             <ButtonsSet style={{ margin: '4% 0' }}>
-              <MyButton>
+              <MyButton href='https://boppity-bop-lofi.netlify.app/'>
                 <Icon icon='akar-icons:link-chain' inline={true} />
                 Visit Site
               </MyButton>
-              <MyButton href='https://boppity-bop-lofi.netlify.app/'>
+              <MyButton href='https://github.com/besmelh/realtime-lofi'>
                 <Icon icon='akar-icons:github-fill' inline={true} />
                 Source Code
               </MyButton>

@@ -10,7 +10,7 @@ function PlanetDisplay_Phobigone(props) {
   const { hoverable } = props;
   return (
     <PlanetDisplay
-      scene='https://prod.spline.design/EaVEPovGuLXxV1Bk/scene.splinecode'
+      scene='https://prod.spline.design/jtFbzUMJ3jx1Q6Nb/scene.splinecode'
       placeholder='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/phobigone-placeholder.png?v=1678729607472'
       href='phobigone'
       hoverable={hoverable}

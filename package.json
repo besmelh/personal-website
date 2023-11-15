@@ -17,7 +17,7 @@
     "@splinetool/loader": "^0.9.256",
     "@splinetool/r3f-spline": "^1.0.2",
     "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^0.9.260",
+    "@splinetool/runtime": "^0.9.497",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",

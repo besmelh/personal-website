@@ -80,7 +80,7 @@ const rightContainer = {
 const rightContainerText = {
   top: '0',
   left: '150px',
-  paddingRight: '150px',
+  paddingRight: '230px',
   background:
     'linear-gradient(90deg, rgba(17, 22, 41, 0.6) 0%, rgba(32, 40, 71, 0) 100%)',
 };
@@ -88,7 +88,7 @@ const rightContainerText = {
 const leftContainerText = {
   top: '0',
   left: '-150px',
-  paddingLeft: '150px',
+  paddingLeft: '230px',
   background:
     'linear-gradient(270deg, rgba(17, 22, 41, 0.6) 0%, rgba(32, 40, 71, 0) 100%)',
 };

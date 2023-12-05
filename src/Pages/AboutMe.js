@@ -37,12 +37,11 @@ function AboutMe() {
 
           <div className='container-medium'>
             <p>
-              Hello, I'm Besmelh (Bas-mal-ah) Alshaalan! I’m a senior at the
-              University of Rochester, pursuing a B.S. in Computer Science, and
-              a minor in Digital Media Studies. I am especially interested in
-              areas that allow me to utilize my creativity through computer
-              programming and visuals like Web and App Development. And I'm
-              currently learning more about Computer Graphics.
+              Hello, I'm Besmelh (Bas-mal-ah) Alshaalan!I am especially
+              interested in areas that allow me to utilize my creativity through
+              computer programming and visuals like video game, AI/VR, Web, and
+              App Development. And I'm currently learning more about Computer
+              Graphics.
             </p>
 
             <ButtonsList>

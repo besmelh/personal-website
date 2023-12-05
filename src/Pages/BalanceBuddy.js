@@ -110,7 +110,7 @@ function BalanceBuddy(props) {
               <FramedDiv>
                 <VideoPlayer
                   height='600px'
-                  url='https://www.youtube.com/watch?v=z7GhZehCUkI'
+                  url='https://youtu.be/xZ66I4_RNAo'
                 />
               </FramedDiv>
             </div>

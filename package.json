@@ -2,7 +2,7 @@
   "name": "personal-website",
   "version": "0.1.0",
   "engines": {
-    "node": "16.13.2",
+    "node": "18.x",
     "yarn": "1.22.17"
   },
   "private": true,

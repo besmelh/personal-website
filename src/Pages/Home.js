@@ -13,9 +13,20 @@ import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
 import PlanetDisplay_BalanceBuddy from '../Components/PlanetDisplay_BalanceBuddy';
 import PlanetDisplay_BoppityBopLofi from '../Components/PlanetDisplay_BoppityBopLofi';
 import PlanetDisplay_LightUp from '../Components/PlanetDisplay_LightUp';
+import { Icon } from '@iconify/react';
 
 function Home() {
   const transition = { duration: 0.5, type: 'spring' };
+
+  const ButtonsList = styled.div`
+  display: flex;
+
+  & button {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+  }
+`;
 
   return (
     <motion.div
@@ -44,9 +55,25 @@ function Home() {
                 I integrate Software Development with arts and visuals.
               </h3>
 
-              <MyButton redirect href='/about-me' style={{ marginTop: '20px' }}>
-                More about me...
-              </MyButton>
+              // <MyButton redirect href='/about-me' style={{ marginTop: '20px' }}>
+              //   More about me...
+              // </MyButton>
+              <ButtonsList>
+                <MyButton href='https://www.linkedin.com/in/besmelh-alshaalan/'>
+                  <Icon icon='entypo-social:linkedin-with-circle' />
+                  LinkedIn
+                </MyButton>
+
+                <MyButton href='https://github.com/besmelh/'>
+                  <Icon icon='octicon:mark-github-16' />
+                  Github
+                </MyButton>
+  
+                <MyButton href='mailto:besmelh.alshaalan@gmail.com'>
+                  <Icon icon='clarity:email-solid' />
+                  E-mail
+                </MyButton>
+              </ButtonsList>
             </div>
           </Header>
         </div>

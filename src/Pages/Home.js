@@ -56,9 +56,6 @@ function Home() {
                 I integrate Software Development with arts and visuals.
               </h3>
 
-              // <MyButton redirect href='/about-me' style={{ marginTop: '20px' }}>
-              //   More about me...
-              // </MyButton>
               <ButtonsList>
                 <MyButton href='https://www.linkedin.com/in/besmelh-alshaalan/'>
                   <Icon icon='entypo-social:linkedin-with-circle' />

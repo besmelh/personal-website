@@ -19,13 +19,25 @@ import { Icon } from '@iconify/react';
 function Home() {
   const transition = { duration: 0.5, type: 'spring' };
 
-  const ButtonsList = styled.div`
+const ButtonsList = styled.div`
   display: flex;
+  margin-top: 20px; /* adds padding/space above the button list */
 
   & button {
     margin-right: 15px;
     display: flex;
     align-items: center;
+  }
+
+  /* mobile view: stack vertically */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    & button {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
   }
 `;
 

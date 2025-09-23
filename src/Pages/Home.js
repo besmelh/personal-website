@@ -13,6 +13,7 @@ import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
 import PlanetDisplay_BalanceBuddy from '../Components/PlanetDisplay_BalanceBuddy';
 import PlanetDisplay_BoppityBopLofi from '../Components/PlanetDisplay_BoppityBopLofi';
 import PlanetDisplay_LightUp from '../Components/PlanetDisplay_LightUp';
+import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 
 function Home() {

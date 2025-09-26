@@ -99,24 +99,24 @@ const ButtonsList = styled.div`
             <PlanetDisplay_Phobigone hoverable />
           </MainPageSection>
 
-          {/* ********* lofi ********* */}
-          <MainPageSection
-            title='Boppity-Bop Lofi'
-            summary='Audio visualizer website, with a relaxing window view (buildings, trees, clouds) that animates to Lo-fi music.'
-            href='boppity-bop-lofi'
-            allignedLeft={true}
-          >
-            <PlanetDisplay_BoppityBopLofi hoverable />
-          </MainPageSection>
-
           {/* ********* balancebuddy ********* */}
           <MainPageSection
             title='BalanceBuddy'
             summary='Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.'
             href='balancebuddy'
-            allignedLeft={false}
+            allignedLeft={true}
           >
             <PlanetDisplay_BalanceBuddy hoverable />
+          </MainPageSection>
+
+          {/* ********* lofi ********* */}
+          <MainPageSection
+            title='Boppity-Bop Lofi'
+            summary='Audio visualizer website, with a relaxing window view (buildings, trees, clouds) that animates to Lo-fi music.'
+            href='boppity-bop-lofi'
+            allignedLeft={false}
+          >
+            <PlanetDisplay_BoppityBopLofi hoverable />
           </MainPageSection>
 
           {/* ********* lightup ********* */}

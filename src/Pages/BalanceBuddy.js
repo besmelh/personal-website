@@ -72,8 +72,11 @@ const Row = styled.div`
 const Figure = styled.figure`
   margin: 0;
   position: relative;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
   & img { width: 100%; border-radius: 12px; display: block; }
-  & figcaption { font-size: 0.92rem; opacity: 0.85; margin-top: 8px; line-height: 1.35; }
+  & figcaption { font-size: 0.92rem; opacity: 0.85; margin-top: 8px; line-height: 1.35; width: 80%;}
 `;
 
 /* Caption overlay for carousels (more readable, per your request) */
@@ -351,13 +354,13 @@ function BalanceBuddy() {
               <PersonaFrame>
                 <Zoomable src={img_path + "/persona_1.png" } alt="Persona — Bobby" />
               </PersonaFrame>
-              <figcaption>“Bobby”: busy and forgetful…</figcaption>
+              <figcaption>“Bobby”: busy, forgetful; wants consistency and better application quality.</figcaption>
             </Figure>
             <Figure>
               <PersonaFrame>
                 <Zoomable src={img_path + "/persona_2.png" } alt="Persona — Tern" />
               </PersonaFrame>
-              <figcaption>“Tern”: international student…</figcaption>
+              <figcaption>“Tern”: international student; needs clarity on process and practice.</figcaption>
             </Figure>
           </Row>
           </Section>

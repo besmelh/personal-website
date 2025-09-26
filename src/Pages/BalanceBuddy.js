@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 import Header from '../Components/Header';
 import Content from '../Components/Content';
 import Divider from '../Components/Divider';
@@ -9,50 +9,171 @@ import ButtonsSet from '../Components/ButtonsSet';
 import MyButton from '../Components/MyButton';
 import VideoPlayer from '../Components/VideoPlayer';
 import { Icon } from '@iconify/react';
-// NEW (already in your deps): lightweight carousel for your research artifacts
 import Carousel from 'react-elastic-carousel';
 
-const placeholderImg = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"
-const img_path = "/images/balancebuddy/"
-const TwoCol = styled.div`
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 32px;
+const img_path = "/images/balancebuddy/";
+
+/* ---------- GLOBAL TWEAKS (carousel + spacing) ---------- */
+const Global = createGlobalStyle`
+  /* Softer carousel theme (override react-elastic-carousel defaults) */
+  .rec.rec-arrow, .rec.rec-dot {
+    box-shadow: none !important;
+  }
+  .rec.rec-arrow {
+    background: rgba(255,255,255,0.08) !important;
+    color: #fff !important;
+  }
+  .rec.rec-arrow:hover:enabled {
+    background: rgba(255,255,255,0.16) !important;
+  }
+  .rec.rec-dot {
+    background: rgba(255,255,255,0.25) !important;
+  }
+  .rec.rec-dot_active {
+    background: rgba(255,255,255,0.7) !important;
+  }
+
+  /* Mildly larger default spacing inside Content */
+  section.case-section { padding: 24px 0; }
+  @media (max-width: 900px){ section.case-section { padding: 18px 0; } }
+`;
+
+const Section = ({ title, subtitle, children }) => (
+  <section className="case-section">
+    <TitleRow>
+      <h1 style={{marginBottom:'0'}}>{title}</h1>
+      {subtitle && <SubTitle >{subtitle}</SubTitle>}
+    </TitleRow>
+    {children}
+  </section>
+);
+
+/* ---------- LAYOUT ---------- */
+const TitleRow = styled.div`
+  margin-bottom: 8px;
+`;
+const SubTitle = styled.p`
+  margin: 0 0 40px 0;
+  /* margin-bottom: 20px; */
+  font-size: 1.06rem;
+  font-weight: 800;
+  opacity: 0.7;
+  letter-spacing: .15px;
+`;
+
+const Row = styled.div`
+  display: flex;
   align-items: start;
-  margin-top: 10px;
-  @media (max-width: 900px) { grid-template-columns: 1fr; }
+  margin-top: 8px;
+  justify-content: space-around;
+  @media (max-width: 900px){ grid-template-columns: 1fr; gap: 16px; }
 `;
 
 const Figure = styled.figure`
   margin: 0;
-  opacity: 0.98;
-  & img { width: 100%; border-radius: 12px; }
-  & figcaption { font-size: 0.95rem; opacity: 0.8; margin-top: 6px; line-height: 1.35; }
+  position: relative;
+  & img { width: 100%; border-radius: 12px; display: block; }
+  & figcaption { font-size: 0.92rem; opacity: 0.85; margin-top: 8px; line-height: 1.35; }
 `;
 
-const Strip = styled.div`
+/* Caption overlay for carousels (more readable, per your request) */
+const CapOverlay = styled.div`
+  position: absolute; left: 10px; bottom: 10px;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(3px);
+  padding: 6px 10px; border-radius: 8px; font-size: 0.9rem;
+`;
+
+/* Equal persona sizing (consistent aspect ratio) */
+const PersonaFrame = styled.div`
+  width: 100%;
+  max-width: 420px;          /*keeps them reasonable */
+  margin: 0 auto;            /* center the block */
+  border-radius: 12px;
+  padding: 8px;
+  background: rgba(255,255,255,0.04);
+  display: flex; justify-content: center; align-items: center;
+  & img { max-width: 100%; max-height: 100%; object-fit: contain; }
+`;
+
+/* Insights table */
+const InsightsTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 0.98rem;
+  th, td { border: 1px solid rgba(255,255,255,0.15); padding: 12px; vertical-align: top; }
+  th { text-align: left; background: rgba(255,255,255,0.04); }
+`;
+
+/* Use Case → Flow → Prototype row with arrows */
+const Trio = styled.div`
   display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
   gap: 16px;
+  align-items: center;
+  margin-top: 10px;
+  @media (max-width: 900px){
+    grid-template-columns: 1fr;
+    & .arrow { display: none; }
+  }
+`;
+const Arrow = styled.div`
+  font-size: 28px; opacity: 0.6; padding: 0 6px;
 `;
 
-const Caption = styled.p`
-  margin-top: 8px;
-  opacity: 0.9;
+/* --- Zoomable image + lightbox --- */
+const ClickableImg = styled.img`
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  cursor: zoom-in;
+  transition: transform .15s ease;
+  &:hover { transform: scale(1.01); }
 `;
 
-const Kicker = styled.h3`
-  margin: 0 0 8px 0;
-  opacity: 0.9;
-  font-weight: 600;
+const LightboxOverlay = styled.div`
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.8);
+  display: grid; place-items: center;
+  padding: 24px;
 `;
 
-const Hint = styled.p`
-  margin-top: 8px;
-  font-size: 0.9rem;
-  opacity: 0.75;
+const LightboxImg = styled.img`
+  max-width: 92vw; max-height: 92vh; border-radius: 12px;
 `;
 
-// Carousel breakpoint config (nice defaults)
+function Zoomable({ src, alt, caption }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <>
+      <ClickableImg src={src} alt={alt} onClick={() => setOpen(true)} />
+      {caption && <figcaption>{caption}</figcaption>}
+      {open && (
+        <LightboxOverlay onClick={() => setOpen(false)}>
+          <LightboxImg src={src} alt={alt} />
+        </LightboxOverlay>
+      )}
+    </>
+  );
+}
+
+/* 16:9 static box that scales down on small screens, same for both */
+const MediaBox = styled.div`
+  width: 800px;
+  height: 450px;         /* 16:9 */
+  max-width: 100%;
+  max-height: 56.25vw;   /* keep 16:9 if screen is narrow */
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0 auto;        /* center block */
+  background: rgba(255,255,255,0.04);
+`;
+
+/* General text helpers */
+const Kicker = styled.h3` margin: 20px 0; `;
+const Hint = styled.p` margin-top: 6px; font-size: 0.9rem; opacity: 0.75; `;
+
 const breakpoints = [
   { width: 1, itemsToShow: 1 },
   { width: 850, itemsToShow: 2 },
@@ -61,321 +182,335 @@ const breakpoints = [
 function BalanceBuddy() {
   return (
     <div>
+      <Global />
       <ScrollToTop>
         <Header stars topGradient>
-          <div className='icon'>
-            <PlanetDisplay_BalanceBuddy />
-          </div>
-
+          <div className="icon"><PlanetDisplay_BalanceBuddy /></div>
           <div>
             <h2>BalanceBuddy</h2>
             <h4>
-              A gentle coach for students balancing the internship hunt with classes — small, timely tasks,
-              clear next steps, and a browser extension that nudges without nagging.
+            Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.
             </h4>
-
             <p>
-              Teammates:{' '}
-              <a href='https://www.fionaau.net/' target='_blank' rel='noreferrer' style={{ textDecoration:'underline' }}>Fiona Au</a>{' '}
-              &{' '}
-              <a href='https://www.tasheembrown.com/' target='_blank' rel='noreferrer' style={{ textDecoration:'underline' }}>Tasheem Brown</a>
+              Teammates:{" "}
+              <a href="https://www.fionaau.net/" target="_blank" rel="noreferrer" style={{ textDecoration:'underline' }}>Fiona Au</a>{" "}
+              &{" "}
+              <a href="https://www.tasheembrown.com/" target="_blank" rel="noreferrer" style={{ textDecoration:'underline' }}>Tasheem Brown</a>
             </p>
 
-            <ButtonsSet style={{ margin: '4% 0' }}>
-              <MyButton href='https://www.figma.com/proto/qzyKR4nYhvoto2GAvLiiOr/BalanceBuddy-High-Fidelity?page-id=0%3A1&node-id=2%3A350&viewport=481%2C246%2C0.02&scaling=min-zoom&starting-point-node-id=2%3A350'>
-                <Icon icon='bxl:figma' inline /> Open Prototype
+            {/* 4) Video & prototype link at the TOP */}
+            <ButtonsSet style={{ margin: '20px 0 14px' }}>
+              <MyButton href="https://www.figma.com/proto/qzyKR4nYhvoto2GAvLiiOr/BalanceBuddy-High-Fidelity?page-id=0%3A1&node-id=2%3A350&viewport=481%2C246%2C0.02&scaling=min-zoom&starting-point-node-id=2%3A350">
+                <Icon icon="bxl:figma" inline /> Open Prototype
               </MyButton>
-              <MyButton href='https://github.com/BalanceBuddy/balancebuddy' style={{ marginTop: 0 }}>
-                <Icon icon='akar-icons:github-fill' inline /> Source Code
+              <MyButton href="https://youtu.be/xZ66I4_RNAo" style={{ marginTop: 0 }}>
+                <Icon icon="mdi:video-outline" inline /> Demo Video
               </MyButton>
-              <MyButton href='https://youtu.be/xZ66I4_RNAo' style={{ marginTop: 0 }}>
-                <Icon icon='mdi:video-outline' inline /> Demo Video
+              <MyButton href="https://github.com/BalanceBuddy/balancebuddy" style={{ marginTop: 0 }}>
+                <Icon icon="akar-icons:github-fill" inline /> Source Code
               </MyButton>
             </ButtonsSet>
+            {/* <VideoPlayer height="380px" url="https://youtu.be/xZ66I4_RNAo" /> */}
           </div>
         </Header>
 
         <Content homeButton>
-          {/* OVERVIEW */}
-          <h1>Overview: What we set out to solve</h1>
-          <TwoCol>
-            <div>
+          {/* 3) Shorter title + subtitle */}
+          <Section title="Overview" subtitle="What we set out to solve">
+            {/* <Row> */}
+              <div style={{marginBottom: "50px"}}>
+              <>
               <p>
-                We kept meeting the same pattern: students wanted internships, but the process competed with coursework.
-                Trackers helped them list applications, yet they didn’t offer direction or momentum.
-                BalanceBuddy was our answer — a daily rhythm of small, well-timed tasks with resources attached,
-                a roadmap that makes progress visible, and a light touch that fits the ebb and flow of a semester.
+                <b>BalanceBuddy</b> is a web app and browser extension that helps college students balance their
+                schoolwork with the internship search process.
               </p>
-
-              <Kicker>My role</Kicker>
               <p>
-                I co-led the research and design, then built the back-end and data models. I connected the Chrome extension
-                and website so progress stayed in sync, and produced the demo.
+                Students receive daily notifications through the browser extension, each containing a small task
+                related to their applications. These tasks prevent procrastination and keep progress manageable.
               </p>
+              <p>
+                Each student also has a profile dashboard. The dashboard shows the current task, a roadmap of
+                completed and upcoming tasks, and a motivational gallery personalized with images the student
+                chooses. The dashboard and extension pop-up remain <b>in sync</b>, so progress is always updated across both.
+              </p>
+            </>
 
-              <Kicker>Timeline</Kicker>
-              <p>Semester project (Jan–May). Team of three.</p>
-            </div>
-
-            {/* IMAGE SLOT — Hi-fi overview composite */}
-            <Figure>
-              {/* Replace src with a wide composite of hi-fi dashboard + extension */}
-              <img src={img_path + "final_screenshots.png"} alt='BalanceBuddy hi-fi overview' />
-              <figcaption>Screenshots of the Hi-fi dashboard and extension tabs.</figcaption>
-            </Figure>
-          </TwoCol>
+                <Kicker>My role</Kicker>
+                <p>I co-led research and design, built the back-end and data models, connected the Chrome extension and website, and produced the demo.</p>
+                <Kicker>Timeline</Kicker>
+                <p>Semester project (Jan–May). Team of three.</p>
+              </div>
+              <Figure>
+                <Zoomable src={img_path + "final_screenshots.png"} alt="Hi-fi overview" />
+                <figcaption>High-fidelity dashboard and extension design.</figcaption>
+              </Figure>
+            {/* </Row> */}
+          </Section>
 
           <Divider />
 
-          {/* PROBLEM + LIMITATIONS */}
-          <h1>Problem & Market Gap: Why existing tools weren’t enough</h1>
-          <p>
-            Students didn’t just need a place to log applications — they needed help deciding what to do next, when to do it,
-            and how to stay motivated. Products like Huntr keep track of applications, but they don’t guide users toward getting
-            internships. Calendar tools are great for reminders, but they rely on manual setup and don’t curate tasks around
-            students’ changing workload. BalanceBuddy bridges that gap with guidance, timing, and gentle motivation.
-          </p>
-
-          <Divider />
-
-          {/* TARGET USERS */}
-          <h1>Target Users: Who we designed for</h1>
-          <p>
-            We focused on undergraduates actively looking for internships during the semester. They vary in experience,
-            schedules change week to week, and motivation rises and falls. The design needed to adapt to all three.
-          </p>
-
-          <Divider />
-
-          {/* RESEARCH */}
-          <h1>Affinity Mapping: What students told us</h1>
-          <p>
-            We interviewed internship-seeking students and clustered their pain points and needs.
-            Three patterns stood out: they wanted guidance beyond tracking, they needed schedules to flex with coursework,
-            and their motivation was personal and easily affected by tone and timing.
-          </p>
-
-          {/* Carousel — 3 Affinity diagrams */}
-          <Strip>
-            <Carousel breakPoints={breakpoints} itemPadding={[0, 10]}>
-              {/* Replace src with your three affinity exports */}
-              <Figure>
-                <img src={img_path + "affinity_diagram_1.png"} alt='Affinity map 1' />
-                <figcaption>Affinity clusters — confusion points across the application journey.</figcaption>
-              </Figure>
-              <Figure>
-                <img src={img_path + "affinity_diagram_2.png"} alt='Affinity map 2' />
-                <figcaption>Signals for guidance and “what’s next”.</figcaption>
-              </Figure>
-              <Figure>
-                <img src={img_path + "affinity_diagram_3.png"} alt='Affinity map 3' />
-                <figcaption>Motivation patterns and tone sensitivity.</figcaption>
-              </Figure>
-            </Carousel>
-          </Strip>
-
-          {/* Insights + Needs table (from slides) */}
-          <h1>User Insights + Needs: What shaped the solution</h1>
-          <Figure>
-            {/* Replace with your slide/table export */}
-            <img src={placeholderImg} alt='User Insights and Needs table' />
-            <figcaption>Insights mapped directly to needs — guidance, flexible scheduling, and personalized motivation.</figcaption>
+        <Section title="Demo & Prototype" subtitle="See it in action">
+        <Row>
+          <Figure style={{width:"50%", marginRight:"40px"}}>
+            <MediaBox>
+              <VideoPlayer height="100%" url="https://youtu.be/xZ66I4_RNAo" />
+            </MediaBox>
+            <figcaption>Walkthrough of the working prototype.</figcaption>
           </Figure>
 
+          <Figure style={{width:"50%"}}>
+            <MediaBox>
+              <iframe
+                title="BalanceBuddy Figma Prototype"
+                src="https://embed.figma.com/proto/w0ahttkKQEyJQAGsgzFJ1d/BalanceBuddy?page-id=0%3A1&node-id=3-2&p=f&viewport=148%2C341%2C0.03&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=3%3A2&show-proto-sidebar=1&embed-host=share"
+                style={{ width:'100%', height:'100%', border:0 }}
+                allowFullScreen
+                loading="lazy"
+              />
+            </MediaBox>
+            <figcaption>Interactive prototype — explore flows and screens.</figcaption>
+          </Figure>
+        </Row>
+        </Section>
+
+
           <Divider />
 
-          {/* PERSONAS */}
-          <h1>Personas: Who we designed for</h1>
-          <TwoCol>
-            <Figure>
-              <img src={img_path + "persona_1.png"} alt='Persona — Bobby' />
-              <figcaption>“Bobby”: busy and forgetful; wants consistency and better application quality.</figcaption>
-            </Figure>
-            <Figure>
-              <img src={img_path + "persona_2.png"} alt='Persona — Tern' />
-              <figcaption>“Tern”: international student; needs clarity on process and interview practice.</figcaption>
-            </Figure>
-          </TwoCol>
+          <Section title="Problem & Market Gap" subtitle="Why existing tools weren’t enough">
+            <p>
+              Students didn’t just need a place to log applications — they needed help deciding what to do next, when to do it, and how to stay motivated.
+              Products like Huntr track applications but don’t guide users toward getting internships. Calendar tools remind, but rely on manual setup and don’t curate tasks around a changing workload.
+              BalanceBuddy bridges that gap with guidance, timing, and gentle motivation.
+            </p>
+          </Section>
 
           <Divider />
 
-          {/* VOLERE SHELLS */}
-          <h1>Volere & User Requirements: What the product must support</h1>
-          <p>
-            We captured requirements with Volere shells so the system could meet students where they are:
-            motivating without pressure, adjusting to time constraints, and guiding next steps with practical resources.
-          </p>
+          <Section title="Target Users" subtitle="Who we designed for">
+            <p>
+              Undergraduates actively looking for internships during the semester. Experience varies, schedules shift week to week, and motivation rises and falls — so the design had to adapt to all three.
+            </p>
+          </Section>
 
-          {/* Carousel — 5 Volere shells */}
-          <Strip>
+          <Divider />
+
+          <Section title="User Insights + Needs" subtitle="What shaped the solution">
+            <p>
+              Early research clarified four themes we kept designing around: students get lost without next steps,
+              their schedules fluctuate, reminders can backfire if poorly timed, and motivation is personal.
+            </p>
+            <InsightsTable>
+              <thead>
+                <tr><th>Insights</th><th>Needs</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lost or confused at various points in the application process</td>
+                  <td>Guidance and resources</td>
+                </tr>
+                <tr>
+                  <td>Trouble balancing schoolwork and the application process</td>
+                  <td>Flexible schedule that still allows students to progress</td>
+                </tr>
+                <tr>
+                  <td>Reminders are desired but can be stressful if poorly timed</td>
+                  <td>Persistent, considerate reminders</td>
+                </tr>
+                <tr>
+                  <td>Staying motivated can be a challenge</td>
+                  <td>Customizable ways to remain motivated</td>
+                </tr>
+              </tbody>
+            </InsightsTable>
+          </Section>
+
+
+          <Divider />
+
+          {/* 1) Carousel restyle + readable subtitle over images */}
+          <Section title="Affinity Mapping" subtitle="What students told us">
+            <p>
+              We interviewed internship-seeking students and clustered their pain points and needs. Three patterns stood out: they wanted guidance beyond tracking, they needed schedules to flex with coursework, and motivation was personal and tone-sensitive.
+            </p>
             <Carousel breakPoints={breakpoints} itemPadding={[0, 10]}>
-              {/* Replace each with a clear Volere shell export */}
-              <Figure><img src={img_path + "volere_1.png"} alt='Volere 1' /><figcaption>Motivation when progress stalls.</figcaption></Figure>
-              <Figure><img src={img_path + "volere_2.png"} /><figcaption>Calendar-aware task timing.</figcaption></Figure>
-              <Figure><img src={img_path + "volere_3.png"} /><figcaption>Guided roadmap and milestones.</figcaption></Figure>
-              <Figure><img src={img_path + "volere_4.png"} /><figcaption>Per-task resources.</figcaption></Figure>
-              <Figure><img src={img_path + "volere_5.png"} /><figcaption>Lightweight daily nudges.</figcaption></Figure>
+              {["affinity_diagram_1.png","affinity_diagram_2.png","affinity_diagram_3.png"].map((f,i)=>(
+                <Figure key={i}>
+                  <Zoomable src={img_path + f} alt={`Affinity map ${i+1}`} />
+                  <CapOverlay>{i===0?"Confusion points across the journey": i===1?"Signals for guidance and “what’s next”":"Motivation patterns and tone sensitivity"}</CapOverlay>
+                </Figure>
+              ))}
             </Carousel>
-          </Strip>
+           
+          </Section>
 
           <Divider />
 
-          {/* USE CASES — per-use-case structure like slides */}
-          <h1>Use Cases → Flows → Prototypes: How the system works</h1>
-
-          <Kicker>Use Case #1: User sets up an account</Kicker>
-          <TwoCol>
-            <div>
-              <p>
-                New users create an account, choose or upload motivational material, connect a calendar if they wish,
-                and complete a short assessment. The system places them on an appropriate milestone and prepares a starting set of tasks.
-              </p>
-              <Caption><b>User Flow #1</b> follows the same path — account setup through assessment into the dashboard.</Caption>
-            </div>
+          <Section title="Personas" subtitle="Who we designed for">
+          <Row>
             <Figure>
-              {/* Use case #1 diagram */}
-              <img src={placeholderImg} alt='Use Case 1: Account Setup' />
-              <figcaption>Use Case Diagram #1 — account setup and onboarding.</figcaption>
-            </Figure>
-          </TwoCol>
-
-          <TwoCol>
-            <Figure>
-              {/* Flow screenshot */}
-              <img src={placeholderImg} alt='User Flow 1 — account setup' />
-              <figcaption>User Flow #1 — website account setup.</figcaption>
+              <PersonaFrame>
+                <Zoomable src={img_path + "/persona_1.png" } alt="Persona — Bobby" />
+              </PersonaFrame>
+              <figcaption>“Bobby”: busy and forgetful…</figcaption>
             </Figure>
             <Figure>
-              {/* Lo-fi or hi-fi prototype screen(s) */}
-              <img src={placeholderImg} alt='Lo-fi — setup' />
-              <figcaption>Lo-fi frames exploring account setup before moving to hi-fi.</figcaption>
+              <PersonaFrame>
+                <Zoomable src={img_path + "/persona_2.png" } alt="Persona — Tern" />
+              </PersonaFrame>
+              <figcaption>“Tern”: international student…</figcaption>
             </Figure>
-          </TwoCol>
+          </Row>
+          </Section>
 
           <Divider />
 
-          <Kicker>Use Case #2: Utilizing resources to do a task</Kicker>
-          <TwoCol>
-            <div>
-              <p>
-                When a task feels unclear, students can open the dashboard and use the attached resources for that task
-                rather than searching elsewhere. This keeps momentum and reduces the cognitive load of “figuring out where to look.”
-              </p>
-              <Caption><b>User Flow #2</b> illustrates the pivot from a notification to the dashboard’s resource list, then back to completion.</Caption>
-            </div>
-            <Figure>
-              <img src={placeholderImg} alt='Use Case 2: Utilize Resources' />
-              <figcaption>Use Case Diagram #2 — resources support task completion.</figcaption>
-            </Figure>
-          </TwoCol>
-
-          <TwoCol>
-            <Figure>
-              <img src={placeholderImg} alt='User Flow 2 — resources' />
-              <figcaption>User Flow #2 — utilizing resources from the dashboard.</figcaption>
-            </Figure>
-            <Figure>
-              <img src={placeholderImg} alt='Hi-fi — dashboard' />
-              <figcaption>Hi-fi dashboard with per-task resources and roadmap progress.</figcaption>
-            </Figure>
-          </TwoCol>
-
-          <Divider />
-
-          <Kicker>Use Case #3: Receiving a task notification and doing the task</Kicker>
-          <TwoCol>
-            <div>
-              <p>
-                The extension nudges students at times that fit their schedule. If recent progress is low, the nudge includes
-                personal motivation. Students can change the task, complete it, or ask to be reminded later — and the dashboard
-                reflects progress immediately.
-              </p>
-              <Caption><b>User Flow #3</b> shows the extension path end-to-end.</Caption>
-            </div>
-            <Figure>
-              <img src={placeholderImg} alt='Use Case 3: Notification and Task' />
-              <figcaption>Use Case Diagram #3 — notification to task completion.</figcaption>
-            </Figure>
-          </TwoCol>
-
-          <TwoCol>
-            <Figure>
-              <img src={placeholderImg} alt='User Flow 3 — extension' />
-              <figcaption>User Flow #3 — extension notification and quick actions.</figcaption>
-            </Figure>
-            <Figure>
-              <img src={placeholderImg} alt='Hi-fi — extension notification' />
-              <figcaption>Hi-fi extension with change/complete/remind controls.</figcaption>
-            </Figure>
-          </TwoCol>
-
-          {/* If you want to include Use Cases 4 & 5 without bloating the page */}
-          <Strip style={{ marginTop: 12 }}>
+          <Section title="Volere & User Requirements" subtitle="What the product must support">
+            <p>
+              We documented requirements with Volere shells so BalanceBuddy could motivate without pressure, adjust to time constraints, and guide next steps with practical resources.
+            </p>
             <Carousel breakPoints={breakpoints} itemPadding={[0, 10]}>
-              <Figure><img src={placeholderImg} alt='Use Case 4' /><figcaption>Use Case Diagram #4 — roadmap progress update.</figcaption></Figure>
-              <Figure><img src={placeholderImg} alt='Use Case 5' /><figcaption>Use Case Diagram #5 — attempt/ignore task paths.</figcaption></Figure>
+              {[1,2,3,4,5].map(n=>(
+                <Figure key={n}>
+                  <Zoomable src={img_path + `volere_${n}.png`} alt={`Volere ${n}`} />
+                  <CapOverlay>
+                    {n===1?"Motivation when progress stalls"
+                      :n===2?"Calendar-aware timing"
+                      :n===3?"Guided roadmap & milestones"
+                      :n===4?"Per-task resources"
+                      :"Lightweight daily nudges"}
+                  </CapOverlay>
+                </Figure>
+              ))}
             </Carousel>
-          </Strip>
+          </Section>
 
           <Divider />
 
-          {/* EVALUATION — accurate to report/slides */}
-          <h1>Evaluation: How we tested BalanceBuddy</h1>
+          {/* 9) Organized Use Case → Flow → Prototype rows with arrows */}
+          <Section title="Use Cases → Flows → Prototypes" subtitle="How the system works">
+            {/* UC #1 */}
+            <Kicker>Use Case #1 · User sets up an account</Kicker>
+            <Trio>
+              <Figure><Zoomable src={img_path + "use_case_1.png"} alt="Use Case 1" /><figcaption>Use case diagram</figcaption></Figure>
+              <Arrow className="arrow">→</Arrow>
+              <Figure><Zoomable src={img_path + "user_flow_1.png"} alt="Flow 1" /><figcaption>User flow</figcaption></Figure>
+              <Arrow className="arrow">→</Arrow>
+              <Figure><Zoomable src={img_path + "wireflow_1.png"} alt="Lo-fi setup" /><figcaption>Wireflow</figcaption></Figure>
+            </Trio>
 
-          <Kicker>Goals & Questions</Kicker>
-          <p>
-            We wanted to understand whether the assessment represented users well, and whether providing resources and
-            motivation alongside tasks helped students complete those tasks. We focused on clarity, efficiency, and how supported
-            students felt during the process.
-          </p>
+            <Divider style={{margin: "40px auto", width: "300px", opacity:"0.5"}}/>
 
-          <Kicker>Participants</Kicker>
-          <p>
-            We ran a small study with six undergraduates (18–22), all attending U.S. institutions and actively seeking internships
-            or planning to start. We aimed for diversity across gender and international status, and assumed moderate to strong
-            computer literacy.
-          </p>
+            {/* UC #2 */}
+            <Kicker style={{marginTop: "50px"}}>Use Case #2 · Utilize resources to complete a task</Kicker>
+            <Trio>
+              <Figure><Zoomable src={img_path + "use_case_2.png"} alt="Use Case 2" /><figcaption>Use case diagram</figcaption></Figure>
+              <Arrow className="arrow">→</Arrow>
+              <Figure><Zoomable src={img_path + "user_flow_2.png"} alt="Flow 2" /><figcaption>User flow</figcaption></Figure>
+              <Arrow className="arrow">→</Arrow>
+              <Figure><Zoomable src={img_path + "wireflow_2.png"} alt="Hi-fi dashboard" /><figcaption>Wireflow</figcaption></Figure>
+            </Trio>
 
-          <Kicker>Test Procedure</Kicker>
-          <p>
-            We began with a brief pre-test interview about perceived factors in internship outcomes, how often students feel lost,
-            and what keeps them motivated. Participants were then randomly split into control and test groups. Everyone completed
-            the assessment the same way. Each participant then worked on a 30-minute task. The control group received no
-            motivational material or resources; the test group received both. We closed with a post-test interview covering clarity,
-            representation, and motivation.
-          </p>
+            <Divider style={{margin: "40px auto", width: "300px", opacity:"0.5"}}/>
 
-          <Kicker>Data Collection</Kicker>
-          <p>
-            We noted whether participants completed the task, how often the test group used resources and motivation,
-            and gathered interview feedback. For usability, we looked at effectiveness (representation in the assessment; task
-            completion rate), efficiency (how easily participants navigated assessment, resources, and motivation), and satisfaction
-            (assessment length; whether the motivation board helped).
-          </p>
+            {/* UC #3 */}
+            <Kicker>Use Case #3 · Receive a task and do it</Kicker>
+            <Trio>
+              <Figure><Zoomable src={img_path + "use_case_3.png"} alt="Use Case 3" /><figcaption>Use case diagram</figcaption></Figure>
+              <Arrow className="arrow">→</Arrow>
+              <Figure><Zoomable src={img_path + "user_flow_3.png"} alt="Flow 3" /><figcaption>User flow</figcaption></Figure>
+              <Arrow className="arrow">→</Arrow>
+              <Figure><Zoomable src={img_path + "wireflow_3.png"} alt="Hi-fi extension" /><figcaption>Wireflow</figcaption></Figure>
+            </Trio>
+          </Section>
 
-          <Kicker>Data Analysis & Findings</Kicker>
-          <p>
-            All six participants completed the task. The test group (with resources and motivation) produced more thorough outputs
-            — compiling 43 interview questions and answers versus 25 in the control group. Test-group participants described the
-            experience as straightforward and self-explanatory. Participants generally felt represented by the assessment and were
-            satisfied with its length. We saw signs that attaching resources at the point of action improved quality and reduced friction.
-          </p>
+          <Divider/>
+
+          {/* 7) Storyboard — short and optional; recommended */}
+          <Section title="Storyboard" subtitle="From nudge to completion">
+            <Row>
+            <Figure style={{ width: '80%' }}>
+              <Zoomable src={img_path + "storyboard.png"} alt="Storyboard" />
+              <figcaption>How a student moves from a timely nudge to completing a task with attached resources.</figcaption>
+            </Figure>
+            </Row>
+          </Section>
 
           <Divider />
 
-          {/* LINKS */}
-          <h1>Links & Extras</h1>
-          <ButtonsSet style={{ margin: '8px 0 40px' }}>
-            <MyButton href='https://github.com/BalanceBuddy/balancebuddy'>
-              <Icon icon='akar-icons:github-fill' inline /> Source Code
-            </MyButton>
-            <MyButton href='https://youtu.be/xZ66I4_RNAo'>
-              <Icon icon='mdi:video-outline' inline /> Demo Video
-            </MyButton>
-            {/* Optional: link your full PDF report and presentation once hosted */}
-            {/* <MyButton href='/assets/BalanceBuddy_FinalReport.pdf'><Icon icon='mdi:file-document-outline' inline /> Full Report (PDF)</MyButton>
-            <MyButton href='/assets/BalanceBuddy_FinalPresentation.pdf'><Icon icon='mdi:monitor-screenshot' inline /> Final Presentation (PDF)</MyButton> */}
-          </ButtonsSet>
+          {/* 8) Shorter Evaluation with collapsible details */}
+          <Section title="Evaluation" subtitle="How we tested BalanceBuddy">
+          <>
+  <p>
+    We evaluated <b>BalanceBuddy</b> with <b>6 undergraduate students</b> who were actively seeking internships.
+    Participants were split into a <b>control group</b> (no resources or motivation) and a <b>test group</b>
+    (tasks included resources and motivation).
+  </p>
+
+  <h3>Procedure</h3>
+  <ul>
+    <li><b>Pre-test interview:</b> current process, blockers, and how often they need motivation/resources.</li>
+    <li>
+      <b>In-app assessment:</b> short questionnaire to gauge experience and current progress (used to place the student on a starting milestone).
+    </li>
+    <li><b>Task:</b> a 30-minute internship-related task triggered by a notification.</li>
+    <li><b>Post-test interview:</b> clarity, representation, usability, and perceived support.</li>
+  </ul>
+
+  <h3>Collected Data (what we captured)</h3>
+  <ul>
+    <li><b>Completion & output:</b> whether the task was completed; number/quality of produced Q&As.</li>
+    <li><b>Feature usage (test group):</b> count of resource opens and motivation board views.</li>
+    <li><b>Assessment interaction:</b> time spent and any points of confusion.</li>
+    <li><b>Qualitative feedback:</b> feelings of representation, clarity, motivation, and friction points.</li>
+  </ul>
+
+  <h3>Findings</h3>
+  <table style={{ width:'100%', borderCollapse:'collapse', margin:'8px 0' }}>
+    <thead>
+      <tr>
+        <th style={{ textAlign:'left', padding:'8px', borderBottom:'1px solid rgba(255,255,255,0.2)' }}>Control group</th>
+        <th style={{ textAlign:'left', padding:'8px', borderBottom:'1px solid rgba(255,255,255,0.2)' }}>Test group</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style={{ verticalAlign:'top', padding:'8px' }}>
+          All participants completed the task but produced fewer outputs:
+          <b> 25 interview Q&As</b> in total. Reported moments of feeling stuck; often searched externally.
+        </td>
+        <td style={{ verticalAlign:'top', padding:'8px' }}>
+          All participants completed the task and produced <b>43 interview Q&As</b> in total.
+          Used attached resources/motivation multiple times; described the flow as clearer and more self-explanatory.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 style={{ marginTop: '8px' }}>Observed in both groups</h4>
+  <ul>
+    <li>All 6 participants finished within the session.</li>
+    <li>Students generally felt the in-app assessment represented them and was a reasonable length.</li>
+  </ul>
+
+  <p style={{ marginTop:'8px' }}>
+    <b>Result:</b> Delivering resources and motivation at the moment of action improved task quality and perceived support, while maintaining clarity and completion.
+  </p>
+</>
+
+
+
+          </Section>
+
+          <Section title="Reflections" subtitle="What we learned">
+  <ul>
+    <li>Reminders can motivate, but poor timing creates stress — context and tone matter as much as the content.</li>
+    <li>Small user tests (6 participants) revealed clear differences between control and test groups, showing the value of even lightweight evaluation.</li>
+    <li>Designing both the extension and dashboard taught us how important it is to keep experiences in sync across platforms.</li>
+    <li>Next time, we would expand testing over several weeks to study long-term motivation, not just single-session tasks.</li>
+  </ul>
+</Section>
+
+  
         </Content>
       </ScrollToTop>
     </div>

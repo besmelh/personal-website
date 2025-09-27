@@ -15,6 +15,9 @@
   --min-width-px: 730px;
 }
 
+b{
+  font-weight: 600;
+}
 
 body {
   width: 100%;

@@ -9,7 +9,12 @@ import ButtonsSet from '../Components/ButtonsSet';
 import MyButton from '../Components/MyButton';
 import VideoPlayer from '../Components/VideoPlayer';
 import { Icon } from '@iconify/react';
-import Carousel from 'react-elastic-carousel';
+
+import Section from '../Components/Section';
+import Figure, { CaptionOverlay as CapOverlay } from '../Components/Figure';
+import ZoomableImage from '../Components/ZoomableImage';
+import MediaBox from '../Components/MediaBox';
+import CarouselGallery from '../Components/CarouselGallery';
 
 const img_path = "/images/balancebuddy/";
 
@@ -38,15 +43,6 @@ const Global = createGlobalStyle`
   @media (max-width: 900px){ section.case-section { padding: 18px 0; } }
 `;
 
-const Section = ({ title, subtitle, children }) => (
-  <section className="case-section">
-    <TitleRow>
-      <h1 style={{marginBottom:'0'}}>{title}</h1>
-      {subtitle && <SubTitle >{subtitle}</SubTitle>}
-    </TitleRow>
-    {children}
-  </section>
-);
 
 /* ---------- LAYOUT ---------- */
 const TitleRow = styled.div`
@@ -67,24 +63,6 @@ const Row = styled.div`
   margin-top: 8px;
   justify-content: space-around;
   @media (max-width: 900px){ grid-template-columns: 1fr; gap: 16px; }
-`;
-
-const Figure = styled.figure`
-  margin: 0;
-  position: relative;
-  display: flex;
-    flex-direction: column;
-    align-items: center;
-  & img { width: 100%; border-radius: 12px; display: block; }
-  & figcaption { font-size: 0.92rem; opacity: 0.85; margin-top: 8px; line-height: 1.35; width: 80%;}
-`;
-
-/* Caption overlay for carousels (more readable, per your request) */
-const CapOverlay = styled.div`
-  position: absolute; left: 10px; bottom: 10px;
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(3px);
-  padding: 6px 10px; border-radius: 8px; font-size: 0.9rem;
 `;
 
 /* Equal persona sizing (consistent aspect ratio) */
@@ -146,36 +124,9 @@ const LightboxImg = styled.img`
   max-width: 92vw; max-height: 92vh; border-radius: 12px;
 `;
 
-function Zoomable({ src, alt, caption }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <>
-      <ClickableImg src={src} alt={alt} onClick={() => setOpen(true)} />
-      {caption && <figcaption>{caption}</figcaption>}
-      {open && (
-        <LightboxOverlay onClick={() => setOpen(false)}>
-          <LightboxImg src={src} alt={alt} />
-        </LightboxOverlay>
-      )}
-    </>
-  );
-}
-
-/* 16:9 static box that scales down on small screens, same for both */
-const MediaBox = styled.div`
-  width: 800px;
-  height: 450px;         /* 16:9 */
-  max-width: 100%;
-  max-height: 56.25vw;   /* keep 16:9 if screen is narrow */
-  border-radius: 12px;
-  overflow: hidden;
-  margin: 0 auto;        /* center block */
-  background: rgba(255,255,255,0.04);
-`;
 
 /* General text helpers */
 const Kicker = styled.h3` margin: 20px 0; `;
-const Hint = styled.p` margin-top: 6px; font-size: 0.9rem; opacity: 0.75; `;
 
 const breakpoints = [
   { width: 1, itemsToShow: 1 },
@@ -244,7 +195,7 @@ function BalanceBuddy() {
                 <p>Semester project (Jan–May). Team of three.</p>
               </div>
               <Figure>
-                <Zoomable src={img_path + "final_screenshots.png"} alt="Hi-fi overview" />
+                <ZoomableImage src={img_path + "final_screenshots.png"} alt="Hi-fi overview" />
                 <figcaption>High-fidelity dashboard and extension design.</figcaption>
               </Figure>
             {/* </Row> */}
@@ -335,14 +286,14 @@ function BalanceBuddy() {
             <p>
               We interviewed internship-seeking students and clustered their pain points and needs. Three patterns stood out: they wanted guidance beyond tracking, they needed schedules to flex with coursework, and motivation was personal and tone-sensitive.
             </p>
-            <Carousel breakPoints={breakpoints} itemPadding={[0, 10]}>
+            <CarouselGallery breakPoints={breakpoints} itemPadding={[0, 10]}>
               {["affinity_diagram_1.png","affinity_diagram_2.png","affinity_diagram_3.png"].map((f,i)=>(
                 <Figure key={i}>
-                  <Zoomable src={img_path + f} alt={`Affinity map ${i+1}`} />
+                  <ZoomableImage src={img_path + f} alt={`Affinity map ${i+1}`} />
                   <CapOverlay>{i===0?"Confusion points across the journey": i===1?"Signals for guidance and “what’s next”":"Motivation patterns and tone sensitivity"}</CapOverlay>
                 </Figure>
               ))}
-            </Carousel>
+            </CarouselGallery>
            
           </Section>
 
@@ -352,13 +303,13 @@ function BalanceBuddy() {
           <Row>
             <Figure>
               <PersonaFrame>
-                <Zoomable src={img_path + "/persona_1.png" } alt="Persona — Bobby" />
+                <ZoomableImage src={img_path + "/persona_1.png" } alt="Persona — Bobby" />
               </PersonaFrame>
               <figcaption>“Bobby”: busy, forgetful; wants consistency and better application quality.</figcaption>
             </Figure>
             <Figure>
               <PersonaFrame>
-                <Zoomable src={img_path + "/persona_2.png" } alt="Persona — Tern" />
+                <ZoomableImage src={img_path + "/persona_2.png" } alt="Persona — Tern" />
               </PersonaFrame>
               <figcaption>“Tern”: international student; needs clarity on process and practice.</figcaption>
             </Figure>
@@ -371,10 +322,10 @@ function BalanceBuddy() {
             <p>
               We documented requirements with Volere shells so BalanceBuddy could motivate without pressure, adjust to time constraints, and guide next steps with practical resources.
             </p>
-            <Carousel breakPoints={breakpoints} itemPadding={[0, 10]}>
+            <CarouselGallery breakPoints={breakpoints} itemPadding={[0, 10]}>
               {[1,2,3,4,5].map(n=>(
                 <Figure key={n}>
-                  <Zoomable src={img_path + `volere_${n}.png`} alt={`Volere ${n}`} />
+                  <ZoomableImage src={img_path + `volere_${n}.png`} alt={`Volere ${n}`} />
                   <CapOverlay>
                     {n===1?"Motivation when progress stalls"
                       :n===2?"Calendar-aware timing"
@@ -384,7 +335,7 @@ function BalanceBuddy() {
                   </CapOverlay>
                 </Figure>
               ))}
-            </Carousel>
+            </CarouselGallery>
           </Section>
 
           <Divider />
@@ -394,11 +345,11 @@ function BalanceBuddy() {
             {/* UC #1 */}
             <Kicker>Use Case #1 · User sets up an account</Kicker>
             <Trio>
-              <Figure><Zoomable src={img_path + "use_case_1.png"} alt="Use Case 1" /><figcaption>Use case diagram</figcaption></Figure>
+              <Figure><ZoomableImage src={img_path + "use_case_1.png"} alt="Use Case 1" /><figcaption>Use case diagram</figcaption></Figure>
               <Arrow className="arrow">→</Arrow>
-              <Figure><Zoomable src={img_path + "user_flow_1.png"} alt="Flow 1" /><figcaption>User flow</figcaption></Figure>
+              <Figure><ZoomableImage src={img_path + "user_flow_1.png"} alt="Flow 1" /><figcaption>User flow</figcaption></Figure>
               <Arrow className="arrow">→</Arrow>
-              <Figure><Zoomable src={img_path + "wireflow_1.png"} alt="Lo-fi setup" /><figcaption>Wireflow</figcaption></Figure>
+              <Figure><ZoomableImage src={img_path + "wireflow_1.png"} alt="Lo-fi setup" /><figcaption>Wireflow</figcaption></Figure>
             </Trio>
 
             <Divider style={{margin: "40px auto", width: "300px", opacity:"0.5"}}/>
@@ -406,11 +357,11 @@ function BalanceBuddy() {
             {/* UC #2 */}
             <Kicker style={{marginTop: "50px"}}>Use Case #2 · Utilize resources to complete a task</Kicker>
             <Trio>
-              <Figure><Zoomable src={img_path + "use_case_2.png"} alt="Use Case 2" /><figcaption>Use case diagram</figcaption></Figure>
+              <Figure><ZoomableImage src={img_path + "use_case_2.png"} alt="Use Case 2" /><figcaption>Use case diagram</figcaption></Figure>
               <Arrow className="arrow">→</Arrow>
-              <Figure><Zoomable src={img_path + "user_flow_2.png"} alt="Flow 2" /><figcaption>User flow</figcaption></Figure>
+              <Figure><ZoomableImage src={img_path + "user_flow_2.png"} alt="Flow 2" /><figcaption>User flow</figcaption></Figure>
               <Arrow className="arrow">→</Arrow>
-              <Figure><Zoomable src={img_path + "wireflow_2.png"} alt="Hi-fi dashboard" /><figcaption>Wireflow</figcaption></Figure>
+              <Figure><ZoomableImage src={img_path + "wireflow_2.png"} alt="Hi-fi dashboard" /><figcaption>Wireflow</figcaption></Figure>
             </Trio>
 
             <Divider style={{margin: "40px auto", width: "300px", opacity:"0.5"}}/>
@@ -418,11 +369,11 @@ function BalanceBuddy() {
             {/* UC #3 */}
             <Kicker>Use Case #3 · Receive a task and do it</Kicker>
             <Trio>
-              <Figure><Zoomable src={img_path + "use_case_3.png"} alt="Use Case 3" /><figcaption>Use case diagram</figcaption></Figure>
+              <Figure><ZoomableImage src={img_path + "use_case_3.png"} alt="Use Case 3" /><figcaption>Use case diagram</figcaption></Figure>
               <Arrow className="arrow">→</Arrow>
-              <Figure><Zoomable src={img_path + "user_flow_3.png"} alt="Flow 3" /><figcaption>User flow</figcaption></Figure>
+              <Figure><ZoomableImage src={img_path + "user_flow_3.png"} alt="Flow 3" /><figcaption>User flow</figcaption></Figure>
               <Arrow className="arrow">→</Arrow>
-              <Figure><Zoomable src={img_path + "wireflow_3.png"} alt="Hi-fi extension" /><figcaption>Wireflow</figcaption></Figure>
+              <Figure><ZoomableImage src={img_path + "wireflow_3.png"} alt="Hi-fi extension" /><figcaption>Wireflow</figcaption></Figure>
             </Trio>
           </Section>
 
@@ -432,7 +383,7 @@ function BalanceBuddy() {
           <Section title="Storyboard" subtitle="From nudge to completion">
             <Row>
             <Figure style={{ width: '80%' }}>
-              <Zoomable src={img_path + "storyboard.png"} alt="Storyboard" />
+              <ZoomableImage src={img_path + "storyboard.png"} alt="Storyboard" />
               <figcaption>How a student moves from a timely nudge to completing a task with attached resources.</figcaption>
             </Figure>
             </Row>

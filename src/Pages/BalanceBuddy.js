@@ -44,18 +44,6 @@ const Global = createGlobalStyle`
 `;
 
 
-/* ---------- LAYOUT ---------- */
-const TitleRow = styled.div`
-  margin-bottom: 8px;
-`;
-const SubTitle = styled.p`
-  margin: 0 0 40px 0;
-  /* margin-bottom: 20px; */
-  font-size: 1.06rem;
-  font-weight: 800;
-  opacity: 0.7;
-  letter-spacing: .15px;
-`;
 
 const Row = styled.div`
   display: flex;

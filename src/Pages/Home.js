@@ -13,6 +13,7 @@ import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
 import PlanetDisplay_BalanceBuddy from '../Components/PlanetDisplay_BalanceBuddy';
 import PlanetDisplay_BoppityBopLofi from '../Components/PlanetDisplay_BoppityBopLofi';
 import PlanetDisplay_LightUp from '../Components/PlanetDisplay_LightUp';
+import PlanetDisplay_SoniClean from '../Components/PlanetDisplay_SoniClean';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
 
@@ -97,6 +98,16 @@ const ButtonsList = styled.div`
             allignedLeft={false}
           >
             <PlanetDisplay_Phobigone hoverable />
+          </MainPageSection>
+
+            {/* ********* soniclean ********* */}
+            <MainPageSection
+            title='SoniClean'
+            summary='Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.'
+            href='soniclean'
+            allignedLeft={true}
+          >
+            <PlanetDisplay_SoniClean hoverable />
           </MainPageSection>
 
           {/* ********* balancebuddy ********* */}

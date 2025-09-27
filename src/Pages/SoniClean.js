@@ -68,12 +68,18 @@ export default function SoniClean() {
             <Row>
 
               <Col>
-            <p>
-              <b>SoniClean</b> is a home device concept that cleans and dries shoes quickly and safely.
-              It merges <b>ultrasonic cleaning</b> (to lift dirt from fabric and seams) with <b>vacuum drying</b> 
-              (to drop the boiling point and dry at ~20&nbsp;°C under ~−98&nbsp;kPa), delivering
-              <b> less time</b>, <b>less effort</b>, and <b>no damage</b> when cleaning shoes.
-            </p>
+                <p>
+                  <b>SoniClean</b> is a home device concept that cleans and dries shoes quickly and safely.
+                  It merges <b>ultrasonic cleaning</b> (to lift dirt from fabric and seams) with <b>vacuum drying</b>
+                  (to drop the boiling point and dry at ~20&nbsp;°C under ~−98&nbsp;kPa), delivering
+                  <b> less time</b>, <b>less effort</b>, and <b>no damage</b>.
+                </p>
+
+                <ul>
+                  <li><b>Timeline:</b> 2 weeks</li>
+                  <li><b>Program:</b> ShenTech Entrepreneurship Bootcamp (KAUST × InnoX Academy, Shenzhen)</li>
+                  <li><b>Award:</b> recognized as a <i>Top Project</i>.</li>
+                </ul>
             </Col>
             <Col>
             <Figure style={{ width: '86%', margin: '22px auto 0' }}>

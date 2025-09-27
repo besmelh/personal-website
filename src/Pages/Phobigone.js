@@ -237,11 +237,12 @@ function Phobigone() {
         <Divider />
         
   {/* ===== DARK SCENE PROTOTYPES ===== */}
-  <Section title="Dark Scene — Prototypes" subtitle="Paper sketches to physical mockups">
+  <Section title="Heights Scene — Prototypes" subtitle="Paper sketches to physical mockups">
           <p>
-          The dark scene tests locating a light switch with a flickering flashlight.
-              We began with paper to validate flow and visibility, then built a physical
-              mockup (phone-as-flashlight) to simulate timing, cone angle, and handheld ergonomics.
+              The heights scene focuses on crossing a bridge between rooftops and confirming success
+              by collecting a star. Paper prototypes clarified the menu-to-scene selection and walking path.
+              A quick physical mockup (cups as skyscrapers, a blade as the bridge) let us test distance and
+              perceived risk without real height.
           </p>
           <Row>
             <Col>
@@ -252,8 +253,8 @@ function Phobigone() {
                 itemPadding={[0, 10]}
               >
                 {[
-                  [darkPaper1, "A flashlight blinking incrementally in player's hand."],
-                  [darkPaper2, "A light switch for the user to turn on."],
+                  [heightsPaper1, "Menu selection via ray-cast + bridge path diagram to the target platform."],
+                  [heightsPaper2, "Star collection as the explicit success cue before returning to the menu."],
                 ].map((f, i) => (
                   <Figure key={i}>
                     <ZoomableImage src={f[0]} alt={`Paper-based Prototype ${i + 1}`} />
@@ -270,15 +271,11 @@ function Phobigone() {
               breakPoints={breakpoints}
               itemPadding={[0, 10]}
             >
-              {[darkPhys1, darkPhys2, darkPhys3].map((f, i) => (
+              {[[heightsPhys1, "Cups as buildings, tool as bridge — used to reason about spacing and perceived exposure."]].map((f, i) => (
                 <Figure key={i}>
-                  <ZoomableImage src={f} alt={`Physical Prototype ${i + 1}`} />
+                  <ZoomableImage src={f[0]} alt={`Physical Prototype`} />
                   <CapOverlay>
-                    {i === 0
-                      ? "Phone as flashlight in dark space"
-                      : i === 1
-                      ? "Testing search behavior for the switch"
-                      : "Evaluating intermittent light without frustration"}
+                  {f[1]}
                   </CapOverlay>
                 </Figure>
               ))}
@@ -289,41 +286,6 @@ function Phobigone() {
 
         <Divider />
 
-        {/* ===== HEIGHTS SCENE PROTOTYPES ===== */}
-        <ProtoGallery
-          title="Heights Scene — Prototypes"
-          subtitle="From paper to physical to VR"
-          description={
-            <>
-              The heights scene focuses on crossing a bridge between rooftops and confirming success
-              by collecting a star. Paper prototypes clarified the menu-to-scene selection and walking path.
-              A quick physical mockup (cups as skyscrapers, a blade as the bridge) let us test distance and
-              perceived risk without real height.
-            </>
-          }
-          items={[
-            {
-              src: heightsPaper1,
-              label: 'Paper prototype',
-              caption:
-                'Menu selection via ray-cast + bridge path diagram to the target platform.',
-            },
-            {
-              src: heightsPaper2,
-              label: 'Paper prototype',
-              caption:
-                'Star collection as the explicit success cue before returning to the menu.',
-            },
-            {
-              src: heightsPhys1,
-              label: 'Physical prototype',
-              caption:
-                'Cups as buildings, tool as bridge — used to reason about spacing and perceived exposure.',
-            },
-          ]}
-        />
-
-
           {/* PROTOTYPING */}
           {/* <Section title="Prototyping" subtitle="From storyboard to Unity">
             <p>
@@ -331,9 +293,10 @@ function Phobigone() {
               for the Dark scenario; cups and tools as buildings and bridges) before implementing
               the Unity VR build. Each stage validated <b>task flow</b>, <b>comfort</b>, and <b>feedback</b>.
             </p>
-          </Section> */}
+          </Section> 
+          
+          */}
 
-          <Divider />
 
           {/* SCENARIOS */}
           <Section title="Scenarios" subtitle="Three fears, three focused tasks">

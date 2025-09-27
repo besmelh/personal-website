@@ -92,7 +92,7 @@ const Arrow = styled.div`
 `;
 
 /* General text helpers */
-const Kicker = styled.h3` margin: 20px 0; `;
+const Kicker = styled.h3`  margin: 0;`;
 
 const breakpoints = [
   { width: 1, itemsToShow: 1 },
@@ -156,9 +156,9 @@ function BalanceBuddy() {
             </>
 
                 <Kicker>My role</Kicker>
-                <p>I co-led research and design, built the back-end and data models, connected the Chrome extension and website, and produced the demo.</p>
+                <p style={{marginTop: "5px"}}>I co-led research and design, built the back-end and data models, connected the Chrome extension and website, and produced the demo.</p>
                 <Kicker>Timeline</Kicker>
-                <p>Semester project (Jan–May). Team of three.</p>
+                <p style={{marginTop: "5px"}}>Semester project (Jan–May). Team of three.</p>
               </div>
               <Figure>
                 <ZoomableImage src={img_path + "final_screenshots.png"} alt="Hi-fi overview" />

@@ -1,26 +1,16 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import PlanetDisplay from './PlanetDisplay';
+const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
-const soniclean_3d_model_img = "/images/soniclean/soniclean_open.png";
-
-function PlanetDisplay_SoniClean() {
-  const navigate = useNavigate();
-
+function PlanetDisplay_SoniClean(props) {
+  const { hoverable } = props;
   return (
-    <div className="icon">
-      <img
-        src={soniclean_3d_model_img}
-        alt="SoniClean 3D Model"
-        style={{
-          width: "400px",
-          transition: "transform 0.2s ease",
-          cursor: "pointer",
-        }}
-        onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-        onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-        onClick={() => navigate("/soniclean")}
-      />
-    </div>
+    <PlanetDisplay
+      scene='https://prod.spline.design/WqcSCn2KQxGj2JDx/scene.splinecode'
+      placeholder='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/balancebuddy-placeholder.png?v=1678730286600'
+      href='soniclean'
+      hoverable={hoverable}
+    />
   );
 }
 

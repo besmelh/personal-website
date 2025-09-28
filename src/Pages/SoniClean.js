@@ -12,6 +12,8 @@ import MediaBox from "../Components/MediaBox";
 import CarouselGallery from "../Components/CarouselGallery";
 import ButtonsSet from "../Components/ButtonsSet";
 import MyButton from "../Components/MyButton";
+import PlanetDisplay_SoniClean from '../Components/PlanetDisplay_SoniClean';
+
 
 import { Icon } from "@iconify/react";
 
@@ -90,20 +92,10 @@ export default function Soniclean() {
   return (
     <div>
 
+    
 <Header stars topGradient>
           <div className="icon">
-            {/* <PlanetDisplay_Phobigone /> */}
-            <div className="icon">
-          <img
-            src={soniclean_3d_model_img}
-            alt="SoniClean 3D Model"
-            style={{
-              width: "400px",
-              // objectFit: "cover",
-              // borderRadius: "12px",
-            }}
-          />
-        </div>
+            <PlanetDisplay_SoniClean />
             </div>
           <div>
             <h2>SoniClean</h2>

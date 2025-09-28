@@ -17,7 +17,6 @@ import BalanceBuddy from "./Pages/BalanceBuddy";
 import BoppityBopLofi from "./Pages/BoppityBopLofi";
 import LightUp from "./Pages/LightUp";
 import SoniClean from "./Pages/SoniClean";
-import SoniClean2 from "./Pages/SoniClean2";
 
 function App() {
   const location = useLocation();
@@ -37,7 +36,6 @@ function App() {
           <Route path="phobigone" element={<Phobigone />} />
           <Route path="balancebuddy" element={<BalanceBuddy />} />
           <Route path="soniclean" element={<SoniClean />} />
-          <Route path="soniclean2" element={<SoniClean2 />} />
           <Route path="boppity-bop-lofi" element={<BoppityBopLofi />} />
           <Route path="lightup" element={<LightUp />} />
 

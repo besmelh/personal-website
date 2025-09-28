@@ -2,12 +2,14 @@ import React from 'react';
 import PlanetDisplay from './PlanetDisplay';
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
+const soniclean_3d_model_img = "/images/soniclean/soniclean_open.png";
+
 function PlanetDisplay_SoniClean(props) {
   const { hoverable } = props;
   return (
     <PlanetDisplay
       scene='https://prod.spline.design/WqcSCn2KQxGj2JDx/scene.splinecode'
-      placeholder='https://cdn.glitch.global/8ab04539-a012-487a-82a4-7612329b440c/balancebuddy-placeholder.png?v=1678730286600'
+      placeholder={soniclean_3d_model_img}
       href='soniclean'
       hoverable={hoverable}
     />

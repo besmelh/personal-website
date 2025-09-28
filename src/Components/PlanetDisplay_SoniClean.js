@@ -12,7 +12,6 @@ function PlanetDisplay_SoniClean(props) {
       placeholder={soniclean_3d_model_img}
       href='soniclean'
       hoverable={hoverable}
-      style={{scale: "0.8"}}
     />
   );
 }

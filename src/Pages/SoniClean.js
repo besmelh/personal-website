@@ -1,35 +1,45 @@
-import React from 'react';
-import styled from 'styled-components';
+// /src/Pages/Soniclean.js
+import React from "react";
+import styled from "styled-components";
 
-import Header from '../Components/Header';
-import Content from '../Components/Content';
-import Section from '../Components/Section';
-import Figure, { CaptionOverlay as CapOverlay } from '../Components/Figure';
-import ZoomableImage from '../Components/ZoomableImage';
-import MediaBox from '../Components/MediaBox';
-import CarouselGallery from '../Components/CarouselGallery';
-import ButtonsSet from '../Components/ButtonsSet';
-import MyButton from '../Components/MyButton';
-import Divider from '../Components/Divider';
-import ScrollToTop from '../Components/ScrollToTop';
+import Header from "../Components/Header";
+import Content from "../Components/Content";
+import Section from "../Components/Section";
+import Divider from "../Components/Divider";
+import Figure, { CaptionOverlay as CapOverlay } from "../Components/Figure";
+import ZoomableImage from "../Components/ZoomableImage";
+import MediaBox from "../Components/MediaBox";
+import CarouselGallery from "../Components/CarouselGallery";
+import ButtonsSet from "../Components/ButtonsSet";
+import MyButton from "../Components/MyButton";
 
-// TEMP: placeholder planet (swap to PlanetDisplay_SoniClean when you make one)
-import PlanetDisplay_Phobigone from '../Components/PlanetDisplay_Phobigone';
+import { Icon } from "@iconify/react";
 
-// --- OPTIONAL: if you move assets to /public/images/soniclean,
-// replace these with "/images/soniclean/<file>" paths or imports.
-const img_path = "/images/soniclean/"
-const POSTER = img_path + "SoniClean_poster.jpg"; // put the jpg in public/images/soniclean
-const FINAL_PPT = '/files/soniclean/Final-PPT.pdf';       // move your PDFs to public/files/soniclean
-const INTER_PPT = '/files/soniclean/Intermediate-PPT.pdf';
-
+/* ---------- Local helpers ---------- */
 const Row = styled.div`
-  display: flex; gap: 24px; align-items: center; justify-content: center;
-  @media (max-width: 900px){ flex-direction: column; }
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Col = styled.div`
-  flex: 1; display: flex; flex-direction: column; align-items: center; width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers carousels/images */
+  width: 100%;
+  max-width: 760px;
+`;
+
+const Kicker = styled.h3`
+  margin: 16px 0 8px;
 `;
 
 const breakpoints = [
@@ -37,182 +47,498 @@ const breakpoints = [
   { width: 850, itemsToShow: 2 },
 ];
 
+/* ---------- Image paths (drop assets into /public/images/soniclean) ---------- */
+const base = "/images/soniclean/";
 
-export default function SoniClean() {
+// Header-side visuals
+const imgTeam = base + "team_shentech.jpeg"; // ← add your team+trophy photo
+const imgPoster = base + "poster.jpg"; // ← add your poster
+
+// User research + findings + personas + market + competitors
+const imgUR = base + "ur_slide.jpg";
+const imgFind = base + "pain_points.jpg";
+const imgPersona = base + "personas.png";
+const imgMarket = base + "market.jpg";
+const imgComp = base + "competitors.png";
+
+// Tech research + anatomy
+const imgTech1 = base + "technologies.jpg";
+const imgTech2 = base + "shoe_anatomy.jpg";
+
+// Ideation / sketches
+const imgSketch1 = base + "sketch_1.png";
+const imgSketch2 = base + "sketch_2.png";
+const imgSketch3 = base + "sketch_3.png";
+const imgSketch4 = base + "sketch_4.png";
+
+// Final solution
+const imgFinal1 = base + "final_solution_slide.jpg";
+const imgFinal2 = base + "solution_ultrasonic_cleaning.jpg";
+const imgFinal3 = base + "solution_vacuum_drying.jpg";
+
+// Modes & scaling
+const imgModes = base + "scaling.jpg";
+
+// Business model (table)
+const imgBiz = base + "business_model_table.jpg";
+
+/* -------------------------------------------------------------------------- */
+
+export default function Soniclean() {
   return (
     <div>
-      <ScrollToTop>
-        <Header stars topGradient>
-          <div className="icon">
-            <PlanetDisplay_Phobigone />
-          </div>
-          <div>
-            <h2>SoniClean</h2>
-            <h4>
-            Effortless shoe cleaning, by combining ultrasonic cleaning and vacuum drying
-              to reduce time and effort, without damaging sneakers.
-            </h4>
+      <Header stars topGradient>
+        <div className="icon">
+          {/* You can swap this with a small icon or 3D planet later if you create one */}
+          <img
+            src={imgPoster}
+            alt="SoniClean poster"
+            style={{
+              width: 160,
+              height: 160,
+              objectFit: "cover",
+              borderRadius: "12px",
+            }}
+          />
+        </div>
 
-            <ButtonsSet style={{ margin: '18px 0 6px' }}>
-              <MyButton href={FINAL_PPT}><span role="img" aria-label="deck">📑</span> Final Slides</MyButton>
-              <MyButton href={INTER_PPT} style={{ marginTop: 0 }}>
-                <span role="img" aria-label="deck">🗂️</span> Intermediate Slides
-              </MyButton>
-            </ButtonsSet>
-          </div>
-        </Header>
+        <div>
+          <h2>SoniClean</h2>
+          <h4>
+            A compact ultrasonic shoe-cleaning + drying device designed through
+            human-centered research, experience & service design, and strategic
+            UX.
+          </h4>
 
-        <Content homeButton>
-          {/* OVERVIEW */}
-          <Section title="Overview" subtitle="What SoniClean is and why it matters">
-            <Row>
+          <ButtonsSet style={{ margin: "18px 0 6px" }}>
+            <MyButton href={imgPoster}>
+              <Icon icon="clarity:two-page-settings-line" inline /> Poster
+            </MyButton>
+            <MyButton href={imgTeam}>
+              <Icon icon="mdi:image" inline /> Team &amp; Trophy
+            </MyButton>
+          </ButtonsSet>
+        </div>
+      </Header>
 
-              <Col>
-                <p>
-                  <b>SoniClean</b> is a home device concept that cleans and dries shoes quickly and safely.
-                  It merges <b>ultrasonic cleaning</b> (to lift dirt from fabric and seams) with <b>vacuum drying</b>
-                  (to drop the boiling point and dry at ~20&nbsp;°C under ~−98&nbsp;kPa), delivering
-                  <b> less time</b>, <b>less effort</b>, and <b>no damage</b>.
-                </p>
-
-                <ul>
-                  <li><b>Timeline:</b> 2 weeks</li>
-                  <li><b>Program:</b> ShenTech Entrepreneurship Bootcamp (KAUST × InnoX Academy, Shenzhen)</li>
-                  <li><b>Award:</b> recognized as a <i>Top Project</i>.</li>
-                </ul>
+      <Content homeButton>
+        {/* -------------------- OVERVIEW -------------------- */}
+        <Section
+          title="Overview"
+          subtitle="Project summary, role, timeline, recognition"
+        >
+          <Row>
+            <Col>
+              <p>
+                <b>SoniClean</b> is a small-form-factor device that cleans and
+                dries sneakers using <b>ultrasonic agitation</b> and a guided
+                drying workflow. We built the concept during the{" "}
+                <b>ShenTech Entrepreneurship Program</b> in Shenzhen, China
+                (2-week sprint).
+              </p>
+              <p>
+                <b>My role:</b> led user interviews & synthesis (human
+                research), framed the service model across purchase, usage, and
+                maintenance (experience/service design), shaped market &
+                competitor strategy, and designed the product interactions and
+                UI touchpoints (UI/UX).
+              </p>
+              <p>
+                <b>Outcome:</b> Awarded a <b>Top Project</b> for evidencing
+                market need, feasibility, and an end-to-end experience that fits
+                into users’ routines.
+              </p>
             </Col>
             <Col>
-            <Figure style={{ width: '86%', margin: '22px auto 0' }}>
-              <ZoomableImage src={POSTER} alt="SoniClean poster" />
-              <figcaption>Concept poster highlighting value props and core technologies.</figcaption>
-            </Figure>
+              {/* <Figure style={{ width: "70%" }}>
+                <ZoomableImage src={imgPoster} alt="Team receiving the award" />
+                <figcaption>Final symposium poster.</figcaption>
+              </Figure> */}
+              <CarouselGallery breakPoints={breakpoints}>
+                {[imgPoster, imgTeam].map((src, i) => (
+                  <Figure key={i}>
+                    <ZoomableImage src={src} alt={`Sketch ${i + 1}`} />
+                    <CapOverlay>
+                      {i === 0
+                        ? "Final symposium poster."
+                        : "Team receiving the award."}
+                    </CapOverlay>
+                  </Figure>
+                ))}
+              </CarouselGallery>
             </Col>
-            </Row>
-          </Section>
+          </Row>
+        </Section>
 
-          <Divider />
+        <Divider />
 
-          {/* RESEARCH */}
-          <Section title="Human Research" subtitle="How we learned what people struggle with">
-            <p>
-              We combined <b>shopping-mall intercepts</b>, <b>interviews</b>, and <b>surveys</b> to
-              understand current shoe-care habits. Three pain points dominated: <b>time-consuming</b>
-              workflows, <b>tedious manual scrubbing</b>, and fear of <b>damaging shoes</b> 
-              (especially white sneakers and premium fabrics).
-            </p>
+        {/* -------------------- USER RESEARCH -------------------- */}
+        <Section
+          title="User Research"
+          subtitle="Interviews that shaped the problem framing"
+        >
+          <Row>
+            <Col>
+              <p>
+                We interviewed sneaker owners and casual users to understand{" "}
+                <b>when</b> and <b>how</b> they clean shoes, what they find
+                frustrating, and the <b>trade-offs</b> between time, space, and
+                results. The research focused on routines (entryways, laundry
+                areas), materials (mesh, leather, foam), and pain points with
+                current DIY and service options.
+              </p>
+              <ul>
+                <li>
+                  10+ rapid interviews in dorms/cafés; contextual notes on
+                  spaces/tools used.
+                </li>
+                <li>
+                  Photos of storage/cleaning setups; product/brand mentions and
+                  expectations.
+                </li>
+                <li>
+                  Decision drivers: time-to-clean, mess containment, drying
+                  time, shape retention.
+                </li>
+              </ul>
+            </Col>
+            <Col>
+              <Figure>
+                <ZoomableImage src={imgUR} alt={`User research slide.`} />
+              </Figure>
+            </Col>
+          </Row>
+        </Section>
 
-            <Row>
-              <Col>
-                <Figure>
-                  <ZoomableImage
-                    src="/images/soniclean/pain_points.png"
-                    alt="Pain points"
-                  />
-                  <figcaption>Top pain points from interviews & surveys: time, effort, and damage risk.</figcaption>
-                </Figure>
-              </Col>
-              <Col>
-                <Figure>
-                  <ZoomableImage
-                    src="/images/soniclean/user_journeys.png"
-                    alt="Current journeys"
-                  />
-                  <figcaption>
-                    Current journeys involve laundromats, washing machines, or manual scrubbing —
-                    all slow, effortful, or risky.
-                  </figcaption>
-                </Figure>
-              </Col>
-            </Row>
-          </Section>
+        <Divider />
 
-          <Divider />
+        {/* -------------------- FINDINGS -------------------- */}
+        <Section
+          title="Pain Points & Findings"
+          subtitle="What must the solution respect"
+        >
+          <Row>
+            <Col>
+              <ul>
+                <li>
+                  <b>Mess & space:</b> Cleaning splashes and odor discourage
+                  frequent cleaning in small apartments.
+                </li>
+                <li>
+                  <b>Drying delay:</b> Waiting overnight is common; fears of
+                  trapping moisture or warping shape.
+                </li>
+                <li>
+                  <b>Material anxiety:</b> Users worry about damaging knit/foam,
+                  discoloration, or glue failure.
+                </li>
+                <li>
+                  <b>Consistency:</b> Multi-step DIY kits feel effortful;
+                  professional services are slow/inconvenient.
+                </li>
+              </ul>
+              <p>
+                These point to a <b>contained, quick, material-safe</b> process
+                that <b>retains shoe shape</b> and has a predictable, repeatable
+                routine.
+              </p>
+            </Col>
+            <Col>
+              <Figure>
+                <ZoomableImage src={imgFind} alt="Findings slide" />
+                <figcaption>
+                  Top pain points consolidated from interviews.
+                </figcaption>
+              </Figure>
+            </Col>
+          </Row>
+        </Section>
 
-          {/* EXPERIENCE / SERVICE / STRATEGY */}
-          <Section title="Experience & Service Design" subtitle="End-to-end flow and modes">
-            <p>
-              We framed SoniClean as a simple, guided service at home. The interface exposes
-              <b> three operation modes</b> tuned to outcomes:
-            </p>
-            <ul>
-              <li><b>Sonic Clean</b> — fast clean for light dirt and dust.</li>
-              <li><b>Deep Clean</b> — longer ultrasonic phase for heavy stains.</li>
-              <li><b>UV Clean</b> — a sanitization pass for odor and microbes.</li>
-            </ul>
+        <Divider />
 
-            <Row>
-              <Col>
-                <Figure>
-                  <ZoomableImage src="/images/soniclean/modes_ui.png" alt="Modes UI" />
-                  <figcaption>Simple mode selection with safeguards for material types.</figcaption>
-                </Figure>
-              </Col>
-              <Col>
-                <Figure>
-                  <ZoomableImage src="/images/soniclean/water_compartments.png" alt="Water compartments" />
-                  <figcaption>Clean/dirty water compartments for hygienic cycles and easy disposal.</figcaption>
-                </Figure>
-              </Col>
-            </Row>
-          </Section>
+        {/* -------------------- PERSONAS -------------------- */}
+        <Section
+          title="Target Customers (Personas)"
+          subtitle="Who benefits first"
+        >
+          <Row>
+            <Col>
+              <p>
+                We targeted <b>urban sneaker owners</b> who value cleanliness
+                and longevity but have limited time/space. Early adopters
+                include students and young professionals with 3–8 pairs in
+                active rotation.
+              </p>
+              <ul>
+                <li>
+                  <b>Goals:</b> fast refresh, safe for materials, minimal
+                  space/mess.
+                </li>
+                <li>
+                  <b>Behaviors:</b> batch cleaning on weekends; avoids long
+                  drying times.
+                </li>
+                <li>
+                  <b>Constraints:</b> small apartments, shared laundry, no
+                  balcony/yard.
+                </li>
+              </ul>
+            </Col>
+            <Col>
+              <Figure>
+                <ZoomableImage
+                  src={imgPersona}
+                  alt="Personas / targeted customers"
+                />
+                <figcaption>
+                  Condensed persona board from the workshop.
+                </figcaption>
+              </Figure>
+            </Col>
+          </Row>
+        </Section>
 
-          <Divider />
+        <Divider />
 
-          {/* PRODUCT / TECH */}
-          <Section title="Product & Technology" subtitle="Why ultrasonic + vacuum">
-            <p>
-              <b>Ultrasonic waves</b> create cavitation bubbles that lift dirt from fabrics and seams,
-              avoiding abrasive brushing that can fray materials. <b>Vacuum drying</b> lowers the
-              boiling point so water evaporates quickly at low temperature — <b>drying fast without heat</b>.
-            </p>
+        {/* -------------------- MARKET + COMPETITORS -------------------- */}
+        <Section title="Market & Competitors" subtitle="Where SoniClean fits">
+          <Row>
+            <Col>
+              <Figure>
+                <ZoomableImage src={imgMarket} alt="Market research" />
+                <figcaption>Market Research</figcaption>
+              </Figure>
+            </Col>
+            <Col>
+              <Figure>
+                <ZoomableImage src={imgComp} alt="Potential competitors" />
+                <figcaption>Potential competitors</figcaption>
+              </Figure>
+            </Col>
+          </Row>
+        </Section>
 
-            <Row>
-              <Col>
-                <Figure>
-                  <ZoomableImage src="/images/soniclean/ultrasonic_diagram.png" alt="Ultrasound diagram" />
-                  <figcaption>Ultrasonic cavitation lifts grime deep inside the fabric.</figcaption>
-                </Figure>
-              </Col>
-              <Col>
-                <Figure>
-                  <ZoomableImage src="/images/soniclean/vacuum_curve.png" alt="Vacuum drying curve" />
-                  <figcaption>
-                    Under ~−98&nbsp;kPa, water reaches a ~20&nbsp;°C boiling point → gentle, fast drying.
-                  </figcaption>
-                </Figure>
-              </Col>
-            </Row>
-          </Section>
+        <Divider />
 
-          <Divider />
+        {/* -------------------- TECH RESEARCH -------------------- */}
+        <Section
+          title="Tech Research"
+          subtitle="Ultrasound + shoe anatomy → safe cleaning strategy"
+        >
+          <Row>
+            <Col>
+              <p>
+                We explored <b>ultrasonic cleaning</b> literature (already used
+                in textiles and precision parts) and mapped <b>shoe anatomy</b>{" "}
+                to identify risk areas (adhesives, foam midsoles, knit uppers).
+                Our direction: short ultrasonic cycles with controlled{" "}
+                <b>water level</b> and <b>temperature</b>, followed by contained
+                draining and a <b>gentle forced-air + vacuum</b> dry that
+                preserves shape.
+              </p>
+              <ul>
+                <li>
+                  Ultrasound helps dislodge dirt in crevices at low mechanical
+                  abrasion.
+                </li>
+                <li>
+                  Modularity around <b>last/rod supports</b> keeps the shoe form
+                  during wet stages.
+                </li>
+              </ul>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Figure>
+                <ZoomableImage src={imgTech1} alt="Market research" />
+                <figcaption>Market Research</figcaption>
+              </Figure>
+            </Col>
+            <Col>
+              <Figure>
+                <ZoomableImage src={imgComp} alt="Potential competitors" />
+                <figcaption>Potential competitors</figcaption>
+              </Figure>
+            </Col>
+          </Row>
+        </Section>
 
-          {/* STRATEGY */}
-          <Section title="Strategy" subtitle="Positioning, channels, and partners">
-            <p>
-              We target sneaker owners (students, athletes, families) who value convenience and shoe longevity.
-              Early channels: direct-to-consumer online + retail partners; longer-term: brand collaborations for
-              co-branded care. Key partners include component suppliers, contract manufacturers, and
-              sneaker brands for testing + credibility.
-            </p>
-            <ul>
-              <li><b>Value prop:</b> faster, safer, at-home shoe care that preserves materials.</li>
-              <li><b>Revenue:</b> device sales + accessories (filters, cleaning solution).</li>
-              <li><b>Costs:</b> manufacturing, R&amp;D, marketing, customer support.</li>
-            </ul>
-          </Section>
+        <Divider />
 
-          <Divider />
+        {/* -------------------- IDEATION / SKETCHES -------------------- */}
+        <Section
+          title="Ideation & Sketches"
+          subtitle="Form factor, compartments, and controls"
+        >
+          <Row>
+            <Col>
+              <p>
+                We tested <b>horizontal vs. vertical</b> placement for{" "}
+                <b>loading ease</b>, <b>drainage</b>, and
+                <b> footprint</b>. Controls cluster near the handle for
+                one-handed use; the door seals splash and odor, enabling
+                countertop operation.
+              </p>
+            </Col>
+            <Col>
+              <CarouselGallery breakPoints={breakpoints}>
+                {[imgSketch1, imgSketch2, imgSketch3, imgSketch4].map(
+                  (src, i) => (
+                    <Figure key={i}>
+                      <ZoomableImage src={src} alt={`Sketch ${i + 1}`} />
+                      <CapOverlay>
+                        {i === 0
+                          ? "Horizontal vs vertical placement; rod spacing"
+                          : i === 1
+                          ? "Compartment door & button placement options"
+                          : "Drying mechanism placement & airflow paths"}
+                      </CapOverlay>
+                    </Figure>
+                  )
+                )}
+              </CarouselGallery>
+            </Col>
+          </Row>
+        </Section>
 
-          {/* NEXT STEPS */}
-          <Section title="Next Steps" subtitle="What We’d validate next">
-            <ul>
-              <li>Bench-top ultrasonic + vacuum tests with common materials (mesh, knit, suede).</li>
-              <li>Material-aware presets and auto-sensing (e.g., tag or vision) for safer defaults.</li>
-              <li>Pilot with sneaker-community partners; longevity and satisfaction measures.</li>
-            </ul>
-          </Section>
-        </Content>
-      </ScrollToTop>
+        <Divider />
+
+        {/* -------------------- FINAL SOLUTION -------------------- */}
+        <Section title="Final Solution" subtitle="Mechanism & end-to-end cycle">
+          <Row>
+            <Col>
+              <p>
+                The core is a <b>container with two shoe rods</b>. You place
+                shoes while the rods are angled for easy loading; as the door
+                closes, the mechanism{" "}
+                <b>rotates rods to an inverted vertical</b> position to aid
+                drainage.
+              </p>
+              <ol>
+                <li>
+                  <b>Fill & Ultrasonic Clean:</b> chamber fills from a
+                  clean-water side tank; ultrasonic transducers agitate debris.
+                </li>
+                <li>
+                  <b>Drain:</b> water moves to a dirty-water tank for later
+                  disposal.
+                </li>
+                <li>
+                  <b>Dry:</b> gentle <b>rod vents</b> + chamber airflow;
+                  optional <b>vacuum assist</b> to evacuate moisture quickly.
+                </li>
+              </ol>
+              <p style={{ opacity: 0.9 }}>
+                <i>Feasibility notes:</i> Ultrasonic cleaning is compatible with
+                textiles at moderate power/time. Forced-air through hollow rods
+                plus chamber airflow is a reasonable combo; keep temps low to
+                avoid glue damage.
+              </p>
+            </Col>
+            {/* <Col>
+              <CarouselGallery breakPoints={breakpoints}>
+                {[imgFinal1, imgFinal2, imgFinal3].map((src, i) => (
+                  <Figure key={i}>
+                    <ZoomableImage src={src} alt={`Final mechanism ${i + 1}`} />
+                    <CapOverlay>
+                      {i === 0
+                        ? "Overall cycle: fill → sonics → drain → dry"
+                        : i === 1
+                        ? "Door-linked rod rotation for load → invert"
+                        : "Water path: clean tank → chamber → dirty tank"}
+                    </CapOverlay>
+                  </Figure>
+                ))}
+              </CarouselGallery>
+            </Col> */}
+          </Row>
+          <CarouselGallery breakPoints={breakpoints}>
+            {[imgFinal1, imgFinal2, imgFinal3].map((src, i) => (
+              <Figure key={i}>
+                <ZoomableImage src={src} alt={`Final mechanism ${i + 1}`} />
+                <CapOverlay>
+                  {i === 0
+                    ? "Overall cycle: fill → sonics → drain → dry"
+                    : i === 1
+                    ? "Door-linked rod rotation for load → invert"
+                    : "Water path: clean tank → chamber → dirty tank"}
+                </CapOverlay>
+              </Figure>
+            ))}
+          </CarouselGallery>
+        </Section>
+
+        <Divider />
+
+        {/* -------------------- MODES & SCALING -------------------- */}
+        <Section
+          title="Modes & Scaling"
+          subtitle="From MVP to performance tiers"
+        >
+          <Row>
+            <Col>
+              <ul>
+                <li>
+                  <b>MVP:</b> Single “Daily Clean” (short sonic burst + quick
+                  dry).
+                </li>
+                <li>
+                  <b>Deep Clean:</b> Longer sonic time; optional mild detergent
+                  capsule.
+                </li>
+                <li>
+                  <b>Dry-Only:</b> For rainy days (skip fill; use airflow +
+                  vacuum).
+                </li>
+                <li>
+                  <b>Scale-Up:</b> Higher-capacity variant for small shops or
+                  dorm floors.
+                </li>
+              </ul>
+            </Col>
+            <Col>
+              <Figure>
+                <ZoomableImage src={imgModes} alt="Modes & scaling" />
+                <figcaption>
+                  Feature tiers mapped to use cases and environments.
+                </figcaption>
+              </Figure>
+            </Col>
+          </Row>
+        </Section>
+
+        <Divider />
+
+        {/* -------------------- BUSINESS MODEL -------------------- */}
+        <Section
+          title="Business Model"
+          subtitle="Hardware + consumables + placement strategy"
+        >
+          <Row>
+            <Col>
+              <p>
+                <b>Hardware sale</b> for individuals; <b>placement</b> in
+                dorms/gyms with rev-share; optional
+                <b> consumables</b> (mild detergent/filters). Warranty & filter
+                replacements create recurring touchpoints.
+              </p>
+              <ul>
+                <li>
+                  Early channel: university housing & sneaker communities.
+                </li>
+                <li>Service model: filter swap program; repair partners.</li>
+              </ul>
+            </Col>
+            <Col>
+              <Figure>
+                <ZoomableImage src={imgBiz} alt="Business model table" />
+                <figcaption>Business model snapshot from the deck.</figcaption>
+              </Figure>
+            </Col>
+          </Row>
+        </Section>
+      </Content>
     </div>
   );
 }

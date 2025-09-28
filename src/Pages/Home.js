@@ -103,19 +103,18 @@ const ButtonsList = styled.div`
             {/* ********* soniclean ********* */}
             <MainPageSection
             title='SoniClean'
-            summary='Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.'
+            summary="Concept design of a shoe cleaning device that's fast, convenient, and safe."
             href='soniclean'
             allignedLeft={true}
           >
             <PlanetDisplay_SoniClean hoverable />
           </MainPageSection>
 
-          {/* ********* balancebuddy ********* */}
           <MainPageSection
             title='BalanceBuddy'
             summary='Website to balance between students’ schoolwork & internship search process through daily tasks & progress dashboard.'
             href='balancebuddy'
-            allignedLeft={true}
+            allignedLeft={false}
           >
             <PlanetDisplay_BalanceBuddy hoverable />
           </MainPageSection>
@@ -125,7 +124,7 @@ const ButtonsList = styled.div`
             title='Boppity-Bop Lofi'
             summary='Audio visualizer website, with a relaxing window view (buildings, trees, clouds) that animates to Lo-fi music.'
             href='boppity-bop-lofi'
-            allignedLeft={false}
+            allignedLeft={true}
           >
             <PlanetDisplay_BoppityBopLofi hoverable />
           </MainPageSection>
@@ -135,7 +134,7 @@ const ButtonsList = styled.div`
             title='LightUp'
             summary='An iOS app for brainstorming ideas; it displays random words and has the option to write ideas in "sticky notes".'
             href='lightup'
-            allignedLeft={true}
+            allignedLeft={false}
           >
             <PlanetDisplay_LightUp hoverable />
           </MainPageSection>

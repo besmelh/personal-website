@@ -9,7 +9,12 @@ const LightboxOverlay = styled.div`
   position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.8);
   display:grid; place-items:center; padding:24px;
 `;
-const LightboxImg = styled.img`max-width:92vw; max-height:92vh; border-radius:12px;`;
+const LightboxImg = styled.img`max-width:92vw; 
+max-height:92vh;
+height: auto;
+width: auto;
+border-radius:12px;
+object-fit: contain;`;
 
 export default function ZoomableImage({ src, alt }) {
   const [open, setOpen] = useState(false);
